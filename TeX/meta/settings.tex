@@ -1,0 +1,136 @@
+%Personel Data
+\title{Functional Renormalization and Quantum Gravity}
+\author{Mathieu Kaltschmidt}
+\date{\today}
+
+%Statements
+\newtheorem{statements}{Statements}[chapter]
+
+%Page Layout and geometry
+\usepackage{fancyhdr}
+\fancyhfoffset{0pt}
+
+\usepackage[a4paper,
+			width = 150mm,
+			top = 30mm,
+		    bottom=30mm%,
+		    %bindingoffset = 7mm
+		    ]{geometry}
+\usepackage[onehalfspacing]{setspace}
+
+
+%Empty ages At The Beginning Of The Document
+\def\blankpage{%
+	\clearpage%
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\null%
+	\clearpage}
+
+%Renewing marks for appearance in header
+\renewcommand{\chaptermark}[1]{
+    \markboth{\mbox{\@chapapp}\ \thechapter.\ \ #1}{}%
+}
+\renewcommand{\sectionmark}[1]{
+    \markright{\thesection\ \ #1}{}
+}
+
+%Chapter Layout
+\KOMAoption{chapterprefix}{true}
+\renewcommand*\raggedchapter{\centering}
+\RedeclareSectionCommand[beforeskip=0pt,afterskip=\baselineskip]{chapter}
+\setkomafont{chapterprefix}{\Large\mdseries}
+\renewcommand*{\chapterformat}{%
+  \chapappifchapterprefix{\nobreakspace}\thechapter\autodot%
+  \IfUsePrefixLine{%
+    \par\nobreak\vspace{-\parskip}\vspace{-.6\baselineskip}%
+    \rule{0.9\textwidth}{0.5pt}\vspace{-1\baselineskip}%
+  }{\enskip}%
+}
+\renewcommand\chapterlineswithprefixformat[3]{%
+#2#3
+}
+
+
+%Page Layout For Beginning Of Chapter
+\fancypagestyle{plain}{%
+	\fancyhf{}  %clear all header and footer fields
+	\fancyfoot[C]{- \thepage\hspace{3pt}-}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+	}
+
+%Page Layout For Other Pages
+\pagestyle{fancy}
+	\fancyhf{}
+	\fancyhead[LE]{\footnotesize\nouppercase{\leftmark}}
+	\fancyhead[RO]{\footnotesize\nouppercase{\rightmark}}
+	\fancyfoot[C]{-\thepage-}
+	\renewcommand{\headrulewidth}{0.2pt}
+	\renewcommand{\footrulewidth}{0pt}
+
+%Headings
+\setkomafont{section}{\textsf\bfseries\Large}
+\setkomafont{subsection}{\textsf\bfseries\large}
+\setkomafont{subsubsection}{\textsf\bfseries\normalsize}
+
+
+%Math and Units
+\usepackage{amsmath, amssymb, commath, mathtools}
+\usepackage{physics}
+\usepackage[hyperref]{ntheorem}
+\usepackage{xfrac}
+\usepackage[separate-uncertainty]{siunitx}
+
+
+%Tables
+\usepackage{array} %math mode in tables
+\usepackage{booktabs} %hline rules
+
+%Language Settings and Microtype
+\usepackage{fontspec, xunicode}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\setmainfont{Palatino}
+\setsansfont{Optima}
+\setmonofont[Scale=MatchLowercase]{Menlo}
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\setotherlanguages{german, french}
+\usepackage{microtype}
+
+%Useful Packages
+\usepackage{graphicx} %including images
+\usepackage{float} %better positioning for float environments
+\usepackage{blindtext} %for testing the output
+\usepackage[labelfont=bf]{caption} %nice captions
+\usepackage{subcaption} %for multiple plots
+
+%TikZ and Feynman Diagrams
+\usepackage{tikz}
+\usepackage{tikz-feynman}
+\tikzfeynmanset{compat=1.0.0}
+\usetikzlibrary{external}
+	\immediate\write18{mkdir -p feynman-diagrams}
+	\tikzexternalize[
+  	prefix=feynman-diagrams/,
+  	system call={
+    lualatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname="\image" "\texsource"  || rm "\image.pdf"},
+	]
+
+%Appendix and Bibliography
+\RequirePackage[toc,page]{appendix}
+
+\usepackage[
+	style=numeric-comp,
+	backend=biber,
+	isbn=false,
+	date=year,
+	url=false,
+	doi=false
+]{biblatex}
+\addbibresource{bib/bsc.bib}
+
+%Colorlinks etc.
+\usepackage[colorlinks=False]{hyperref}
+\hypersetup{allcolors=BScBlue}

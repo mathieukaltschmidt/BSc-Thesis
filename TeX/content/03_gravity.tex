@@ -1,0 +1,41 @@
+\chapter{Fundamentals of General Relativity}
+\blindtext 
+\section{The Einstein Equations}
+\Blindtext
+The Einstein-Hilbert action:
+\begin{align}
+	\mathcal{S}_{\text{EH}}[g_{\mu\nu}] = \frac{1}{16\pi G} \int\limits_x \sqrt{-\operatorname{det}g_{\mu\nu}} (\Ricci - 2\Lambda)
+\end{align}
+Varying this action as usual yields the Einstein equations in absence of matter:
+\begin{align}
+	G_{\mu\nu} + \Lambda g_{\mu\nu} = 0
+\end{align}
+where we used $G_{\mu\nu} = \mathcal{R}_{\mu\nu} - \frac{1}{2}g_{\mu\nu}\mathcal{R}$. \\
+
+Diffeomorphism invariance, Lie derivatives:
+\begin{align}
+	\mathcal{L}_{\omega}\phi = \omega^{\mu}\partial^{\mu}\phi = \omega^{\mu}\nabla^{\mu}\phi
+\end{align}
+
+Now we include matter. \\
+
+Energy-Momentum Tensor:
+\begin{align}
+	T_{\mu\nu} = \frac{-2}{\sqrt{-\operatorname{det}g_{\mu\nu}}} \frac{\delta\mathcal{S}_{\text{matter}}}{\delta g^{\mu\nu}}
+\end{align}
+
+Matter part of the action for a minimally coupled scalar field $\phi$:
+\begin{align}
+	\mathcal{S}_{\text{matter}}[g_{\mu\nu}, \phi] = -\frac{1}{2} \int\limits_x \sqrt{-\operatorname{det}g_{\mu\nu}}\left( g^{\mu\nu}\nabla_{\mu}\phi\nabla_{\nu}\phi - g_{\mu\nu} V(\phi) \right)
+\end{align}
+
+From this, we get the Einstein equations including matter by demanding the variation $\sqrt{-\operatorname{det}g_{\mu\nu}}\frac{\delta\mathcal{S}}{\delta g^{\mu\nu}}$ to vanish. This yields:
+
+\begin{align}
+\frac{1}{8\pi G}\left[\Ricci_{\mu\nu} - \frac{1}{2}(\Ricci - 2\Lambda)g_{\mu\nu}\right] = T_{\mu\nu}	
+\end{align}
+
+
+\section{Perturbative Non-Renormalizability of Gravity}
+
+\blindtext

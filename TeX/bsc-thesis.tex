@@ -1,47 +1,48 @@
 %compiling with XeLaTeX
 \documentclass[abstracton,
-			   %twoside,
+			   twoside,
 			   parskip=half,
 			   11pt]{scrreprt}
 			   
-\input{metadata/settings}
-\input{metadata/definitions}
+%Presettings			   
+\include{meta/settings}
+\include{meta/macros}
+
 
 \begin{document}
 
-%Introductory stuff, abstracts and toc
 \pagenumbering{roman}
-\input{content/titlepage}
-{\renewcommand{\headrulewidth}{0pt}
+%Introductory stuff, abstracts and toc
 
-\addcontentsline{toc}{chapter}{Abstracts}
-
-\input{content/abstract}
+\include{content/titlepage}
+%\addcontentsline{toc}{chapter}{Abstracts} %if necessary
+\include{content/abstract}
 \tableofcontents
-}
+
 \blankpage
+
 
 \setcounter{tocdepth}{1}
 \pagenumbering{arabic}
 
+%main part
+	\include{content/01_introduction}
+	\include{content/02_functional_methods}
+	\include{content/03_gravity}
+	\include{content/04_eh_truncation}
+	\include{content/05_coupling_dependency}
+	\include{content/06_conclusion}
 
-
-\include{content/chapter1}
-
-%Appendices
 \pagenumbering{Roman}
-\addcontentsline{toc}{chapter}{Acknowledgements}
-\input{content/acknowledgements}
+%Appendices
+\include{content/acknowledgements}
 \blankpage
 \thispagestyle{plain}
-%\nocite*
 \addcontentsline{toc}{chapter}{References}
 \printbibliography
-\listoffigures
-\blankpage	
-\listoftables
+\listoffigures	
 \blankpage
 
-\input{content/declaration}
+\include{content/declaration}
 
 \end{document}

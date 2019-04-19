@@ -1,0 +1,26 @@
+%Statement environment
+\newcommand{\statement}[1]{\stepcounter{statements}\begin{center}
+	\textbf{#1}
+	\end{center}
+}
+
+%Color Settings
+\usepackage{xcolor}
+\definecolor{BScRed}{RGB}{157,0,0}
+\definecolor{BScBlue}{RGB}{1,1,141}
+\definecolor{BScGreen}{RGB}{0, 119, 85}
+\definecolor{BScGray}{RGB}{102, 102, 142}
+
+%Useful definitions
+\newcommand{\Z}{\mathcal{Z}[J]}
+\renewcommand{\S}{\mathcal{S}[\varphi]}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\W}{\mathcal{W}[J]}
+\newcommand{\cf}[1]{\langle #1 \rangle}
+
+
+\newcommand{\Ricci}{\mathcal{R}}
+\newcommand{\Gammak}{\Gamma_{k}}
+%\newcommand{\Gamma2}{\Gamma^{(2)}_{k}}
+\newcommand{\Lambdak}{\Lambda_k}
+\renewcommand{\tr}[1]{\operatorname{Tr}\left[ #1 \right]}

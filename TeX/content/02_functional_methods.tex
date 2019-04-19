@@ -1,0 +1,65 @@
+\chapter{Functional methods in Quantum Field Theory}
+\section{Generating Functionals and Correlation Functions}
+Path Integral formulation of the partition sum:
+\begin{align}
+	\Z = \frac{1}{N} \int \D\varphi \exp\left\{-\S + \int\limits_x J(x)\varphi(x) \right\}
+\end{align}
+
+\subsection{The Schwinger Functional}
+We obtain the Schwinger functional by taking the logarithm of $\Z$:
+\begin{align}
+	\W = \operatorname{ln} \Z
+\end{align}
+
+The connected two point functions, also known as the propagators, can be computed simply by differentiating the Schwinger functional:
+\begin{align}
+	G(x_1, x_2) &= \frac{\delta^2\W}{\delta J(x_1)\delta J(x_2)} \nonumber \\
+				&= \cf{\varphi(x_1)\varphi(x_2)} - \cf{\varphi(x_1)}\cf{\varphi(x_2)} \nonumber \\
+				&= \cf{\varphi(x_1)\varphi(x_2)}_{\text{c}}		
+\end{align}
+
+\subsection{The Effective Action}
+The effective action can be obtained by performing a Legendre transform of the Schwinger funtional, i.\,e.:
+\begin{align}
+\Gamma[\phi] = \underset{J}{\operatorname{sup}}\left\{ \int\limits_x J(x)\phi(x) - \W \right\} = \int\limits_x J_{\text{sub}}(x)\phi(x) - \mathcal{W}[J_{\text{sub}}]
+\end{align}
+
+Quantum equation of motion:
+\begin{align}
+\frac{\delta\Gamma[\phi]}{\delta\phi(x)} = J(x)	
+\end{align}
+
+Dyson-Schwinger equation:
+\begin{align}
+\frac{\delta\Gamma[\phi]}{\delta\phi(x)} = \frac{\delta\mathcal{S}}{\delta\varphi(x)} \left[\varphi = G \cdot \frac{\delta}{\delta\phi} + \phi \right]
+\end{align}
+
+\section{The Functional Renormalization Group}
+\begin{itemize}
+	\item Kadanoff Block-Spin model 
+	\item maybe visualization of Ising model + phase transitions
+\end{itemize}
+
+\subsection{Renormalization group consistency}
+Cutoff independence of the full quantum effective action:
+\begin{align}
+	\Lambda\frac{\dd\Gamma}{\dd\Lambda} = 0
+\end{align}
+
+Full effective action in a generic representation:
+\begin{align}
+	\Gamma[\phi] = \D_{\Lambda}[\phi] + \Gamma_{\Lambda}[\phi]
+\end{align}
+
+Formal discussion:
+\begin{align}
+\Gammak[\phi] = \Gamma_{\Lambda}[\phi] + \int\limits_{\Lambda}^k \frac{\dd k'}{k'} \mathcal{F}_{k'}[\phi]
+\end{align}
+ 
+ 
+\section{The Renormalisation Group Flow  for the Effective Action}
+We introduce the RG time scale as $t = \ln \frac{k}{\Lambda}$
+
+\begin{align}
+	\partial_t\Gammak[\phi] = \frac{1}{2}\tr{\frac{1}{\Gammak^{(2)}[\phi] + R_k} \partial_t R_k}
+\end{align}

@@ -1,0 +1,234 @@
+%========================================================================
+% fncystyle.sty
+%
+% This file is created by Chandra Has
+% It is a style file: fncystyle.sty
+% use it as \usepackages[options]{fncystyle}
+% It includes several packages so once must check this file before
+% adding any new package
+% Copyright (C) 2016 C. Has
+% Time stamp: 17:10, 10 Feb 2016 ; Chandra Has
+%
+% Author electronic mail: chandrahashbti@gmail.com
+%
+%***********************************************************************
+
+% IMPORTANT POINTS:
+
+%*********************************************************************
+% Report to author if you find some errors in this file
+% You are allowed to distribute this copy in any form without author permission
+% You can cange the name of the style file
+% Your suggestions will be highly appreciated
+% Other info..
+%=====================================================================
+
+%******************* New style: fncystyle.sty**********************
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{settings/fncystyle}[2016/02/10 packages and several chapter styles]
+
+
+%***************Packages for chapter style***********************
+\usepackage{titletoc}
+\usepackage[titles]{tocloft}
+\usepackage[explicit]{titlesec} 
+\usepackage{calc}
+
+%***************************TOC style*********************************
+ \newcommand{\setupname}[1][Chapter]{%
+  \addtocontents{toc}{%
+    \unexpanded{\unexpanded{%
+    \setlength\cftchapnumwidth{5.5em}%
+      \renewcommand{\cftchappresnum}{\bfseries\textit{#1}~}%
+       \renewcommand{\cftchapaftersnum}{:}
+       \renewcommand{\cftchapaftersnumb}{\quad}
+    }}%
+  }%
+}
+
+
+%**************************Chapter style******************************
+% According to IITB: there should be 3 blank lines between the last line of the
+% chapter title and the first line of your text material
+% 3 blank lines for 12pt font size would be almost 40pt
+% Space before chapter title: 50 pt
+% Several chapter styles with font size
+%********************************************************************
+\newcommand*{\mytitlespacing}{%
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+%\titlespacing{\section}{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+%\titlespacing{\subsection}{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+%\titlespacing{\subsubsection}{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+}
+
+
+%***************************Default style**************************
+\newcommand*{\makechapterstyle}{\mytitlespacing}
+
+
+%*********************chapterstyleA********************************
+\newcommand*{\chapterstyleA}{%
+\titleformat{\chapter}[block]
+{\normalfont}{}{0pt}{%
+\parbox[b]{\chapternum}{%
+    \fontsize{100pt}{120pt}\selectfont{\thechapter}
+   }%
+  \parbox[b]{\textwidth-\chapternum}{%
+    \raggedleft \hfill{\LARGE##1}\\[-0.25\baselineskip]
+    \rule{\textwidth-\chapternum}{1pt}
+    }
+}
+
+\titleformat{name=\chapter,numberless}[block]
+{\normalfont}{}{0pt}{%
+	\parbox[b]{\chapternum}{%
+   \mbox{}}%
+  \parbox[b]{\textwidth-\chapternum}{%
+    \raggedleft \hfill{\LARGE##1}\\[-0.25\baselineskip]
+    \rule{\textwidth-\chapternum}{1pt}
+    }
+ }\mytitlespacing
+}
+
+
+%*********************chapterstyleB********************************
+% This is quotchap style with garamond font
+%*****************************************************************
+\newcommand*{\chapterstyleB}{%
+\titleformat{name=\chapter}[display]{%
+\normalfont}{%
+\filleft\fontsize{100pt}{120pt}\selectfont\textcolor{chaptergrey}{%
+	{\thechapter}}}{-24pt}{\LARGE ##1}[]
+
+\titleformat{name=\chapter,numberless}[display]{%
+	\normalfont}{}{-24pt}{\LARGE ##1}[]
+\mytitlespacing
+	}
+
+%*********************chapterstyleC********************************
+% This is similar to classic thesis with garamond font
+%*****************************************************************
+\newcommand*{\chapterstyleC}{%
+\titleformat{\chapter}[display]
+{\Usefont{ppl}\bfseries \scshape\LARGE}{%
+\filleft\color{gray!50!black}\chaptertitlename\hspace*{2mm}%
+	\begin{tikzpicture}[baseline={([yshift=-15mm]current bounding box.center)}]
+	\node[fill=gray!50!black,rectangle,text=white] {\fontsize{100pt}{120pt}\selectfont {\thechapter}};
+	\end{tikzpicture}}{1mm}{%
+\Usefont{ppl}\centering\titlerule[3pt]\vskip2pt\titlerule[1pt] \chapskip{1}
+\leavevmode\\[-0.8\baselineskip]\bfseries\LARGE\MakeUppercase{##1}}%
+[{\vskip4pt\titlerule[1pt]}]
+
+\mytitlespacing
+}
+
+%
+%*********************chapterstyleD********************************
+\newcommand*{\chapterstyleD}{%
+	\titleformat{\chapter}[display]
+	{\Usefont{ppl}\bfseries\LARGE}{%
+		\filleft\color{gray!50!black}%
+		\begin{tikzpicture}[baseline={([yshift=-15mm]current bounding box.center)}]
+		\node[fill=gray!50!black,rectangle,text=white] {\fontsize{100pt}{120pt}\selectfont{\thechapter}};
+		\end{tikzpicture}}{1mm}{%
+		\Usefont{ppl}\centering\titlerule[3pt]\vskip2pt\titlerule[1pt] \chapskip{1}\leavevmode\\[-0.8\baselineskip]\bfseries\LARGE ##1}%
+	[{\vskip4pt\titlerule[1pt]}]
+
+	\mytitlespacing
+}
+
+
+%*********************chapterstyleE********************************
+% This is similar to quotchap with chapnumber in box
+%********************************************************************
+\newcommand*{\chapterstyleE}{%
+	\titleformat{\chapter}[display]
+	{\LARGE}%
+	{\bfseries\scshape\filleft\color{gray!50!black}\hspace*{2mm}%
+		\begin{tikzpicture}[baseline={([yshift=-15mm]current bounding box.center)}]
+		\node[fill=gray!70!black,rectangle,text=white] {\fontsize{100pt}{120pt}\selectfont{\thechapter}};
+		\end{tikzpicture}}
+	{1mm}{\filleft\LARGE {##1}}[]
+
+\mytitlespacing
+}
+
+
+%*********************chapterstyleF********************************
+% chapnumber in s circle
+%*****************************************************************
+\newcommand*{\chapterstyleF}{%
+	\titleformat{\chapter}[display]
+	{\normalfont\LARGE\bfseries}%
+	{\filright\color{gray!50!black}\hspace*{2mm}%
+		\begin{tikzpicture}[baseline={([yshift=10mm]current bounding box.center)}]
+		\node[fill=gray!50!black,circle,text=white] {\fontsize{100pt}{120pt}\selectfont \thechapter};
+		\end{tikzpicture}}
+	{1mm}{\chapskip{1}\titlerule\filleft\bfseries\vskip5pt ##1}[\vskip4pt\titlerule]
+\mytitlespacing
+}
+
+
+%****************chapterstyleG************************************
+\newcommand*{\chapterstyleG}{%
+\titleformat{\chapter}[display]
+{\Usefont{ppl}\bfseries\LARGE}
+{\filleft\hspace*{-60pt}%
+	\rotatebox[origin=c]{90}{%
+\scshape\color{gray!50!black}	\large\textls[200]{\vspace*{5mm}\scshape\chaptertitlename}%
+	}\hspace{10pt}%
+	{\setlength{\fboxsep}{0pt}%
+	\colorbox{gray!50!black}{\parbox[c][3cm][c]{2.5cm}{%
+				\centering\color{white}\fontsize{120}{140}\selectfont{\thechapter}}%
+		}}%
+	}
+	{10pt}
+	{##1}[{\titlerule[3pt]\vskip2pt\titlerule[1pt]}]
+\mytitlespacing
+}
+
+
+%****************chapterstyleH**********************************
+\newcommand*{\chapterstyleH}{%
+\titleformat{\chapter} %
+{\normalfont\LARGE\filcenter} %
+{\tikz[remember picture,overlay]
+  {\node[fill=black, %
+       font=\fontsize{110}{130}\selectfont\color{white}, %
+       anchor=north east,
+       minimum width=2.6cm,
+       minimum height=3.3cm]
+       at ([xshift=0cm,yshift=-4cm]current page.north east)
+         (numb) {\filright{\thechapter}};
+     \node[rotate=90,
+           anchor=south,
+           inner sep=4pt,
+           font=\LARGE]
+       at ([xshift=.8cm,yshift=-5.7cm]current page.north east)
+       (numb.west) {\filright\textls[190]{\Large\scshape\chaptertitlename}};
+    }}
+  {5pt}{\vskip15mm\bfseries ##1}
+  [\filcenter\vskip-5pt\huge****]
+%
+\mytitlespacing
+ }
+
+
+%****************Package otpion for chap-styles************************
+\DeclareOption{inlinechap}{\chapterstyleA}
+\DeclareOption{quotchpI}{\chapterstyleB}
+\DeclareOption{boxedchapnum}{\chapterstyleC}
+\DeclareOption{boxedchapnumN}{\chapterstyleD}
+\DeclareOption{quotchapII}{\chapterstyleE}
+\DeclareOption{roundchapnum}{\chapterstyleF}
+\DeclareOption{boxedchapnumL}{\chapterstyleG}
+\DeclareOption{boxedchapnumR}{\chapterstyleH}
+
+\ExecuteOptions{}                           % default style
+
+
+\endinput
+
+% File \textit{fncystyle.sty} ends here.
+%=======================================================================
