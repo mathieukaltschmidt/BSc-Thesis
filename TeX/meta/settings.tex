@@ -19,14 +19,6 @@
 \usepackage[onehalfspacing]{setspace}
 
 
-%Empty ages At The Beginning Of The Document
-\def\blankpage{%
-	\clearpage%
-	\thispagestyle{empty}
-	\addtocounter{page}{-1}
-	\null%
-	\clearpage}
-
 %Renewing marks for appearance in header
 \renewcommand{\chaptermark}[1]{
     \markboth{\mbox{\@chapapp}\ \thechapter.\ \ #1}{}%
@@ -39,7 +31,7 @@
 \KOMAoption{chapterprefix}{true}
 \renewcommand*\raggedchapter{\centering}
 \RedeclareSectionCommand[beforeskip=0pt,afterskip=\baselineskip]{chapter}
-\setkomafont{chapterprefix}{\Large\mdseries}
+\setkomafont{chapterprefix}{\Large\normalfont}
 \renewcommand*{\chapterformat}{%
   \chapappifchapterprefix{\nobreakspace}\thechapter\autodot%
   \IfUsePrefixLine{%
@@ -55,7 +47,7 @@
 %Page Layout For Beginning Of Chapter
 \fancypagestyle{plain}{%
 	\fancyhf{}  %clear all header and footer fields
-	\fancyfoot[C]{- \thepage\hspace{3pt}-}
+	\fancyfoot[C]{\thepage}
 	\renewcommand{\headrulewidth}{0pt}
 	\renewcommand{\footrulewidth}{0pt}
 	}
@@ -65,7 +57,7 @@
 	\fancyhf{}
 	\fancyhead[LE]{\footnotesize\nouppercase{\leftmark}}
 	\fancyhead[RO]{\footnotesize\nouppercase{\rightmark}}
-	\fancyfoot[C]{-\thepage-}
+	\fancyfoot[C]{\thepage}
 	\renewcommand{\headrulewidth}{0.2pt}
 	\renewcommand{\footrulewidth}{0pt}
 
@@ -106,20 +98,16 @@
 \usepackage[labelfont=bf]{caption} %nice captions
 \usepackage{subcaption} %for multiple plots
 
-%TikZ and Feynman Diagrams
-\usepackage{tikz}
-\usepackage{tikz-feynman}
-\tikzfeynmanset{compat=1.0.0}
-\usetikzlibrary{external}
-	\immediate\write18{mkdir -p feynman-diagrams}
-	\tikzexternalize[
-  	prefix=feynman-diagrams/,
-  	system call={
-    lualatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname="\image" "\texsource"  || rm "\image.pdf"},
-	]
 
 %Appendix and Bibliography
-\RequirePackage[toc,page]{appendix}
+\usepackage[toc,page]{appendix}
+
+\usepackage{etoolbox}
+\appto\appendix{\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}}
+
+% reinstate the correct level for list of tables and figures
+\appto\listoffigures{\addtocontents{lof}{\protect\setcounter{tocdepth}{1}}}
+\appto\listoftables{\addtocontents{lot}{\protect\setcounter{tocdepth}{1}}}
 
 \usepackage[
 	style=numeric-comp,
@@ -127,10 +115,11 @@
 	isbn=false,
 	date=year,
 	url=false,
-	doi=false
+	doi=false,
+	hyperref = auto
 ]{biblatex}
 \addbibresource{bib/bsc.bib}
 
 %Colorlinks etc.
-\usepackage[colorlinks=False]{hyperref}
+\usepackage[colorlinks=True]{hyperref}
 \hypersetup{allcolors=BScBlue}

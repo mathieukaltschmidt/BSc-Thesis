@@ -1,6 +1,7 @@
 %compiling with XeLaTeX
 \documentclass[abstracton,
 			   twoside,
+			   openright,
 			   parskip=half,
 			   11pt]{scrreprt}
 			   
@@ -15,17 +16,17 @@
 %Introductory stuff, abstracts and toc
 
 \include{content/titlepage}
-%\addcontentsline{toc}{chapter}{Abstracts} %if necessary
 \include{content/abstract}
-\tableofcontents
-
-\blankpage
+{\hypersetup{linkcolor=black}
+\tableofcontents  %TODO: Think about structure of the theoretical foundations
+}
+\cleardoublepage
 
 
 \setcounter{tocdepth}{1}
 \pagenumbering{arabic}
 
-%main part
+%Main part
 	\include{content/01_introduction}
 	\include{content/02_functional_methods}
 	\include{content/03_gravity}
@@ -33,16 +34,28 @@
 	\include{content/05_coupling_dependency}
 	\include{content/06_conclusion}
 
-\pagenumbering{Roman}
+
+
 %Appendices
-\include{content/acknowledgements}
-\blankpage
+\appendix{
+	\include{appendices/A_maths}
+	\include{appendices/B_numerical}
+}
+
+
+
+\pagenumbering{Roman}
+%References, Figures etc.
 \thispagestyle{plain}
 \addcontentsline{toc}{chapter}{References}
-\printbibliography
-\listoffigures	
-\blankpage
+\nocite{*}
+\printbibliography[title=References]
+\cleardoublepage
 
-\include{content/declaration}
-
+{\hypersetup{linkcolor=black}
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+}	
+\cleardoublepage
+\include{content/acknowledgements}
 \end{document}
