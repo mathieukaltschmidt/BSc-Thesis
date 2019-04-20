@@ -63,7 +63,9 @@ Dyson-Schwinger equation:
 	\item maybe visualization of Ising model + phase transitions
 \end{itemize}
 
-\subsection{Renormalization group consistency}
+\section{Renormalization Group Consistency}
+This section is mainly based on \cite{BraunLeonhardtPawlowski2018}.
+
 Cutoff independence of the full quantum effective action:
 \begin{align}
 	\Lambda\frac{\dd\Gamma}{\dd\Lambda} = 0
@@ -80,7 +82,7 @@ Formal discussion:
 \end{align}
  
  
-\section{The Renormalisation Group Flow  for the Effective Action}
+\section{Flow Equations for Generating Functionals}
 We introduce the RG time scale $t$:
 \begin{align}
 	\partial_t = \frac{\partial}{\partial\ln(k/\Lambda)} = \frac{k}{\Lambda}\frac{\partial}{\partial(k/\Lambda)} = k \partial_k
@@ -93,11 +95,17 @@ We introduce the RG time scale $t$:
 							&= \frac{1}{2}\int\limits_p \frac{1}{\Gammak^{(2)}[\phi] + R_k}(p, -p) \ \partial_t R_k(p^2) \nonumber
 \end{align}
 This translates directly into the following diagrammic representation:
+
 \begin{figure}[H]
 \centering
-\includegraphics{figs/TikZ/wetterich_equation}
+\begin{gather}
+\begin{aligned}
+\includegraphics{figs/TikZ/wetterich_equation} 
+\end{aligned}
+\end{gather}
 \end{figure}
 where $\otimes = \partial_t R_k$ represents the insertion of the respective regulator. \\
+
 
 \blindtext
 
