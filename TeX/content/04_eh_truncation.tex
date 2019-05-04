@@ -1,14 +1,55 @@
 \chapter{Quantum Gravity in the Einstein-Hilbert Truncation}
 \section{RG approach to Quantum Gravity}
+Flow equation for QG:
+\begin{align}
+	\partial_t\Gammak[\overline{g}, \Phi] = \frac{1}{2} \operatorname{Tr}\ G_{\text{hh}}[\Phi] \ \partial_tR_k - \operatorname{Tr}\ G_{\text{c}\overline{\text{c}}}[\Phi] \ \partial_tR_k
+\end{align}
 
-\blindtext
+\section{Einstein-Hilbert truncation}
+We want to solve the Flow equation (\ref{eqn:QGflow}) approximately. All terms that are invariant under the imposed symmetry, i.\,e. invariant under diffeomorphism transformations need to be taken into account. \\
 
-\section{Truncations of the theory space}
+Easiest truncation takes only the scalar curvature $\mathcal{R}$ and the cosmological constant $\Lambda$ into account (No higher order terms \dots) and was performed by Martin Reuter in 1993 \cite{ReuterSaueressig2002}. \\
 
-\blindtext
 
-\section{The Effective Action for Quantum Gravity}
+This truncation reads
+\begin{align}
+	\Gammak = 2\kappa^2Z_k \int_x \sqrt{g} \ [-\mathcal{R} + 2\Lambda_k] + \mathcal{S}_{\text{gf}} + \mathcal{S}_{\text{gh}}
+\label{eqn:QGflow}
+\end{align}
+with 
+\begin{align}
+	\kappa^2 = \frac{1}{32\pi G}, \qquad\qquad G_k = GZ^{-1}_k
+\end{align}
 
-\blindtext
+anomalous dimension: 
+\begin{align*}
+	\eta_g = -\frac{\partial_t Z_k}{Z_k} = -\partial_t \ln Z_k
+\end{align*}
 
-\section{Non-Gaussian Fixed Points}
+dimensionless renormalized cosmological constant:
+\begin{align*}
+	\lambda_k = \Lambdak k^{-2}
+\end{align*}
+
+dimensionless renormalized cosmological constant:
+\begin{align*}
+	g_k = G_k k^{d-2} = \frac{Gk^{d-2}}{Z_k}
+\end{align*}
+
+corresponding beta function:
+\begin{align}
+	\beta_g = \partial_t g_k = \left(d-2 + \eta_g\right)g_k
+\end{align}
+
+maximally symmetric space:
+\begin{align}
+	\overline{\mathcal{R}}_{\mu\nu} = \frac{1}{d} \ \overline{g}_{\mu\nu} \overline{\mathcal{R}}
+\end{align}
+\begin{align}
+	\overline{\mathcal{R}}_{\mu\nu\rho\sigma} = \frac{1}{d(d-1)} \ (\overline{g}_{\mu\rho}\overline{g}_{\nu\sigma} - \overline{g}_{\mu\sigma}\overline{g}_{\nu\rho}) \overline{\mathcal{R}}
+\end{align}
+
+suitable tensor basis:
+\begin{align}
+	h_{\mu\nu} = h_{\mu\nu}^{\text{TT}} + \overline{\nabla}_{\mu}\xi_{\nu} + \left(\overline{\nabla}_{\mu}\overline{\nabla}_{\nu} - \frac{1}{d} \ \overline{g}_{\mu\nu}\overline{\Delta}\right)\sigma + \frac{1}{d} \ \overline{g}_{\mu\nu}h
+\end{align}
