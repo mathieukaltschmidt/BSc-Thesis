@@ -1,5 +1,5 @@
 \chapter{Functional methods in Quantum Field Theory}
-\blindtext
+This chapter introduces the the treatment of Quantum Field Theory (QFT) using functional methods. The main goal is to derive the flow equation for the effective action functional, the generating functional for the one-particle irreducible (1PI) correlation functions. The flow equation was first derived by Christof Wetterich in 1993 \cite{Wetterich1992}. It is the foundation for our treatment of Quantum Gravity in the Asymptotic Safety approach, discussed in more detail later on.
 \section{Generating Functionals and Correlation Functions}
 We consider a theory setting of $N$ scalar fields $\varphi_a(x), a \in \{1,\dots,N\}$ in $d$-dimensional Euclidean space. The corresponding partition sum in presence of sources $J_a(x)$ reads
 \begin{align}
@@ -33,11 +33,11 @@ We obtain the Schwinger functional by taking the logarithm:
 	W[J] = \ln Z[J]
 \end{align}
 
-For the special case of $n=2$ the correlation function yields the connected 2-point function which is also known as the propagator $G_{ab}(x, y)$ correlating the field $\varphi_a$ at spacetime point $x$ with the field $\varphi_b$ at $y$.
+For the special case of $n=2$ the correlation function yields the connected 2-point function which is also known as the propagator $G_{ab}(x,y)$ correlating the field $\varphi_a$ at spacetime point $x$ with the field $\varphi_b$ at $y$.
 \begin{align}
-	G_{ab}(x, y) &= \frac{\delta^2W[J]}{\delta J_a(x)\delta J_b(y)} = \frac{\delta}{\delta J_a(x)}\left(\frac{1}{Z}\frac{\delta Z}{\delta J_b(y)}\right) \nonumber \\
-				&= \frac{1}{Z}\left(\frac{\delta^2Z}{\delta J_a(x)\delta J_b(y)}\right) - \frac{1}{Z^2}\left(\frac{\delta Z}{\delta J_a(x)}\right)\left(\frac{\delta Z}{\delta J_b(y)}\right)\\
-				&= \cf{\varphi_a(x)\varphi_b(y)} - \phi_a(x)\phi_b(y) = \cf{\varphi_a(x)\varphi_b(y)}_{\text{c}}	\nonumber	
+	G_{ab} &= \frac{\delta^2W[J]}{\delta J_a\delta J_b} = \frac{\delta}{\delta J_a}\left(\frac{1}{Z}\frac{\delta Z}{\delta J_b}\right) \nonumber \\
+				&= \frac{1}{Z}\left(\frac{\delta^2Z}{\delta J_a\delta J_b}\right) - \frac{1}{Z^2}\left(\frac{\delta Z}{\delta J_a}\right)\left(\frac{\delta Z}{\delta J_b}\right)\\
+				&= \cf{\varphi_a\varphi_b} - \phi_a\phi_b = \cf{\varphi_a\varphi_b}_{\text{c}}	\nonumber	
 \end{align}
 
 The Effective Action:\\
