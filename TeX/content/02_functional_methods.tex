@@ -33,11 +33,11 @@ We obtain the Schwinger functional by taking the logarithm:
 	W[J] = \ln Z[J]
 \end{align}
 
-For the special case of $n=2$ the correlation function yields the connected 2-point function which is also known as the propagator $G_{ab}(x,y)$ correlating the field $\varphi_a$ at spacetime point $x$ with the field $\varphi_b$ at $y$.
+For the special case of $n=2$ the correlation function yields the connected 2-point function which is also known as the propagator $G_{ab}(x,y) = G_{\alpha\beta}$ correlating the field $\varphi_a$ at spacetime point $x$ with the field $\varphi_b$ at $y$.
 \begin{align}
-	G_{ab} &= \frac{\delta^2W[J]}{\delta J_a\delta J_b} = \frac{\delta}{\delta J_a}\left(\frac{1}{Z}\frac{\delta Z}{\delta J_b}\right) \nonumber \\
-				&= \frac{1}{Z}\left(\frac{\delta^2Z}{\delta J_a\delta J_b}\right) - \frac{1}{Z^2}\left(\frac{\delta Z}{\delta J_a}\right)\left(\frac{\delta Z}{\delta J_b}\right)\\
-				&= \cf{\varphi_a\varphi_b} - \phi_a\phi_b = \cf{\varphi_a\varphi_b}_{\text{c}}	\nonumber	
+	G_{\alpha\beta} &= \frac{\delta^2W[J]}{\delta J_{\alpha}\delta J_{\beta}} = \frac{\delta}{\delta J_{\alpha}}\left(\frac{1}{Z}\frac{\delta Z}{\delta J_{\beta}}\right) \nonumber \\
+				&= \frac{1}{Z}\left(\frac{\delta^2Z}{\delta J_{\alpha}\delta J_{\beta}}\right) - \frac{1}{Z^2}\left(\frac{\delta Z}{\delta J_{\alpha}}\right)\left(\frac{\delta Z}{\delta J_{\beta}}\right)\\
+				&= \cf{\varphi_{\alpha}\varphi_{\beta}} - \phi_{\alpha}\phi_{\beta} = \cf{\varphi_{\alpha}\varphi_{\beta}}_{\text{c}}	\nonumber	
 \end{align}
 
 The Effective Action:\\
@@ -121,5 +121,5 @@ where $\otimes = \partial_t R_k$ represents the insertion of the respective regu
 \begin{figure}[H]
 \centering
 \includegraphics{figs/TikZ/regulator_dependence}
-\caption[Flow of $\Gamma_k$ through infinite-dimensional theory space for different regulators.]{Flow of $\Gamma_k$ through infinite-dimensional theory space for different regulators, inspired by \cite{Riebesell2017}}	
+\caption{Flow of $\Gamma_k$ through infinite-dimensional theory space for different regulators.}	
 \end{figure}
