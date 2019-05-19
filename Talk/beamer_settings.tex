@@ -1,0 +1,71 @@
+%Personel Data
+\title{Asymptotic safety of gravity-matter systems}
+%\subtitle{This is my subtitle}
+\author[Mathieu Kaltschmidt]{Mathieu Kaltschmidt}
+\institute[ITP Heidelberg]
+{
+Institute for Theoretical Physics \\
+Heidelberg University \\
+}
+
+\titlegraphic{\includegraphics[width=2cm]{figures/signet}\hspace*{2cm}~%
+	\includegraphics[width=2cm]{figures/signet}
+}
+
+\date[08. Juli 2019]
+{
+%Bachelor Thesis Defence \\
+July 8th, 2019
+}
+
+% Change base colour beamer@blendedblue (originally RGB: 0.2,0.2,0.7)
+\colorlet{beamer@blendedblue}{green!35!black}
+
+
+%Math and Units
+\usepackage{amsmath, amssymb, commath, mathtools}
+\usepackage{physics}
+\usepackage{xfrac}
+\usepackage[separate-uncertainty]{siunitx}
+
+
+%Tables
+\usepackage{array} %math mode in tables
+\usepackage{booktabs} %hline rules
+
+%Language Settings and Microtype
+\usepackage{fontspec, xunicode}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\setsansfont{Palatino}
+%\setsansfont{Optima}
+\setmonofont[Scale=MatchLowercase]{Menlo}
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\setotherlanguages{german, french}
+\usepackage{microtype}
+
+%Useful Packages
+\usepackage{graphicx} %including images
+\usepackage{float} %better positioning for float environments
+\usepackage{blindtext} %for testing the output
+\usepackage[labelfont=bf]{caption} %nice captions
+\usepackage{subcaption} %for multiple plots
+
+\usepackage[
+	style=numeric-comp,
+	backend=biber,
+	isbn=false,
+	date=year,
+	url=false,
+	doi=false,
+	hyperref = auto
+]{biblatex}
+\addbibresource{bsc.bib}
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+
+\beamertemplatenavigationsymbolsempty
+
+%Colorlinks etc.
+%\usepackage[colorlinks=True]{hyperref}
+%\hypersetup{allcolors=BScBlue}

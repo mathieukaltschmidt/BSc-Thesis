@@ -1,0 +1,47 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+
+\include{macros}
+\include{beamer_settings}
+
+
+\begin{document}
+\maketitle
+
+\begin{frame}{Contents}
+\tableofcontents
+\end{frame}
+\section{Functional Renormalization Group methods}
+\begin{frame}
+\begin{itemize}
+	\item Wetterich equation:
+	\begin{align}
+		\Gamma_k = \frac{1}{2}\operatorname{Tr}\left[\left(\Gamma^{(2)}_k + R_k\right)^{-1}\partial_tR_k \right]
+	\end{align}
+	\item Graphical representation as one-loop equation:
+	\begin{figure}
+		\centering
+		\includegraphics{figures/wetterich_equation}
+	\end{figure}
+\end{itemize}
+\end{frame}
+
+
+\section{Asymptotic Safety in Quantum Gravity}
+
+\section{Gravity-Matter Systems}
+\begin{frame}{Analyzing Gravity-Matter systems}
+\begin{itemize}
+	\item Truncation \cite{DonaEichhornPercacci2013}
+	\begin{align}
+		\Gamma_k = \Gamma_{\text{EH}} + \mathcal{S}_{\text{gf}} + \mathcal{S}_{\text{gh}} + \Gamma_{\text{matter}}
+	\end{align}
+\end{itemize}
+\end{frame}
+\begin{frame}[shrink=20]{Literaturverzeichnis}
+
+\printbibliography
+\cite{*} %TODO: Fix this ..
+\end{frame}
+
+\end{document}
