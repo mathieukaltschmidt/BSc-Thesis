@@ -14,13 +14,28 @@ Easiest truncation takes only the scalar curvature $\mathcal{R}$ and the cosmolo
 
 This truncation reads
 \begin{align}
-	\Gammak = 2\kappa^2Z_k \int_x \sqrt{g} \ [-\mathcal{R} + 2\Lambda_k] + \mathcal{S}_{\text{gf}} + \mathcal{S}_{\text{gh}}
+	\Gammak = 2\kappa^2Z_k \int_x \sqrt{\operatorname{det}g} \ [-\mathcal{R} + 2\Lambda_k] + \mathcal{S}_{\text{gf}} + \mathcal{S}_{\text{gh}}
 \label{eqn:QGflow}
 \end{align}
 with 
 \begin{align}
 	\kappa^2 = \frac{1}{32\pi G}, \qquad\qquad G_k = GZ^{-1}_k
 \end{align}
+
+Linear gauge fixing $F_{\mu}$ and corresponding ghost term induced by the Faddeev-Popov trick:
+\begin{align}
+\mathcal{S}_{\text{gf}} &= \frac{1}{2\alpha} \int_x \sqrt{\operatorname{det}\overline{g}} \  \overline{g}^{\mu\nu} F_{\mu}F_{\nu}	\nonumber\\
+\phantom{.} \\
+\mathcal{S}_{\text{gh}} &= \int_x \sqrt{\operatorname{det}\overline{g}} \  \overline{g}^{\mu\mu'} \overline{g}^{\nu\nu'}\overline{c}_{\mu'} \mathcal{M}_{\mu\nu}  c_{\nu'} \nonumber
+\end{align}
+with the Faddeev-Popov operator $\mathcal{M}_{\mu\nu}(\overline{g},h)$ for the gauge fixing $F_{\mu}(\overline{g},h)$. \\
+A linear, de-Donder type gauge fixing with 
+\begin{align}
+	F_{\mu} &= \overline{\nabla}^{\nu}h_{\mu\nu} - \frac{1+\beta}{4}\overline{\nabla}_{\mu}h^{\nu}_{\phantom{\nu},\nu} \nonumber \\
+	\phantom{.} \\
+	\mathcal{M}_{\mu\nu} &= \overline{\nabla}^{\rho}(g_{\mu\nu}\nabla_{\rho} + g_{\rho\nu}\nabla_{\mu}) - \overline{\nabla}_{\mu}\nabla_{\nu}, \nonumber
+\end{align}
+is employed, where $\beta=1$ and $\alpha\rightarrow 0$ represents a fixed point of the RG flow. Note, that the limit  $\alpha\rightarrow 0$ is performed after the gauge fixing process.  \\
 
 anomalous dimension: 
 \begin{align*}
@@ -54,3 +69,49 @@ suitable tensor basis:
 \begin{align}
 	h_{\mu\nu} = h_{\mu\nu}^{\text{TT}} + \overline{\nabla}_{\mu}\xi_{\nu} + \left(\overline{\nabla}_{\mu}\overline{\nabla}_{\nu} - \frac{1}{d} \ \overline{g}_{\mu\nu}\overline{\Delta}\right)\sigma + \frac{1}{d} \ \overline{g}_{\mu\nu}h
 \end{align}
+As a first approximation, we only take the contribution from the spin-two graviton mode $h_{\mu\nu}^{\text{TT}}$ into account. This is motivated by the fact, that this mode carries the the most degrees of freedom.\\ %TODO: Extend this explanation (exercise sheet...)
+In this setting, we want to solve the Wetterich equation (\ref{eqn:Wetterich}) by computing the left hand side and the right hand side separately and extract the $\beta$-functions for the Newton coupling $g_k$ and the cosmological constant $\lambda_k$ by a comparison of all terms of order $\sim\sqrt{\operatorname{det}g}$ and $\sim \sqrt{\operatorname{det}g} \ \mathcal{R}$. Here, only the most important steps of the calculation are presented. For the complete calculation have a look at the Appendix A. \\%TODO:Referencing the Appendix. 
+In our spin-two graviton mode approximation, we don't have to deal with the gauge-fixing and ghost parts ocuring in the effective action. The simplified version of equation (\ref{eqn:QGflow}) reads
+\begin{align}
+	\Gamma_{k, h^{\text{TT}}} = 2\kappa^2Z_k \int_x \sqrt{\operatorname{det}g} \ [-\mathcal{R} + 2\Lambda_k].
+\end{align}
+We start by computing the transverse-traceless graviton two-point function
+\begin{align}
+\Gamma_{h^{\text{TT}}h^{\text{TT}}}^{(2)} = \frac{Z_k}{32\pi}\left(\overline{\Delta} - 2\Lambda_k+\frac{2}{3}\overline{\mathcal{R}}\right).
+\end{align}
+Using a regulator of form
+\begin{align}
+R_k  = \eval{\Gamma_{h^{\text{TT}}h^{\text{TT}}}^{(2)}}_{\Lambda_k=\overline{\mathcal{R}}=0} \cdot r_k\left(\frac{\overline{\Delta}}{k^2}\right) = \frac{Z_k}{32\pi}\overline{\Delta}\left(\frac{k^2}{\overline{\Delta}}-1\right)\Theta\left(1-\frac{\overline{\Delta}}{k^2}\right), \nonumber
+\end{align}
+with a Litim-type cutoff
+\begin{align}
+r_k(x) = \left(\frac{1}{x}-1\right)\Theta(1-x),
+\end{align}
+we are directly able to compute the l.h.s. of the Wetterich equation, i.\,e. the scale derivative of the effective average action:
+\begin{align}
+	\partial_{t}\Gamma_{k,h^{\text{TT}}} = 2\kappa^2 Z_k\int_x \sqrt{\operatorname{det}g} \left\{\eta_g\mathcal{R}+2\left(k^2(\partial_t\lambda_k) + \Lambda_k(2 - \eta_g)\right)\right\}
+\end{align}
+One finds the $\beta$-function for the Newton coupling without performing the analysis of the Wetterich equation, i.\,e. 
+\begin{align}
+\beta_g = \partial_t g_k = \partial_t\left(\frac{G\cdot k^2}{Z_k}\right) = g_k\left(2+\eta_g\right).
+\end{align}
+%TODO: RHS calculation using heat-kernels.
+For the cosmological constant, comparing the $\sqrt{\operatorname{det}g}$ terms yields
+\begin{align}
+	\beta_{\lambda} = \partial_t\lambda_k = -4\lambda_k + \frac{\lambda_k}{g_k} \partial_t g_k + \frac{10}{4\pi}g_k\frac{1-\frac{\eta_g}{6}}{1-2\lambda_k}.
+\end{align}
+where the anomalous dimension $\eta_g$ is determined by comparing the $\sqrt{\operatorname{det}g}\mathcal{R}$ terms:
+\begin{align}
+\eta_g = -\frac{5}{3\pi} \left(\frac{1-\frac{\eta_g}{4}}{1-2\lambda_k} + 2\frac{1-\frac{\eta_g}{6}}{(1-2\lambda_k)^2}\right).	
+\end{align}
+
+Using \verb|Mathematica| to solve this system of coupled differential equations, we arrive at the following fixed point values for the Newton coupling and the cosmological constant:
+\begin{align}
+	(g_k^*, \lambda_k^*) = (0.86, 0.18).
+\end{align}
+The corresponding critical exponents, i.\,e. the eigenvalues of the stability matrix evaluated at the fixed point, are given by
+\begin{align}
+	\theta_{1,2} = 2.9 \pm 2.6i
+\end{align}
+%TODO: Plot of the Fixed Point (Vector field??)
+%TODO: Interpretation and transition to next chapter (MATTER)
