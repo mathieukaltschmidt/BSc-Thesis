@@ -1,0 +1,17 @@
+\documentclass{standalone}
+\input{feynman_settings}
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{feynman}
+      \diagram [horizontal=a to b, layered layout] {
+        i1 [nudge right=0.7cm] -- [double] a [dot]
+        -- [half left] b [dot]
+        -- [half left] a ,
+        b -- [double] f1 [nudge left=0.7cm]
+      };
+      \vertex [crossed dot, fill=white] (i) at ($(a)!0.5!(b) - (0, 0.73)$) {};
+    \end{feynman}
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,10 @@
+\documentclass{standalone}
+\input{feynman_settings}
+
+\begin{document}
+\feynmandiagram[vertical'=a to b, small]{
+a [crossed dot] -- [half left, double] b [dot] -- [half left, double] a,
+ b -- [shorten >=0.4cm] {f1,f2} ,
+};
+
+\end{document}
