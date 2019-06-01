@@ -1,6 +1,50 @@
 \chapter{Fundamentals of General Relativity}
+\blindtext
+\section{An Introduction to Spacetime Geometry}
 \blindtext 
-\section{The Einstein Equations}
+%Some words in differential geometry:  differentiable manifolds, coordinate maps, tangent space, covariant/contravariant vectors + trafos, metric tensor
+
+inner product: 
+\begin{align}
+	g(x,y) = g_{\mu\nu}x^{\mu}y^{\nu} = x^{\mu}y_{\mu}= g^{\mu\nu}x_{\mu}y_{\nu} = x_{\mu}y^{\mu}
+\end{align}
+we can use the metric tensor to raise and lower spacetime indices, \\
+Christoffel symbols (connection):
+\begin{align}
+\Gamma_{\phantom{\alpha}\mu \nu}^{\alpha}=\frac{1}{2} g^{\mu \lambda}\left(\partial_{\mu} g_{\nu \lambda}+\partial_{\nu} g_{\mu \lambda}-\partial_{\lambda} g_{\mu \nu}\right)	
+\end{align}
+Geodesic equation:
+\begin{align}
+	\int d s=\int d \tau \sqrt{g_{\mu \nu} \frac{d x^{\mu}}{d \tau} \frac{d x^{\mu}}{d \tau}}
+\end{align}
+
+\begin{align}
+	\ddot{x}^{\mu}+\Gamma_{\phantom{\mu}\sigma \rho}^{\mu} \dot{x}^{\sigma} \dot{x}^{\rho}=0
+\end{align}
+Riemann/Curvature tensor:
+\begin{align}
+	R_{\phantom{\alpha}\beta \gamma \delta}^{\alpha}=\partial_{\gamma} \Gamma_{\phantom{\alpha}\beta \delta}^{\alpha}-\partial_{\delta} \Gamma_{\phantom{\alpha}\beta \gamma}^{\alpha}+\Gamma_{\phantom{\alpha}\beta \delta}^{\epsilon} \Gamma_{\phantom{\alpha}\epsilon \gamma}^{\alpha}-\Gamma_{\phantom{\alpha}\beta \gamma}^{\epsilon} \Gamma_{\phantom{\alpha}\epsilon \delta}^{\alpha}
+\end{align}
+Definition using the commutator of covariant derivatives
+\begin{align}
+	\left[\nabla_{\mu}, \nabla_{\nu}\right] A^{\sigma}=R_{\phantom{\alpha}\rho \mu \nu}^{\sigma} A^{\rho}
+\end{align}
+
+Contractions of the Curvature tensor:
+\begin{align}
+	R_{\mu\nu} = R^{\alpha}_{\phantom{\alpha}\mu\alpha\nu} = g^{\alpha\beta} R^{\beta}_{\phantom{\alpha}\mu\alpha\nu}
+\end{align}
+Curvature Scalar:
+\begin{align}
+\mathcal{R} = g_{\mu\nu}R^{\mu\nu} = R^{\mu}_{\phantom{\mu}\mu}
+\end{align}
+
+
+
+\blindtext
+
+
+\section{From Geometry to the Einstein Equations}
 \Blindtext
 The Einstein-Hilbert action:
 \begin{align}
@@ -17,7 +61,7 @@ Diffeomorphism invariance, Lie derivatives:
 	\mathcal{L}_{\omega}\phi = \omega^{\mu}\partial^{\mu}\phi = \omega^{\mu}\nabla^{\mu}\phi
 \end{align}
 
-Now we include matter. \\
+\section{Gravity with Matter} 
 
 Energy-Momentum Tensor:
 \begin{align}

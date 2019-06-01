@@ -1,4 +1,4 @@
-\chapter{Functional methods in Quantum Field Theory}
+\chapter{Functional Methods in Quantum Field Theory}
 This chapter introduces the the treatment of Quantum Field Theory (QFT) using functional methods. The main goal is to derive the flow equation for the effective action functional, the generating functional for the one-particle irreducible (1PI) correlation functions. The flow equation was first derived by Christof Wetterich in 1993 \cite{Wetterich1992}. It is the foundation for our treatment of Quantum Gravity in the Asymptotic Safety approach, discussed in more detail later on.
 \section{Generating Functionals and Correlation Functions}
 We consider a theory setting of $N$ scalar fields $\varphi_a(x), a \in \{1,\dots,N\}$ in $d$-dimensional Euclidean space. The corresponding partition sum in presence of sources $J_a(x)$ reads
@@ -72,23 +72,23 @@ Dyson-Schwinger equation:
 \footnotetext{This visualization is inspired by an image provided in the \href{https://arxiv.org/pdf/cond-mat/0207340.pdf}{PhD thesis} of J.R. Laguna.}
 \blindtext
 
-\section{Renormalization Group Consistency}
-This section is mainly based on \cite{BraunLeonhardtPawlowski2018}.
+%\section{Renormalization Group Consistency}
+%This section is mainly based on \cite{BraunLeonhardtPawlowski2018}.
 
-Cutoff independence of the full quantum effective action:
-\begin{align}
-	\Lambda\frac{\dd\Gamma}{\dd\Lambda} = 0
-\end{align}
+%Cutoff independence of the full quantum effective action:
+%\begin{align}
+%	\Lambda\frac{\dd\Gamma}{\dd\Lambda} = 0
+%\end{align}
 
-Full effective action in a generic representation:
-\begin{align}
-	\Gamma[\phi] = \D_{\Lambda}[\phi] + \Gamma_{\Lambda}[\phi]
-\end{align}
+%Full effective action in a generic representation:
+%\begin{align}
+%	\Gamma[\phi] = \D_{\Lambda}[\phi] + \Gamma_{\Lambda}[\phi]
+%\end{align}
 
-Formal discussion:
-\begin{align}
-\Gammak[\phi] = \Gamma_{\Lambda}[\phi] + \int\limits_{\Lambda}^k \frac{\dd k'}{k'} \mathcal{F}_{k'}[\phi]
-\end{align}
+%Formal discussion:
+%\begin{align}
+%\Gammak[\phi] = \Gamma_{\Lambda}[\phi] + \int\limits_{\Lambda}^k \frac{\dd k'}{k'} \mathcal{F}_{k'}[\phi]
+%\end{align}
  
  
 \section{Flow Equations for Generating Functionals}
@@ -98,7 +98,7 @@ We introduce the RG time scale $t$:
 \end{align}
 
 \blindtext
-
+\begin{subequations}
 \begin{align}
 	\partial_t\Gammak[\phi] &= \frac{1}{2}\tr{\frac{1}{\Gammak^{(2)}[\phi] + R_k} \partial_t R_k} \nonumber \\ \phantom{.}  \\
 							&= \frac{1}{2}\int\limits_p \frac{1}{\Gammak^{(2)}[\phi] + R_k}(p, -p) \ \partial_t R_k(p^2) \nonumber
@@ -114,6 +114,7 @@ This translates directly into the following diagrammic representation:
 \end{aligned}
 \end{gather}
 \end{figure}
+\end{subequations}
 where $\otimes = \partial_t R_k$ represents the insertion of the respective regulator. \\
 
 

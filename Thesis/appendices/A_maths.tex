@@ -1,18 +1,18 @@
 \chapter{Mathematical Appendix}
 In this part of the appendix we want to present some of the mathematical tools we used during the calculations presented in the scope of this thesis in a more formal manner.
 
-\section{York decomposition}
+\section{York Decomposition}
 \blindtext
 
-\section{Heat-Kernel techniques}
-We use Heat-Kernel techniques to evaluate the r.h.s. of the flow equation (\ref{eqn:Wetterich}), where we need to compute traces over functions depending on the Laplacian on a curved background. In general, the method can be understood as a curvature expansion about a flat background. \\
+\section{Heat-Kernel Techniques}\label{sec:heat-kernel}
+We use heat-kernel techniques to evaluate the r.h.s. of the flow equation (\ref{eqn:Wetterich}), where we need to compute traces over functions depending on the Laplacian on a curved background. In general, the method can be understood as a curvature expansion about a flat background. \\
 The formula to compute such traces is given by
 \begin{align}
 	\operatorname{Tr} f(\Delta)= N \  \int\kern-1.3em\sum_{\ell} \rho(\ell) f(\lambda(\ell)),
 	\label{eqn:heat-kernel}
 \end{align}
 with some normalization $N$, the spectral values $\lambda(\ell)$ and their corresponding multiplicities $\rho(\ell)$. \\
-On flat backgrounds, the computation of (\ref{eqn:heat-kernel}) is simply a standard momentum integral, whereas on curved backgrounds, consider for example a four-sphere with constant background curvature $r = \frac{\overline{\mathcal{R}}}{k^2} > 0$, the spectrum of the Laplacian is discrete and we need to sum over all spectral values in (\ref{eqn:heat-kernel}). \\
+On flat backgrounds, the computation of (\ref{eqn:heat-kernel}) is simply a standard momentum integral, whereas on curved backgrounds, consider for example a four-sphere with constant background curvature $r = \frac{\bar{\mathcal{R}}}{k^2} > 0$, the spectrum of the Laplacian is discrete and we need to sum over all spectral values in (\ref{eqn:heat-kernel}). \\
 For our example of the four-sphere, we have
 \begin{align}
 	\lambda(\ell) = \frac{\ell(3+\ell)}{12}r \qquad \text{and} \qquad \rho(\ell) = \frac{(2\ell + 3)(l+2)!}{6\ell!}.
@@ -24,22 +24,22 @@ and the normalization is given by the inverse of the four-sphere-volume $N= V_{S
 This is called the spectral sum. For large curvatures $r$ the convergence of the series is rather fast, whereas in the limit $r\rightarrow 0$ one finds exponentially slow convergence.\\
 The master equation for heat kernel computations reads
 \begin{align}
-	\operatorname{Tr} f(\Delta)=\frac{1}{(4 \pi)^{\frac{d}{2}}}\left[B_{0}(\Delta) Q_{2}[f(\Delta)]+B_{2}(\Delta) Q_{1}[f(\Delta)]\right]+O\left(\overline{\mathcal{R}}^{2}\right)
+	\operatorname{Tr} f(\Delta)=\frac{1}{(4 \pi)^{\frac{d}{2}}}\left[B_{0}(\Delta) Q_{2}[f(\Delta)]+B_{2}(\Delta) Q_{1}[f(\Delta)]\right]+O\left(\bar{\mathcal{R}}^{2}\right)
 \end{align}
 with the heat-kernel coefficients 
 \begin{align}
-	B_{n}(\overline{\Delta})=\int \mathrm{d}^{d} x \sqrt{\operatorname{det}\overline{g}} \  \operatorname{Tr} b_{n}(\overline{\Delta})
+	B_{n}(\bar{\Delta})=\int \mathrm{d}^{d} x \sqrt{\operatorname{det}\bar{g}} \  \operatorname{Tr} b_{n}(\bar{\Delta})
 \end{align}
 and 
 \begin{align}
 	Q_{n}[f(x)]=\frac{1}{\Gamma(n)} \int \mathrm{d} x x^{n-1} f(x).
 \end{align}
-Four our computation on $S^4$, the traces over the coefficients $b_n(\overline{\Delta})$ are presented in the following.
+Four our computation on $S^4$, the traces over the coefficients $b_n(\bar{\Delta})$ are presented in the following.
 \begin{table}[H]
 	\centering
 	\setlength{\tabcolsep}{5mm}
 	\setlength\extrarowheight{2mm}
-	\begin{tabular}{c c c c}
+	\begin{tabular}{c | c c c}
 	   & TT & TV & S\\ \hline
 	   $\operatorname{Tr} b_{0}$ & 5 &  3 & 1\\
 	  $\operatorname{Tr} b_{2}$ & $-\frac{5}{6}\mathcal{R}$ & $\frac{1}{4}\mathcal{R}$& $\frac{1}{6}\mathcal{R}$\\

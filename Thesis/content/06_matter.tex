@@ -1,8 +1,28 @@
 \chapter{Asymptotic Safety of Gravity-Matter Systems}
 \blindtext
 \section{Matter contributions}
+\begin{align}
+	\Gammak = \Gamma_{\text{EH}} + \mathcal{S}_{\text{gf}}+ \mathcal{S}_{\text{gh}}+ \Gamma_{\text{matter}}
+\end{align}
+where the different matter contributions come from
+\begin{align}
+	\Gamma_{\text{matter}} = \mathcal{S}_{\text{S}} + \mathcal{S}_{\text{D}} + \mathcal{S}_{\text{V}} 
+\end{align}
+with 
+\begin{align}
+	\mathcal{S}_{\text{S}} &= \frac{Z_{\text{S}}}{2}\int_x \sqrt{\operatorname{det}g} \ g^{\mu\nu} \ \sum\limits_{i=1}^{N_{\text{S}}} \partial_{\mu}\phi^{i}\partial_{\nu}\phi^{i} \\
+	\phantom{.}\nonumber\\
+	\mathcal{S}_{\text{D}} &= iZ_{\text{D}}\int_x \sqrt{\operatorname{det}g} \ \sum\limits_{i=1}^{N_{\text{D}}} \bar{\psi}^{i}\slashed{\nabla}\psi^{i}\\
+	\phantom{.}\nonumber\\
+		\mathcal{S}_{\text{V}} &= \frac{Z_{\text{V}}}{4}\int_x \sqrt{\operatorname{det}g} \ \sum\limits_{i=1}^{N_{\text{V}}} g^{\mu\nu}g^{\kappa\lambda}F^{i}_{\mu\kappa}F^{i}_{\nu\lambda} \nonumber \\
+		&+ \frac{Z_{\text{V}}}{2\xi}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \left(\bar{g}^{\mu\nu}\bar{D}_{\mu}A_{\nu}^{i}\right)^2  \\
+		&+ \frac{1}{2}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \bar{c}_i(-\bar{D}^2)c_i \nonumber
+\end{align}
+Covariant derivative:
+\begin{align}
+	\nabla_{\mu} = \partial_{\mu} + \frac{1}{8}\left[\gamma^{a}, \gamma^{b}\right]\omega_{\mu}^{ab}
+\end{align}
 \blindtext
-
  \begin{figure}[H]
  \centering
  \hfill
