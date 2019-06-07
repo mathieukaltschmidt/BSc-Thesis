@@ -22,7 +22,7 @@ with
 	\kappa^2 = \frac{1}{32\pi G}, \qquad\qquad G_k = GZ^{-1}_k
 \end{align}
 
-Linear gauge fixing $F_{\mu}$ and corresponding ghost term induced by the Faddeev-Popov trick:
+Linear gauge fixing $F_{\mu}$ and corresponding ghost term induced by the Faddeev-Popov procedure:
 \begin{align}
 \mathcal{S}_{\text{gf}} &= \frac{1}{2\alpha} \int_x \sqrt{\operatorname{det}\bar{g}} \  \bar{g}^{\mu\nu} F_{\mu}F_{\nu}	\nonumber\\
 \phantom{.} \\
@@ -79,7 +79,7 @@ We start by computing the transverse-traceless graviton two-point function
 \begin{align}
 \Gamma_{h^{\text{TT}}h^{\text{TT}}}^{(2)} = \frac{Z_k}{32\pi}\left(\bar{\Delta} - 2\Lambda_k+\frac{2}{3}\bar{\mathcal{R}}\right).
 \end{align}
-Using a regulator of form
+Using a regulator of the form
 \begin{align}
 R_k  = \eval{\Gamma_{h^{\text{TT}}h^{\text{TT}}}^{(2)}}_{\Lambda_k=\bar{\mathcal{R}}=0} \cdot r_k\left(\frac{\bar{\Delta}}{k^2}\right) = \frac{Z_k}{32\pi}\bar{\Delta}\left(\frac{k^2}{\bar{\Delta}}-1\right)\Theta\left(1-\frac{\bar{\Delta}}{k^2}\right), \nonumber
 \end{align}
@@ -106,7 +106,9 @@ The computation of the r.h.s. of the flow equation is more complicated because i
 
 We expand this expression around vanishing curvature and get
 \begin{align}
-\operatorname{Tr}\left[\frac{1}{\Gammak^{(2)} + R_k}\partial_t R_k\right] = \operatorname{Tr}\left[\frac{\bar{\Delta}\left(\partial_t r_k - \eta_g r_k\right)}{\bar{\Delta}(1+r_k)-2\Lambda_k}\right] - \frac{2}{3}\bar{\mathcal{R}}\operatorname{Tr}\left[\frac{\bar{\Delta}\left(\partial_t r_k - \eta_g r_k\right)}{\left(\bar{\Delta}(1+r_k)-2\Lambda_k\right)^2}\right] + \mathcal{O}(\mathcal{R}^2) 
+\resizebox{.9 \textwidth}{!}{$
+\operatorname{Tr}\left[\frac{1}{\Gammak^{(2)} + R_k}\partial_t R_k\right] = \operatorname{Tr}\left[\frac{\bar{\Delta}\left(\partial_t r_k - \eta_g r_k\right)}{\bar{\Delta}(1+r_k)-2\Lambda_k}\right] - \frac{2}{3}\bar{\mathcal{R}}\operatorname{Tr}\left[\frac{\bar{\Delta}\left(\partial_t r_k - \eta_g r_k\right)}{\left(\bar{\Delta}(1+r_k)-2\Lambda_k\right)^2}\right] + \mathcal{O}(\mathcal{R}^2)$
+}
 \end{align}
 %TODO: Solve this problem.. formula too long..
 Now we are able to evaluate these two terms separately using heat-kernel techniques. One finds for the first term
@@ -130,7 +132,7 @@ where the anomalous dimension $\eta_g$ is determined by comparing the $\int\sqrt
 \eta_g = -\frac{5}{3\pi} \left(\frac{1-\frac{\eta_g}{4}}{1-2\lambda_k} + 2\frac{1-\frac{\eta_g}{6}}{(1-2\lambda_k)^2}\right).	
 \end{align}
 
-Using \verb|Mathematica| to solve this system of coupled differential equations, we arrive at the following fixed point values for the Newton coupling and the cosmological constant:
+The solution of this system of coupled differential equations is evaluated using Python. We arrive at the following fixed point values for the Newton coupling and the cosmological constant:
 \begin{align}
 	(g_k^*, \lambda_k^*) = (0.86, 0.18).
 \end{align}
@@ -139,9 +141,10 @@ The corresponding critical exponents, i.\,e. minus the eigenvalues of the stabil
 	\theta_{1,2} = 2.9 \pm 2.6i
 \end{align}
 
-\begin{figure}[H]
+\begin{figure}[t]
 \centering
-	\includegraphics{figs/Plots/EHPhaseSpace2}
+	\includegraphics[width=\textwidth]{figs/Plots/EH_NoMatter}
+	\caption[RG flow diagram for the Einstein-Hilbert truncation in TT approximation]{RG flow diagram  for the Einstein-Hilbert truncation in TT approximation as computed in this work. The flow points towards the infrared.}%TODO: etwas ausführlicher beschrieben.
 \end{figure}
 
 %TODO: Interpretation and transition to next chapter (MATTER)

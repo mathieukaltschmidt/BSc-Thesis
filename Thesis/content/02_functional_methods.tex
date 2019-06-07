@@ -1,5 +1,5 @@
 \chapter{Functional Methods in Quantum Field Theory}
-This chapter introduces the the treatment of Quantum Field Theory (QFT) using functional methods. The main goal is to derive the flow equation for the effective action functional, the generating functional for the one-particle irreducible (1PI) correlation functions. The flow equation was first derived by Christof Wetterich in 1993 \cite{Wetterich1992}. It is the foundation for our treatment of Quantum Gravity in the Asymptotic Safety approach, discussed in more detail later on.
+This chapter introduces the the treatment of Quantum Field Theory using functional methods. The main goal is to derive the flow equation for the effective action functional, the generating functional for the one-particle irreducible (1PI) correlation functions. The flow equation was first derived by Christof Wetterich in 1993 \cite{Wetterich1992}. It is the foundation for our treatment of Quantum Gravity in the Asymptotic Safety approach, discussed in more detail later on.
 \section{Generating Functionals and Correlation Functions}
 We consider a theory setting of $N$ scalar fields $\varphi_a(x), a \in \{1,\dots,N\}$ in $d$-dimensional Euclidean space. The corresponding partition sum in presence of sources $J_a(x)$ reads
 \begin{align}
@@ -118,9 +118,12 @@ This translates directly into the following diagrammic representation:
 where $\otimes = \partial_t R_k$ represents the insertion of the respective regulator. \\
 
 
-\blindtext
+Regulator properties:
+\begin{align}
+	R_{k}(p) \rightarrow\left\{\begin{array}{ll}{k^{2}} & {\text { for } p \rightarrow 0} \\ {0} & {\text { for } p \rightarrow \infty} \\ {0} & {\text { for } k \rightarrow 0} \\ {\infty} & {\text { for } k \rightarrow \Lambda}\end{array}\right.
+\end{align}
 
-\begin{figure}[H]
+\begin{figure}[t]
 \centering
 \includegraphics{figs/TikZ/regulator_dependence}
 \caption{Flow of $\Gamma_k$ through infinite-dimensional theory space for different regulators.}	
