@@ -1,23 +1,27 @@
 \documentclass{standalone}
 \input{feynman_settings}
+\usetikzlibrary{patterns, decorations.markings}
+\usepackage{relsize}
+
 
 \begin{document}
 
-\raisebox{+2.6ex}{\Large$\partial_t$}
-\begin{tikzpicture}
-\vspace{1cm}
-\draw[thick, fill = gray!20] circle(0.6);
-\end{tikzpicture}
-\raisebox{+2.6ex}{\large{\hspace{5pt} $=$ \hspace{5pt}} \huge $\frac{1}{2}$} 
+\raisebox{6.3ex}{$\partial_t\Gamma_k[\phi] = \mathlarger{\frac{1}{2}} \mathlarger{\sum}\limits_{i, j=1}^{N} \ \mathlarger{\int}_{p, q} \partial_{t} R_{k, i j}\left(p, q\right)$ }
 
-\raisebox{-2ex}{
 \begin{tikzpicture}[cross/.style={path picture={ 
 \draw[black]
 (path picture bounding box.south east) -- (path picture bounding box.north west) (path picture bounding box.south west) -- (path picture bounding box.north east);
 }}]
-\draw[thick] circle(1);
-\node [draw, fill = white, circle,cross,minimum width= 0.1 cm] at (0,1){}; 
+\draw[thick, decoration={markings, mark=at position 0.75 with {\arrow{>}}},
+        postaction={decorate}] circle(1);
+\draw[thick, decoration={markings, mark=at position 0.25 with {\arrow{>}}},
+        postaction={decorate}] circle(1);
+\node [draw, fill = white, circle,cross,minimum width= 0.1 cm] at (-1,0){}; 
+\node [draw, preaction={fill, white}, circle, pattern = north east lines, pattern color=BScGray, minimum width= 0.1 cm] at (1,0){}; 
+
+\node at (0,0.65){$p$};
+\node at (0,-0.65){$q$};
 \end{tikzpicture}
-}
- 
+
+\raisebox{6.3ex}{$\left[\Gamma_{k}^{(2)}[\phi]+R_{k}\right]_{j i}^{-1}\left(q, p\right)$, } 
 \end{document}

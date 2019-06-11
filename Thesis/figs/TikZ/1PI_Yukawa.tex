@@ -1,0 +1,35 @@
+\documentclass{standalone}
+\input{feynman_settings}
+\usetikzlibrary{patterns,snakes}
+
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{feynman}
+      \diagram[horizontal = a to d] {
+	i1 --  a [dot]  -- i2,
+	a  -- [scalar] b [dot],
+	b -- [half left] c [dot]  -- [half left] b,
+	c -- [scalar] d [dot],
+	f1 --  d  -- f2,
+};
+\draw [decorate, decoration={brace,amplitude=10pt,mirror}, xshift=0.4pt, yshift=-0.4pt] (-0.2,-0.7) -- (5.9,-0.7) node[black,midway,yshift=-0.6cm] {reducible};
+
+	\end{feynman}
+\end{tikzpicture}
+
+\hspace{2cm}
+
+\begin{tikzpicture}
+\begin{feynman}
+	 \diagram[horizontal = a to b] {
+	i1 --  a [dot] -- c [dot] -- i2, 
+	f1 --  b [dot] -- d [dot] -- f2, 
+
+	a  -- [scalar] b,
+    c -- [scalar] d,
+	};
+\draw [decorate, decoration={brace,amplitude=10pt,mirror}, xshift=0.4pt, yshift=-0.4pt] (-0.2,-4) -- (4.05,-4) node[black,midway,yshift=-0.6cm] {1PI};
+\end{feynman}	
+\end{tikzpicture}
+\end{document}
