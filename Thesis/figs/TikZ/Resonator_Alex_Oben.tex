@@ -1,0 +1,92 @@
+\documentclass{standalone}
+\input{feynman_settings}
+
+\definecolor{gold}{rgb}{0.83, 0.69, 0.22}
+\definecolor{auburn}{rgb}{0.43, 0.21, 0.1}
+
+\begin{document}
+\begin{tikzpicture}
+	
+%Metallplatte auﬂen
+\filldraw[thick, gray!50!white] (-5, 8) -- (5, 8) -- (5, -8) -- (-5, -8) -- (-5, 8);	
+\draw[thick] (-5, 8) -- (5, 8) -- (5, -8) -- (-5, -8) -- (-5, 8);	
+
+%Halterung (Auﬂenlinie)
+\filldraw[thick, rounded corners, gray!80!white] (-3.3,7.3) -- (3.5,7.3) to [curve through = {(3.7,6.65)}] (4.3, 6) -- (4.3, -6)  to [curve through = {(3.7, -6.65)}] (3.5, -7.3) -- (-3.5, -7.3) to [curve through = {(-3.7, -6.65)}] (-4.3, -6) -- (-4.3,6) to [curve through = {(-3.7, 6.65)}] (-3.5, 7.3) -- (-3.3, 7.3);
+\draw[thick, rounded corners] (-3.3,7.3) -- (3.5,7.3) to [curve through = {(3.7,6.65)}] (4.3, 6) -- (4.3, -6)  to [curve through = {(3.7, -6.65)}] (3.5, -7.3) -- (-3.5, -7.3) to [curve through = {(-3.7, -6.65)}] (-4.3, -6) -- (-4.3,6) to [curve through = {(-3.7, 6.65)}] (-3.5, 7.3) -- (-3.3, 7.3);
+%Halterung (Innere Linie)
+\filldraw[thick, rounded corners, gray!50!white] (-3.2,7.1) -- (3.4,7.1) to [curve through = {(3.3,6.5)}] (4.1, 5.9) -- (4.1, -5.9)  to [curve through = {(3.3, -6.5)}] (3.4, -7.1) -- (-3.4, -7.1) to [curve through = {(-3.5, -6.5)}] (-4.1, -5.9) -- (-4.1,5.9) to [curve through = {(-3.5, 6.5)}] (-3.4, 7.1) -- (-3.2, 7.1);
+\draw[thick, rounded corners] (-3.2,7.1) -- (3.4,7.1) to [curve through = {(3.3,6.5)}] (4.1, 5.9) -- (4.1, -5.9)  to [curve through = {(3.3, -6.5)}] (3.4, -7.1) -- (-3.4, -7.1) to [curve through = {(-3.5, -6.5)}] (-4.1, -5.9) -- (-4.1,5.9) to [curve through = {(-3.5, 6.5)}] (-3.4, 7.1) -- (-3.2, 7.1);
+
+%Aussparungen
+\filldraw[thick, white] (-4.5, 7.5) circle(0.3);
+\draw[thick] (-4.5, 7.5) circle(0.3);
+
+\filldraw[thick, white] (-4.5, -7.5) circle(0.3);
+\draw[thick] (-4.5, -7.5) circle(0.3);
+
+\filldraw[thick, white] (4.5, 7.5) circle(0.3);
+\draw[thick] (4.5, 7.5) circle(0.3);
+
+\filldraw[thick, white] (4.5, -7.5) circle(0.3);
+\draw[thick] (4.5, -7.5) circle(0.3);
+
+%kleine Kreise (nicht ausgeschnitten)
+\filldraw[thick, gray!80!white] (-4.5, 0) circle(0.2);
+\draw[thick] (-4.5, 0) circle(0.2);
+
+\filldraw[thick, gray!80!white] (4.5, 0) circle(0.2);
+\draw[thick] (4.5, 0) circle(0.2);
+
+\filldraw[thick, gray!80!white] (-2.7, 7.5) circle(0.2);
+\draw[thick] (-2.7, 7.5) circle(0.2);
+
+\filldraw[thick, gray!80!white] (2.7, 7.5) circle(0.2);
+\draw[thick] (2.7, 7.5) circle(0.2);
+
+\filldraw[thick, gray!80!white] (-2.7, -7.5) circle(0.2);
+\draw[thick] (-2.7, -7.5) circle(0.2);
+
+\filldraw[thick, gray!80!white] (2.7, -7.5) circle(0.2);
+\draw[thick] (2.7, -7.5) circle(0.2);
+	
+%ƒuﬂerer Rand Resonator
+\filldraw[thick, auburn] (-4, 7) -- (4,7) -- (4,-7) -- (-4,-7) -- (-4,7);
+\draw[thick] (-4, 7) -- (4,7) -- (4,-7) -- (-4,-7) -- (-4,7);
+
+%Innere Struktur (Geraden)
+\filldraw[rounded corners, thick, gray!50!white] (0.23, -4.5) -- (0.23, 5) -- (0.63, 5) --  (0.63, 1.385) to  [curve through = {(1.815, 0.2)}] (3, 1.385) -- (3, 3) to [curve through = {(0,6)}] (-3, 3) -- (-3, 1.385) to [curve through = {(-0.63-1.185, 0.2)}] (-0.63, 1.385) -- (-0.63,5) -- (-0.23,5) -- (-0.23,-5) -- (-0.63, -5) -- (-0.63, -1.385) to [curve through = {(-1.815, -0.2)}] (-3, -1.385) -- (-3,-3) to [curve through = {(0,-6)}] (3, -3) -- (3, -1.385)  to [curve through = {(1.815, -0.2)}] (0.63, -1.385) -- (0.63, -5) -- (0.23, -5)-- (0.23, -4.5);
+
+\draw[rounded corners, thick] (0.23, -4.5) -- (0.23, 5) -- (0.63, 5) --  (0.63, 1.385) to  [curve through = {(1.815, 0.2)}] (3, 1.385) -- (3, 3) to [curve through = {(0,6)}] (-3, 3) -- (-3, 1.385) to [curve through = {(-0.63-1.185, 0.2)}] (-0.63, 1.385) -- (-0.63,5) -- (-0.23,5) -- (-0.23,-5) -- (-0.63, -5) -- (-0.63, -1.385) to [curve through = {(-1.815, -0.2)}] (-3, -1.385) -- (-3,-3) to [curve through = {(0,-6)}] (3, -3) -- (3, -1.385)  to [curve through = {(1.815, -0.2)}] (0.63, -1.385) -- (0.63, -5) -- (0.23, -5) -- (0.23, -5) -- (0.23, -4.5);
+
+
+%Schrauben (Sechsecke)
+\filldraw[thick, gold] (-3.5, 6.7) -- (-3.8, 6.2) -- (-3.5, 5.7) -- (-2.9,5.7) -- (-2.6, 6.2) --  (-2.9, 6.7) -- (-3.5, 6.7);
+\draw[thick] (-3.5, 6.7) -- (-3.8, 6.2) -- (-3.5, 5.7) -- (-2.9,5.7) -- (-2.6, 6.2) --  (-2.9, 6.7) -- (-3.5, 6.7);
+
+\filldraw[thick,gold] (3.5, 6.7) -- (3.8, 6.2) -- (3.5, 5.7) -- (2.9,5.7) -- (2.6, 6.2) --  (2.9, 6.7) -- (3.5, 6.7);
+\draw[thick] (3.5, 6.7) -- (3.8, 6.2) -- (3.5, 5.7) -- (2.9,5.7) -- (2.6, 6.2) --  (2.9, 6.7) -- (3.5, 6.7);
+
+\filldraw[thick, gold] (3.5, -6.7) -- (3.8, -6.2) -- (3.5, -5.7) -- (2.9,-5.7) -- (2.6, -6.2) --  (2.9, -6.7) -- (3.5, -6.7);
+\draw[thick] (3.5, -6.7) -- (3.8, -6.2) -- (3.5, -5.7) -- (2.9,-5.7) -- (2.6, -6.2) --  (2.9, -6.7) -- (3.5, -6.7);
+
+\filldraw[thick, gold] (-3.5, -6.7) -- (-3.8, -6.2) -- (-3.5, -5.7) -- (-2.9, -5.7) -- (-2.6, -6.2) --  (-2.9, -6.7) -- (-3.5, -6.7);
+\draw[thick] (-3.5, -6.7) -- (-3.8, -6.2) -- (-3.5, -5.7) -- (-2.9, -5.7) -- (-2.6, -6.2) --  (-2.9, -6.7) -- (-3.5, -6.7);
+
+%Schrauben (Kreise)
+\filldraw[thin] (-3.2, 6.2) circle(0.01);
+\draw[thick] (-3.2, 6.2) circle(0.3);
+
+\filldraw[thin] (3.2, 6.2) circle(0.01);
+\draw[thick] (3.2, 6.2) circle(0.3);
+
+\filldraw[thin] (-3.2, -6.2) circle(0.01);
+\draw[thick] (-3.2, -6.2) circle(0.3);
+
+\filldraw[thin] (3.2, -6.2) circle(0.01);
+\draw[thick] (3.2, -6.2) circle(0.3);
+
+%Grid zum pr‰ziseren Arbeiten
+%\draw[help lines, thin, dashed] (-5,-8) grid (5,8);	
+\end{tikzpicture}
+\end{document}

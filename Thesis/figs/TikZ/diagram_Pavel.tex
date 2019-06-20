@@ -1,0 +1,61 @@
+\documentclass{standalone}
+\input{feynman_settings}
+\usetikzlibrary{patterns, decorations.markings}
+\usepackage{relsize}
+
+
+\begin{document}
+
+\raisebox{6.3ex}{$\dot{\Gamma}_k^{(2)} = \ - \mathlarger{\frac{1}{2}} $ }
+\hspace{-0.6cm}
+\begin{tikzpicture}[cross/.style={path picture={ 
+\draw[black]
+(path picture bounding box.south east) -- (path picture bounding box.north west) (path picture bounding box.south west) -- (path picture bounding box.north east);
+}}]
+\draw[thick, decoration={markings, mark=at position 0.125 with {\arrow{>}}},
+        postaction={decorate}] circle(1);
+
+\node [draw, fill = white, circle,cross,minimum width= 0.1 cm] at (0,1){}; 
+\node [draw, fill = BScGray!30, circle, minimum width= 0.1 cm] at (1,0){}; 
+\node [draw, fill = BScGray!30, circle, minimum width= 0.1 cm] at (-1,0){}; 
+\node [draw, fill = black, circle, minimum width= 0.1 cm] at (0,-1){}; 
+\draw[thick, ->] (-1.8, -1) -- (-1.1, -1);
+\draw[thick, ->] (-1.15, -1) -- (1.1, -1);
+\draw[thick] (1.05, -1) -- (1.8, -1);
+
+\node at (1.05,0.85){$q$};
+\node at (-1.25, -0.65){$p$};
+\node at (1.25, -0.65){$p$};
+\end{tikzpicture}
+
+\hspace{-0.1cm}
+\raisebox{6.3ex}{$\mathlarger{+}$} 
+\hspace{0.2cm}
+
+\begin{tikzpicture}[cross/.style={path picture={ 
+\draw[black]
+(path picture bounding box.south east) -- (path picture bounding box.north west) (path picture bounding box.south west) -- (path picture bounding box.north east);
+}}]
+\draw[thick, decoration={markings, mark=at position 0.625 with {\arrow{>}}},
+        postaction={decorate}] circle(1);
+\draw[thick, decoration={markings, mark=at position 0.2 with {\arrow{>}}},
+        postaction={decorate}] circle(1);
+\node [draw, fill = white, circle,cross,minimum width= 0.1 cm] at (0,1){}; 
+\node [draw, fill=BScGray!30, circle, minimum width= 0.1 cm] at (0,-1){}; 
+\node [draw, fill=BScGray!30, circle, minimum width= 0.1 cm] at (0.707,0.707){}; 
+\node [draw, fill=BScGray!30, circle, minimum width= 0.1 cm] at (-0.707,0.707){}; 
+
+\node [draw, fill=black, circle, minimum width= 0.1 cm] at (-1,0){}; 
+\node [draw, fill=black, circle, minimum width= 0.1 cm] at (1,0){}; 
+
+\draw[thick, ->] (-2.4, 0) -- (-1.7, 0);
+\draw[thick] (-1.75, 0) -- (-1, 0);
+
+\node at (-1.85,0.35){$p$};
+\node at (1.85,0.35){$p$};
+\node at (0.65,1.27){$q$};
+\node at (-1.45,-0.75){$p+q$};
+\draw[thick, ->] (1, 0) -- (1.7, 0);
+\draw[thick] (1.65, 0) -- (2.4, 0);
+\end{tikzpicture}
+\end{document}

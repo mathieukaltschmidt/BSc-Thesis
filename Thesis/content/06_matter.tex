@@ -1,6 +1,17 @@
 \chapter{Asymptotic Safety of Gravity-Matter Systems}
-\blindtext
-\section{Matter contributions}
+For computing the contributions of the different matter fields on the running of the cosmological constant and the Newton coupling we follow \cite{DonaEichhornPercacci2013}. 
+
+
+Some important formulas:
+\begin{align}
+	\eta_{\Psi} = -\partial_t \ln Z_{\Psi}
+\end{align}
+
+\begin{align}
+	R_{k, \Psi}(z) = Z_{\Psi} \ \mathbbm{1} \ z \ r\left(\frac{z}{k^2}\right)
+\end{align}
+where $r$ is the same Litim-type shape function as defined in (\ref{eqn:Litim}).
+\section{Matter Contributions from Background Field Computation}
 \begin{align}
 	\Gammak = \Gamma_{\text{EH}} + \mathcal{S}_{\text{gf}}+ \mathcal{S}_{\text{gh}}+ \Gamma_{\text{matter}}
 \end{align}
@@ -18,14 +29,28 @@ with
 		&+ \frac{Z_{\text{V}}}{2\xi}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \left(\bar{g}^{\mu\nu}\bar{D}_{\mu}A_{\nu}^{i}\right)^2  \\
 		&+ \frac{1}{2}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \bar{c}_i(-\bar{D}^2)c_i \nonumber
 \end{align}
-\section{Fermionic fields}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figs/TikZ/matter_corrections}
+	\caption[Flow equation for the average effective action $\Gamma_k$ including different matter contributions in diagrammatic representation.]{Flow equation for the average effective action $\Gamma_k$ including different matter contributions in diagrammatic representation. The double, dashed, solid and  wiggly lines correspond to the graviton, scalar, fermion and gauge field  propagators, respectively. The crossed circles denote the insertion of the respective regulator.}
+\end{figure}
+
+\begin{itemize}
+	\item wo essential couplings, $G$ and $\Lambda$ and five inessential\footnote{Inessential in this sense means, that they can be eliminated by field rescalings.} wave function renormalizations $Z_{\Psi}$ with $\Psi = (h,c,S,D,V)$.
+\end{itemize}
+
+
+\section{Perturbative Approximation}
+
+\section{Some Words on Fermionic fields}
 This section is mainly based on \cite{LippoldtPHD} and \cite{Lippoldt2015} where the spin-base invariant formalism for treating fermions in curved spacetimes has been developed. The goal of this part of the thesis is to get a rough idea on how to perform calculations involving Dirac fermions, especially in the context of Asymptotic Safety of gravity-matter systems.  
 
 Covariant derivative:
 \begin{align}
 	\nabla_{\mu} = \partial_{\mu} + \frac{1}{8}\left[\gamma^{a}, \gamma^{b}\right]\omega_{\mu}^{ab}
 \end{align}
-\blindtext
+
+
  \begin{figure}[t]
  \centering
  \hfill
@@ -47,7 +72,7 @@ Covariant derivative:
  \caption{Different matter contributions to the graviton anomalous dimension $\eta_h$.}	
  \end{figure}
  
- \blindtext
+
  
   \begin{figure}[t]
  \centering
@@ -67,3 +92,7 @@ Covariant derivative:
  \hfill
  \caption[Contributing diagrams to the fermion anomalous dimension $\eta_D$.]{Contributing diagrams to the fermion anomalous dimension $\eta_D$. Analogous contributions arise for external scalars and gauge fields to $\eta_S$ and $\eta_V$.} 	
  \end{figure}
+ 
+ \section{Background Field versus Fluctuation Field Calculation}
+
+ 

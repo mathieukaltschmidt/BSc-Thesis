@@ -1,5 +1,5 @@
-\chapter{Functional Methods in Quantum Field Theory}
-This chapter introduces the the treatment of quantum field theory using functional methods. The main goal is to get familiar with the physical concepts and the notation used throughout this work and to derive the flow equation for the average effective action, introduced by Christof Wetterich in 1993 \cite{Wetterich1992}. 
+\chapter{Functional Methods in Quantum Field Theory}\label{chap:FuncMethods}
+This chapter introduces a treatment of quantum field theory using functional methods. The main goal is to get familiar with the physical concepts and the notation used throughout this work and to derive the flow equation for the average effective action, introduced by Christof Wetterich in 1993 \cite{Wetterich1992}. 
 For the derivation of the flow equation we are following \cite{FloerchingerWetterichQFT, PawlowskiNPgaugeLecture}.
 
 \section{Generating Functionals and Correlation Functions}
@@ -27,25 +27,25 @@ and higher order correlation functions
 \begin{align}
 \cf{\varphi_1 \cdots \varphi_n} := \cf{\varphi^n} = \frac{1}{Z}\eval{\frac{\delta^n Z}{\delta^n J}}_{J=0} = \int \D\varphi \ \overbrace{\varphi_1 \cdots \varphi_n}^{:= \ \varphi^n} \ \operatorname{e}^{-\S + J\cdot\varphi}
 \end{align}
-via functional differentiation of $Z[J]$. This means, that we are basically able to compute all contributing Feynman diagrams for our theory setting, if we have knowledge of its corresponding (grand) canonical partition sum. \\
+via functional differentiation.. This means, we are basically able to compute all contributing Feynman diagrams for our theory setting, if we have knowledge of its corresponding (grand) canonical partition sum. \\
  For a more efficient description of the theory in terms of only the \textit{connected} correlation functions, we define the Schwinger functional $W[J]$ as the logarithm of $Z[J]$,  
 \begin{align}
 W[J] = \ln Z[J].
 \label{eqn:Schwinger}
 \end{align}
-It is the generating functional for the connected correlation functions. The normalization factor $\mathcal{N}$, introduced in (\ref{eqn:partition}) enters here as an additive constant, which drops out for all higher order correlation functions, except the zero-point function. This term is connected to the thermodynamic quantities of our system and becomes important, when external parameters such as temperature, volume or the chemical potential are varied. For the case of quantum gravity, it is linked to the cosmological constant $\Lambda$. Nevertheless, in general we are only interested in correlation functions with $n\geq 1$ and therefore we drop this term.\\
+It is the generating functional for the connected correlation functions. The normalization factor $\mathcal{N}$, introduced in (\ref{eqn:partition}) enters here as an additive constant, which drops out for all higher order correlation functions, except for the zero-point function. This term is connected to the thermodynamic quantities of our system and becomes important, when external parameters such as temperature, volume or the chemical potential are varied. For the case of quantum gravity, it is linked to the cosmological constant $\Lambda$. Nevertheless, in general we are only interested in correlation functions with $n\geq 1$ and therefore we drop this term.\\
 Consider for example the connected two-point function $G_{ab}(x,y) = G_{\alpha\beta}$\footnote{To save on notation, we introduce collective indices $\alpha = (x,a)$ respectively $(q,a)$ in momentum space.}, known as the propagator, correlating the field $\varphi_a$ at spacetime point $x$ with the field $\varphi_b$ at $y$,
 \begin{align}
-	G_{\alpha\beta} &= \frac{\delta^2W[J]}{\delta J_{\alpha}\delta J_{\beta}} = \frac{\delta}{\delta J_{\alpha}}\left(\frac{1}{Z}\frac{\delta Z}{\delta J_{\beta}}\right) \nonumber \\
-				&= \frac{1}{Z}\left(\frac{\delta^2Z}{\delta J_{\alpha}\delta J_{\beta}}\right) - \frac{1}{Z^2}\left(\frac{\delta Z}{\delta J_{\alpha}}\right)\left(\frac{\delta Z}{\delta J_{\beta}}\right)\\
+	G_{\alpha\beta} &= \frac{\delta^2W[J]}{\delta J_{\alpha}\delta J_{\beta}} = \frac{\delta}{\delta J_{\alpha}}\left(\frac{1}{Z}\frac{\delta Z}{\delta J_{\beta}}\right) \nonumber \\[10pt]
+				&= \frac{1}{Z}\left(\frac{\delta^2Z}{\delta J_{\alpha}\delta J_{\beta}}\right) - \frac{1}{Z^2}\left(\frac{\delta Z}{\delta J_{\alpha}}\right)\left(\frac{\delta Z}{\delta J_{\beta}}\right)\\[10pt]
 				&= \cf{\varphi_{\alpha}\varphi_{\beta}} - \phi_{\alpha}\phi_{\beta} = \cf{\varphi_{\alpha}\varphi_{\beta}}_{\text{c}}.	\nonumber	
 \end{align}
 The propagator is the key object in functional approaches to quantum field theory. It depends on the chosen background via $J$. \\
-It is still possible to make our computations even more efficient, because $W[J]$ still contains some redundant information. Connected correlation functions can be separated into so-called one-particle irreducible (1PI) and one-particle reducible ones. The 1PI correlation functions are those, whose corresponding Feynman diagrams can \textit{not} be separated into two disconnected ones by cutting a single internal line. As an example, the connected four-point function for Yukawa theory, which has 1PI and and reducible parts is depicted in figure (\ref{fig:1PI_Yukawa}). 
+It is still possible to make our computations even more efficient, because $W[J]$ still contains some redundant information. Connected correlation functions can be separated into so-called one-particle irreducible (1PI) and one-particle reducible ones. The 1PI correlation functions are those, whose corresponding Feynman diagrams can \textit{not} be separated into two disconnected ones by cutting a single internal line. As an example, contributing 1PI and reducible diagrams to the connected four-point function for Yukawa theory, are depicted in figure (\ref{fig:1PI_Yukawa}). 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.8\textwidth]{figs/TikZ/1PI_Yukawa}
-\caption{Contributing one-particle reducible and 1PI diagrams for the four-point-function for Yukawa theory.}	
+\caption{Contributing one-particle reducible and 1PI diagrams to the four-point-function in Yukawa theory.}	
 \label{fig:1PI_Yukawa}
 \end{figure}
 
@@ -54,23 +54,25 @@ The generating functional for the  1PI correlation functions, the \textit{effect
 	\Gamma[\phi]=\sup _{J}\left\{\int_{x} J(x) \phi(x)-W[J]\right\}=\int_{x} J_{\mathrm{sup}}(x) \phi(x)-W\left[J_{\mathrm{sup}}\right],
 \end{align}
 where $J_{\mathrm{sup}}$ has to be understood as a field-dependent current $J_{\mathrm{sup}}[\phi]$. In the following, we will drop the subscript, its meaning is implicitly understood.  From a physical point of view, the effective action $\Gamma$ is the quantum analogue of the classical action $\mathcal{S}$. The performed Legendre transform leads us to a mean field description of our theory with $\phi = \cf{\varphi}$ on a given background, as introduced before. The symmetries of the classical action are in general still present in the effective action.\\
-In terms of the effective action, correlation functions are again obtained by performing functional derivatives, but now w.\,r.\,t. to the mean field $\phi$,
+In terms of the effective action, correlation functions are again obtained by performing functional derivatives, but now w.\,r.\,t. the mean field $\phi$,
 \begin{align}
 	\Gamma^{(n)}\left(x_{1}, \ldots, x_{n}\right)=\frac{\delta^{n} \Gamma}{\delta \phi\left(x_{1}\right) \cdots \delta \phi\left(x_{n}\right)}.
 \end{align}
 For the transition from connected to 1PI correlation functions we have to convert $J$- derivatives into $\phi$-derivatives, i.\,e.
 \begin{align}
-	\frac{\delta}{J(x)}=\int_{y} \frac{\delta \phi(y)}{\delta J(x)} \frac{\delta}{\phi(y)}=\int_{y} G(x, y) \frac{\delta}{\phi(y)}
+	\frac{\delta}{\delta J(x)}=\int_{y} \frac{\delta \phi(y)}{\delta J(x)} \frac{\delta}{\delta \phi(y)}=\int_{y} G(x, y) \frac{\delta}{\delta\phi(y)}
 \end{align}
 where we used, that $\sfrac{\delta\phi}{\delta J} = \sfrac{\delta W^{(1)}}{\delta J} = G.$ Evaluating the product of the two two-point functions obtained from $W$ and $\Gamma$ respectively, gives us another important result:
-\begin{align} \int_{y} \frac{\delta^{2} W}{\delta J\left(x_{1}\right) \delta J(y)} \frac{\delta^{2} \Gamma}{\delta \phi(y) \phi\left(x_{2}\right)} &=\int_{y} \frac{\delta}{\delta J\left(x_{1}\right)}\left[\frac{\delta W}{\delta J(y)}\right] \frac{\delta}{\delta \phi(y)}\left[\frac{\delta \Gamma}{\delta \phi\left(x_{2}\right)}\right] \nonumber\\
-&=\int_{y} \frac{\delta \phi(y)}{\delta J\left(x_{1}\right)} \frac{\delta}{\delta \phi(y)} J\left(x_{2}\right) \\ &=\delta\left(x_{1}-x_{2}\right).\nonumber
-\end{align} 
-The full propagator $G$ is the inverse of the 1PI two point function:
 \begin{align}
-	W^{(2)}(x_1),(x_2) = G(x_1,x_2) = \frac{1}{\Gamma^{(2)}}(x_1,x_2).
+ \int_{y} \frac{\delta^{2} W}{\delta J\left(x_{1}\right) \delta J(y)} \frac{\delta^{2} \Gamma}{\delta \phi(y) \delta\phi\left(x_{2}\right)} &=\int_{y} \frac{\delta}{\delta J\left(x_{1}\right)}\left[\frac{\delta W}{\delta J(y)}\right] \frac{\delta}{\delta \phi(y)}\left[\frac{\delta \Gamma}{\delta \phi\left(x_{2}\right)}\right] \nonumber\\[10pt]
+	&=\int_{y} \frac{\delta \phi(y)}{\delta J\left(x_{1}\right)} \frac{\delta}{\delta \phi(y)} J\left(x_{2}\right) \\[10pt] 
+	&=\delta_{\mathrm{D}}\left(x_{1}-x_{2}\right).\nonumber
+\end{align} 
+The full propagator $G$ is the inverse of the 1PI two-point function:
+\begin{align}
+	W^{(2)}(x_1,x_2) = G(x_1,x_2) = \frac{1}{\Gamma^{(2)}}(x_1,x_2).
 \end{align}
- In the next section, we introduce the functional renormalization group (FRG) based on the concepts and results discussed in this section. 
+ In the next section, we want to use these concepts to introduce the functional renormalization group (FRG)... 
 \section{Functional Renormalization Group}
 The functional renormalization group is a mathematical tool, allowing us to investigate the dynamics of physical systems on different scales, i.\,e. energy or momentum scales. This idea is based on a continuous version of Kadanoffs block spin model on the lattice and was developed by Kenneth G. Wilson in 1971. It aims at solving the theory by integrating successively momentum shell by momentum shell, being the reason why the path integral approach to quantum field theory, as introduced before, provides a suitable framework. The main advantage of the FRG approach is, that no regularization or renormalization procedure has to be applied. The latter one is already implemented systematically, which secures the self-consistency of the approach.
 
@@ -97,7 +99,7 @@ with $ y := \frac{p^2}{k^2}$, and a dimensionless regulator shape function $r_k$
 r_k(y) = \left(\frac{1}{y} - 1\right)\theta(1-y),	
 \end{align}
 where $\theta$ is the Heaviside step function. This class of (sharp) regulators is a good choice for finding analytic FRG equations in simple approximations. For numerical approaches, exponential regulators, which are in general more complicated, are well suited.
-In this setting, (\ref{eqn:Wk}) provides a well defined starting point for solving the theory by successively lowering the cutoff scale $k$ infinitesimally and integrating out all momentum modes $\varphi_{p\approx k}$. \\
+In this setting, (\ref{eqn:Wk}) provides a good starting point for solving the theory by successively lowering the cutoff scale $k$ infinitesimally and integrating out all momentum modes $\varphi_{p\approx k}$. \\
 This procedure can be formalized by taking a scale derivative of our scale-dependent functional (\ref{eqn:Wk})
 \begin{align}
 k\partial_k W_k[J]= -\cf{k\partial_k\Delta\mathcal{S}_k[\varphi]}.	
@@ -113,8 +115,8 @@ where $\Lambda$ is a fixed reference scale. Usually one chooses the ultraviolet 
 With the definition of the propagator, we finally arrive at the FRG equation, also called Wetterich equation or flow equation for the effective action:
 \begin{subequations}
 \begin{align}
-	\partial_t\Gammak[\phi] &= \frac{1}{2}\tr{\frac{1}{\Gammak^{(2)}[\phi] + R_k} \partial_t R_k} \nonumber \\ \phantom{.}  \\
-							&= \frac{1}{2}\int\limits_p \frac{1}{\Gammak^{(2)}[\phi] + R_k}(p, -p) \ \partial_t R_k(p^2). \nonumber
+	\partial_t\Gammak[\phi] &= \frac{1}{2}\tr{\left(\Gammak^{(2)}[\phi] + R_k\right)^{-1} \partial_t R_k} \nonumber \\ \phantom{.}  \\
+							&= \frac{1}{2}\int_p \left(\Gammak^{(2)}[\phi] + R_k\right)^{-1}(p, -p) \ \partial_t R_k(p^2). \nonumber
 \label{eqn:Wetterich}							
 \end{align}
 It has a rather simple diagrammic representation as one-loop equation:
@@ -128,7 +130,7 @@ It has a rather simple diagrammic representation as one-loop equation:
 \end{gather}
 \end{figure}
 \end{subequations}
- where $\partial_{t} R_{k, ij}(p, q)=\partial_{t} R_{k}(p^2)(2 \pi)^{d} \  \delta_{i j} \ \delta(p-q)$ and therefore the trace in on the r.\,h.\,s. effectively sums over just one index $i$ and integrates over one loop momentum $p$.
+ where $\partial_{t} R_{k, ij}(p, q)=\partial_{t} R_{k}(p^2)(2 \pi)^{d} \  \delta_{i j} \ \delta_{\mathrm{D}}(p-q)$ and therefore the trace in on the r.\,h.\,s. effectively sums over just one index $i$ and integrates over one loop momentum $p$.
 
 %TODO: Back to regulator properties...
 

@@ -1,16 +1,41 @@
-\chapter{Curved Spacetimes}
-This section is based on \cite{CarrollGR}.
+\chapter{Curved Spacetimes and Gravity}
+Our current understanding of gravity is manifested in Einsteins theory of General Relativity. Different to the treatment of the other fundamental forces, all described by gauge theories and summarized in the Standard Model of Particle Physics, gravity is based on the concept of curved spacetime. This chapter summarizes some of the general concepts and notions of General Relativity, needed for a basic understanding of the subject. For most of the concepts we present here, we are following Carrolls notes \cite{CarrollGR}. At the end of this chapter, we show why gravity can not be quantized in a perturbative manner, opposite to the other three fundamental forces. This will lead us to our discussion of Asymptotic Safety as a non-perturbative approach based on the functional renormalization group methods we presented in the last chapter.  
+
 \section{An Introduction to Spacetime Geometry}
-
-
-%Some words in differential geometry:  differentiable manifolds, coordinate maps, tangent space, covariant/contravariant vectors + trafos, metric tensor
-
-inner product: 
+ When talking about the concept of curved spacetimes, one first needs a mathematical framework to quantify curvature and to understand how mathematical concepts such as differentiation and integration are generalized to curved spaces. 
+ The central objects in our discussion of curved spaces are \textit{differentiable manifolds}, i\,e. topological spaces, that are  locally diffeomorphic to $\mathbb{R}^n$, equipped with a differentiable structure. Locally in this sense means, that we can find coordinate maps $\phi_i: M \underset{\mathrm{open}}{\supset} U_i \rightarrow \mathbb{R}^n$, such that the image $\phi_i(U_i)$ is open in  $\mathbb{R}^n$, for every point on $M$, whereas globally the manifold may have a very complicated topology. A set of such coordinate maps $\{(U_{\alpha}, \phi_{\alpha})\}$ that covers the entire manifold and where the charts are smoothly sewed together is called an \textit{atlas}. For overlapping charts $U_{\alpha}\cap U_{\beta} \neq \emptyset$, the maps $(\phi_{\alpha} \circ \phi_{\beta}^{-1})$, a.\,k.\,a. coordinate transformations, must be smooth and differentiable. They are directly connected to the coordinates $x^{\mu}$ we'll work with later on. \\
+Further, we need to introduce additional structures, such as vectors and tensors on manifolds, since they are the objects we are interested in when it comes to the discussion of physical models. To be able to talk about vectors, one needs to associate  a \textit{tangent space} $T_p$ to every point $p$ of the manifold. The tangent space is the set of all vectors at  $p$ and  has the structure of a vector space with the same dimension as $M$. The disjoint union of all tangent spaces on $M$ is called the \textit{tangent bundle}. To specify the concept of the tangent space we claim, that it can be identified with the space of directional derivative operators along curves $\gamma: \mathbb{R} \rightarrow M$  through $p$. In this case, we find a basis of $T_p$ as the set $\{\hat{\partial}_{\mu}\}$ of directional derivatives at $p$. It can be shown, that the directional derivatives can be decomposed into a sum of real numbers times partial derivatives, i.\,e. $\frac{\dd}{\dd \lambda} = \frac{\dd x^{\mu}}{\dd \lambda}\partial_{\mu}$, where $\lambda$ is the parameter of the curve $\gamma$. This allows us to represent a vector $V=V^{\mu}\partial_{\mu}$ independent of the chosen coordinates. The basis vectors in some different coordinate system $x^{\mu^{\prime}}$ are then simply related to the initial basis via $\partial_{\mu^{\prime}}=\frac{\partial x^{\mu}}{\partial x^{\mu^{\prime}}} \partial_{\mu}$ which yields the transformation law for vector components under general coordinate transformations,
 \begin{align}
-	g(X,Y) = g_{\mu\nu}X^{\mu}Y^{\nu} = X^{\mu}Y_{\mu}= g^{\mu\nu}X_{\mu}Y_{\nu} = X_{\mu}Y^{\mu}
+	V^{\mu^{\prime}}=\frac{\partial x^{\mu^{\prime}}}{\partial x^{\mu}} V^{\mu}. \label{eqn:contravariant_trafo}
 \end{align}
-we can use the metric tensor to raise and lower spacetime indices, \\
-Christoffel symbols (connection):
+Components obeying this transformation law are called \textit{contravariant}. At this point it follows quite naturally to define the \textit{cotangent space} $T_p^*$ as the set of linear maps $\omega: T_p \rightarrow \mathbb{R}$. Elements of the cotangent space are called one-forms or dual vectors and similarly to the discussion of the tangent space, we find a suitable basis for $T_p^*$ as the gradients $\{\dd\hat{x}^{\mu}\}$, allowing us to represent arbitrary one-forms as $\omega = \omega_{\mu} \dd x^{\mu}$. As before, we are interested in the transformation behavior of our basis one-forms, i.\,e. $\mathrm{d} x^{\mu^{\prime}}=\frac{\partial x^{\mu^{\prime}}}{\partial x^{\mu}} \mathrm{d} x^{\mu}$ and the dual vector components
+\begin{align}
+	\omega_{\mu^{\prime}}=\frac{\partial x_{\mu}}{\partial x^{\mu^{\prime}}} \omega_{\mu}.\label{eqn:covariant_trafo}
+\end{align}
+This transformation behavior differs from the one found for vectors. We call components transforming as in equation (\ref{eqn:covariant_trafo}) \textit{covariant}.
+
+Now we are able to generalize these concepts by introducing tensors $T$ of type $(k,l)$ as
+\begin{align}
+T=T_{\phantom{\mu_{1} \cdots \mu_{k}}\nu_{1} \cdots \nu_{l}}^{\mu_{1} \cdots \mu_{k}} \ \partial_{\mu_{1}} \otimes \cdots \otimes \partial_{\mu_{k}} \otimes \mathrm{d} x^{\nu_{1}} \otimes \cdots \otimes \mathrm{d} x^{\nu_{l}}.
+\end{align}
+The general transformation law for tensors follows naturally as expected from equations (\ref{eqn:contravariant_trafo}) and (\ref{eqn:covariant_trafo}),
+\begin{align}
+	T_{\phantom{\mu_{1}^{\prime} \cdots \mu_{k}^{\prime}}\nu_{1}^{\prime} \cdots \nu_{l}^{\prime}}^{\mu_{1}^{\prime} \cdots \mu_{k}^{\prime}}=\frac{\partial x^{\mu_{1}^{\prime}}}{\partial x^{\mu_{1}}} \cdots \frac{\partial x^{\mu_{k}^{\prime}}}{\partial x^{\mu_{k}}} \frac{\partial x^{\nu_{1}}}{\partial x^{\nu_{1}^{\prime}}} \cdots \frac{\partial x^{\nu_{l}}}{\partial x^{\nu_{l}^{\prime}}} T^{\mu_{1} \cdots \mu_{k}}_{\phantom{\mu_{1} \cdots \mu_{k}}\nu_{1} \cdots \nu_{l}}.
+\end{align}
+Having understood the basic structures and their respective behavior under coordinate transformations, we are now able to introduce some of the most important tensors in general relativity. \\
+Maybe the most important object to quantify curved space is the \textit{metric tensor} $g_{\mu\nu}$\footnote{It is convenient to write the components $T_{\phantom{\mu_{1} \cdots \mu_{k}}\nu_{1} \cdots \nu_{l}}^{\mu_{1} \cdots \mu_{k}}$ when speaking about tensors $T$.} and its inverse  $g^{\mu\nu}$, related via $g^{\mu\nu}g_{\nu\sigma} = \delta^{\mu}_{\phantom{\mu}\sigma}$. The metric and its inverse can be used to raise and lower indices, e.\,g. $x^{\mu} = g^{\mu\nu}x_{\nu}$. Additionally we can compute path lengths and proper time via the definition of the line element 
+\begin{align}
+	d s^{2}=g_{\mu \nu} \mathrm{d} x^{\mu} \mathrm{d} x^{\nu}.
+\end{align}
+For arbitrary vector fields $X$ and $Y$ the scalar product induced by the metric tensor reads
+\begin{align}
+	g(X,Y) = g_{\mu\nu}X^{\mu}Y^{\nu} = X^{\mu}Y_{\mu}= g^{\mu\nu}X_{\mu}Y_{\nu} = X_{\mu}Y^{\mu}.
+\end{align}
+
+We will see, that the metric tensor already contains all the information on the geometrical structure of the respective manifold we need to quantify curvature. Nevertheless, we first have to think about differentiation of general tensors again. 
+
+%TODO: Covariant derivatives, text to formulas i already printet..
+ 
 \begin{align}
 \Gamma_{\phantom{\alpha}\mu \nu}^{\alpha}=\frac{1}{2} g^{\mu \lambda}\left(\partial_{\mu} g_{\nu \lambda}+\partial_{\nu} g_{\mu \lambda}-\partial_{\lambda} g_{\mu \nu}\right)	
 \end{align}
@@ -28,7 +53,7 @@ Riemann/Curvature tensor:
 \end{align}
 Definition using the commutator of covariant derivatives
 \begin{align}
-	\left[\nabla_{\mu}, \nabla_{\nu}\right] A^{\sigma}=R_{\phantom{\alpha}\rho \mu \nu}^{\sigma} A^{\rho}
+	\left[\nabla_{\mu}, \nabla_{\nu}\right] A^{\sigma}=R_{\phantom{\alpha}\rho \mu \nu}^{\sigma} A^{\rho} \label{eqn:Riemann}
 \end{align}
 
 Contractions of the Curvature tensor:
@@ -42,11 +67,12 @@ Curvature Scalar:
 
 
 
-\blindtext
+
 
 
 \section{From Geometry to the Einstein Equations}
-\Blindtext
+
+
 The Einstein-Hilbert action:
 \begin{align}
 	\mathcal{S}_{\text{EH}}[g_{\mu\nu}] = \frac{1}{16\pi G} \int\limits_x \sqrt{-\operatorname{det}g_{\mu\nu}} (\Ricci - 2\Lambda)
@@ -83,4 +109,3 @@ From this, we get the Einstein equations including matter by demanding the varia
 
 \section{Perturbative Non-Renormalizability of Gravity}
 
-\blindtext

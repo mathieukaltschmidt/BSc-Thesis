@@ -1,5 +1,6 @@
 \chapter{Functional Renormalization and Quantum Gravity}
 %TODO: GAUGE FIXING! Faddeev-Popov
+%TODO: Have a look at the derivation of the equation.. still some terms missing
 \section{RG approach to Quantum Gravity}
 Flow equation for QG:
 \begin{align}
@@ -70,7 +71,7 @@ suitable tensor basis:
 	h_{\mu\nu} = h_{\mu\nu}^{\text{TT}} + \bar{\nabla}_{\mu}\xi_{\nu} + \left(\bar{\nabla}_{\mu}\bar{\nabla}_{\nu} - \frac{1}{d} \ \bar{g}_{\mu\nu}\bar{\Delta}\right)\sigma + \frac{1}{d} \ \bar{g}_{\mu\nu}h
 \end{align}
 As a first approximation, we only take the contribution from the spin-two graviton mode $h_{\mu\nu}^{\text{TT}}$ into account. This is motivated by the fact, that this mode carries the the most degrees of freedom.\\ %TODO: Extend this explanation (exercise sheet...)
-In this setting, we want to solve the Wetterich equation (\ref{eqn:Wetterich}) by computing the left hand side and the right hand side separately and extract the $\beta$-functions for the Newton coupling $g_k$ and the cosmological constant $\lambda_k$ by a comparison of all terms of order $\sim\sqrt{\operatorname{det}g}$ and $\sim \sqrt{\operatorname{det}g} \ \mathcal{R}$. Here, only the most important steps of the calculation are presented. For the complete calculation have a look at the Appendix A. \\%TODO:Referencing the Appendix. 
+In this setting, we want to solve the Wetterich equation (\ref{eqn:Wetterich}) by computing the left hand side and the right hand side separately and extract the $\beta$-functions for the Newton coupling $g_k$ and the cosmological constant $\lambda_k$ by a comparison of all terms of order $\sim\sqrt{\operatorname{det}g}$ and $\sim \sqrt{\operatorname{det}g} \ \mathcal{R}$. Here, only the most important steps of the calculation are presented. For the complete calculation have a look at Appendix A. \\%TODO:Referencing the Appendix. 
 In our spin-two graviton mode approximation, we don't have to deal with the gauge-fixing and ghost parts ocuring in the effective action. The simplified version of equation (\ref{eqn:QGflow}) reads
 \begin{align}
 	\Gamma_{k, h^{\text{TT}}} = 2\kappa^2Z_k \int_x \sqrt{\operatorname{det}g} \ [-\mathcal{R} + 2\Lambda_k].
@@ -85,21 +86,21 @@ R_k  = \eval{\Gamma_{h^{\text{TT}}h^{\text{TT}}}^{(2)}}_{\Lambda_k=\bar{\mathcal
 \end{align}
 with a Litim-type cutoff
 \begin{align}
-r_k(x) = \left(\frac{1}{x}-1\right)\Theta(1-x),
+r_k(y) = \left(\frac{1}{y}-1\right)\Theta(1-y), \label{eqn:Litim}
 \end{align}
-we are directly able to compute the l.h.s. of the Wetterich equation, i.\,e. the scale derivative of the effective average action:
+as discussed in chapter (\ref{chap:FuncMethods}), we are directly able to compute the l.\,h.\,s. of the Wetterich equation, i.\,e. the scale derivative of the effective average action:
 \begin{align}
 	\partial_{t}\Gamma_{k,h^{\text{TT}}} = 2\kappa^2 Z_k\int_x \sqrt{\operatorname{det}g} \left\{\eta_g\mathcal{R}+2\left(k^2(\partial_t\lambda_k) + \Lambda_k(2 - \eta_g)\right)\right\}
 \end{align}
-One finds the $\beta$-function for the Newton coupling without performing the analysis of the Wetterich equation, i.\,e. 
+One can extract the $\beta$-function for the Newton coupling without performing the analysis of the Wetterich equation, i.\,e. 
 \begin{align}
 \beta_g = \partial_t g_k = \partial_t\left(\frac{G\cdot k^2}{Z_k}\right) = g_k\left(2+\eta_g\right).
 \end{align}
 
-The computation of the r.h.s. of the flow equation is more complicated because it involves the computation of a trace of a function depending on the Laplacian. We can use heat-kernel techniques to solve such equations. Heat-kernel computations are based on a curvature expansion in powers of the curvature scaler $\mathcal{R}$. For more details, have a look at the appendix (\ref{sec:heat-kernel}). As a first step, we simplify the trace expression as much as possible.
+The computation of the r.\,h.\,s. of the flow equation is more complicated because it involves the computation of a trace of a function depending on the Laplacian on a curved background. We can use heat-kernel techniques to solve such equations. Heat-kernel computations are based on a curvature expansion in powers of the curvature scaler $\mathcal{R}$. For more details, have a look at the appendix (\ref{sec:heat-kernel}). As a first step, we simplify the trace expression as much as possible.
 
 \begin{align}
-\operatorname{Tr}\left[\frac{1}{\Gammak^{(2)} + R_k}\partial_t R_k\right] & = \operatorname{Tr}\left[\frac{\partial_t\left(\frac{Z_k}{32\pi}\bar{\Delta}\right)r_k}{\left(\frac{Z_k}{32\pi}\right)\left(\bar{\Delta} + 2\Lambda_k + \frac{2}{3}\bar{\mathcal{R}}\right) + \left(\frac{Z_k}{32\pi}\bar{\Delta}\right) r_k}\right]	\nonumber \\
+\operatorname{Tr}\left[\frac{1}{\Gammak^{(2)} + R_k}\partial_t R_k\right] & = \operatorname{Tr}\left[\frac{\partial_t\left(\frac{Z_k}{32\pi}\bar{\Delta}\right)r_k}{\left(\frac{Z_k}{32\pi}\right)\left(\bar{\Delta} - 2\Lambda_k + \frac{2}{3}\bar{\mathcal{R}}\right) + \left(\frac{Z_k}{32\pi}\bar{\Delta}\right) r_k}\right]	\nonumber \\
 \phantom{.} \\
 &= \operatorname{Tr}\left[\frac{\bar{\Delta}\left(\partial_t r_k - \eta_g r_k\right)}{\bar{\Delta}(1+r_k)-2\Lambda_k+\frac{2}{3}\bar{\mathcal{R}}}\right] \nonumber
 \end{align}
@@ -124,14 +125,14 @@ Analogously, the second term in our expansion reads
 \end{align}
 For the cosmological constant, comparing the $\int\sqrt{\operatorname{det}g}$ terms yields
 \begin{align}
-	\beta_{\lambda} = \partial_t\lambda_k = -4\lambda_k + \frac{\lambda_k}{g_k} \partial_t g_k + \frac{5}{4\pi}g_k\frac{1-\frac{\eta_g}{6}}{1-2\lambda_k}.
+	\beta_{\lambda} = \partial_t\lambda_k = -4\lambda_k + \frac{\lambda_k}{g_k} \partial_t g_k + \frac{5}{4\pi}g_k\frac{1-\frac{\eta_g}{6}}{1-2\lambda_k},
 \end{align}
 where the anomalous dimension $\eta_g$ is determined by comparing the $\int\sqrt{\operatorname{det}g}\mathcal{R}$ terms:
 \begin{align}
 \eta_g = -\frac{5}{3\pi} \left(\frac{1-\frac{\eta_g}{4}}{1-2\lambda_k} + 2\frac{1-\frac{\eta_g}{6}}{(1-2\lambda_k)^2}\right).	
 \end{align}
 
-The solution of this system of coupled differential equations is evaluated using Python. We arrive at the following fixed point values for the Newton coupling and the cosmological constant:
+The solution of this system of coupled differential equations is evaluated using \verb|Python3| and \verb|Wolfram Mathematica|. We arrive at the following fixed point values for the Newton coupling and the cosmological constant:
 \begin{align}
 	(g_k^*, \lambda_k^*) = (0.86, 0.18).
 \end{align}
