@@ -38,6 +38,58 @@ with
 \begin{itemize}
 	\item wo essential couplings, $G$ and $\Lambda$ and five inessential\footnote{Inessential in this sense means, that they can be eliminated by field rescalings.} wave function renormalizations $Z_{\Psi}$ with $\Psi = (h,c,S,D,V)$.
 \end{itemize}
+\subsection{Scalar fields}
+\begin{align}
+	\mathcal{S}_S &= \frac{Z_{S}}{2}\int_x \sqrt{\operatorname{det}g} \ g^{\mu\nu} \ \sum\limits_{i=1}^{N_{\text{S}}} \partial_{\mu}\phi^{i}\partial_{\nu}\phi^{i} \nonumber \\
+&=  \frac{Z_{S}}{2}\int_x \sqrt{\operatorname{det}\bar{g}} \ \bar{g}^{\mu\nu} \ \sum\limits_{i=1}^{N_{\text{S}}} \partial_{\mu}\phi^{i}\partial_{\nu}\phi^{i} + \mathcal{O}(h) \\
+&\overset{(\star)}{=} \frac{Z_{S}}{2}\int_x \sqrt{\operatorname{det}\bar{g}} \ \ \sum\limits_{i=1}^{N_{\text{S}}} \phi^{i}\left(-\bar{\nabla}^2\right)\phi^{i} + \mathcal{O}(h) \nonumber
+\end{align}
+
+Two-point function:
+\begin{align}
+	\Gamma^{(2)}_{\phi\phi} = \frac{\delta^2 \mathcal{S}_S}{\delta\phi^{i}\ \delta\phi^{j}} = Z_S \cdot\bar{\Delta}\cdot\mathbbm{1}_S + \mathcal{O}(h)  
+\end{align}
+
+Regularized Two-Point-Function:
+\begin{align}
+	\Gamma^{(2)}_{k, \phi\phi} = \left[\Gamma^{(2)}_{\phi\phi}+ R_{k, S}\right]  = Z_S \cdot\bar{\Delta}\cdot\mathbbm{1}_S\left(1 + r_k\left(\frac{\bar{\Delta}}{k^2}\right)\right) 
+\end{align}
+
+
+
+RHS of the flow equation:
+\begin{align}
+	\frac{1}{2}\tr{\left(\Gamma^{(2)}_{k, \phi\phi}\right)^{-1}\partial_t R_{k,S}} &= \frac{1}{2}\tr{\frac{Z_S\bar{\Delta}\left(\partial_t r_k - \eta_s r_k\right)}{Z_S \bar{\Delta}\left(1 + r_k\right)}\mathbbm{1}_S} \nonumber\\
+	\phantom{.} \\
+	&=   \frac{N_S}{2}\tr{\frac{Z_S\bar{\Delta}\left(\partial_t r_k - \eta_s r_k\right)}{Z_S \bar{\Delta}\left(1 + r_k\right)}} \nonumber
+\end{align}
+
+\subsection{Fermionic  fields}
+
+\subsection{Gauge fields}
+\begin{align}
+	\mathcal{S}_{V, \mathrm{tot}} &= \frac{Z_{\text{V}}}{4}\int_x \sqrt{\operatorname{det}g} \ \sum\limits_{i=1}^{N_{\text{V}}} g^{\mu\nu}g^{\kappa\lambda}F^{i}_{\mu\kappa}F^{i}_{\nu\lambda}  
+		+ \frac{Z_{\text{V}}}{2\xi}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \left(\bar{g}^{\mu\nu}\bar{D}_{\mu}A_{\nu}^{i}\right)^2  \nonumber\\
+		&+ \frac{1}{2}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \bar{c}_i(-\bar{D}^2)c_i 
+\end{align}
+
+
+
+standard gauge field term:
+\begin{align}
+\mathcal{S}_{V} &=  \frac{Z_V}{4}\int_x \sqrt{\operatorname{det}g} \ \sum\limits_{i=1}^{N_{\text{V}}} g^{\mu\nu}g^{\kappa\lambda}F^{i}_{\mu\kappa}F^{i}_{\nu\lambda} \nonumber \\
+&=  \frac{Z_{V}}{4}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \bar{g}^{\mu\nu}\bar{g}^{\kappa\lambda}\bar{F}^{i}_{\mu\kappa}\bar{F}^{i}_{\nu\lambda} + \mathcal{O}(h) \\
+&\overset{(\ref{eqn:FF2})}{=} \frac{Z_{V}}{2}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} A_{\lambda}^{i}\left[ \bar{g}^{\mu\lambda}\bar{\nabla}^{\mu}\bar{\nabla}^{\lambda} + \bar{\Delta}\right]A_{\mu}^{i} + \mathcal{O}(h) \nonumber
+\end{align}
+%TODO: Fix reference
+gauge fixing term:
+\begin{align}
+	\mathcal{S}_{V, \mathrm{gf}} &= \frac{Z_{\text{V}}}{2\xi}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \left(\bar{g}^{\mu\nu}\bar{\nabla}_{\mu}A_{\nu}^{i}\right)^2  \nonumber\\
+	&= \frac{Z_{\text{V}}}{2\xi}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \bar{g}^{\mu\nu}\bar{\nabla}_{\mu}A_{\nu}^{i}g^{\kappa\lambda}\bar{\nabla}_{\kappa}A_{\lambda}^{i} \\
+	&\overset{(\star)}{=} \frac{Z_{\text{V}}}{2\xi}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} A_{\lambda}^{i}\left[-\bar{\nabla}^{\lambda}\bar{\nabla}^{\mu}\right]A_{\mu}^{i} \nonumber
+\end{align}
+Both together 
+Ghosts have to be considered separately \dots
 
 
 \section{Perturbative Approximation}
