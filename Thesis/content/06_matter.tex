@@ -1,4 +1,4 @@
-\chapter{Asymptotic Safety of Gravity-Matter Systems}
+\chapter{Asymptotic Safety of Gravity-Matter Systems}\label{chap:Matter}
 For computing the contributions of the different matter fields on the running of the cosmological constant and the Newton coupling we follow \cite{DonaEichhornPercacci2013}. 
 
 
@@ -61,7 +61,7 @@ RHS of the flow equation:
 \begin{align}
 	\frac{1}{2}\tr{\left(\Gamma^{(2)}_{k, \phi\phi}\right)^{-1}\partial_t R_{k,S}} &= \frac{1}{2}\tr{\frac{Z_S\bar{\Delta}\left(\partial_t r_k - \eta_s r_k\right)}{Z_S \bar{\Delta}\left(1 + r_k\right)}\mathbbm{1}_S} \nonumber\\
 	\phantom{.} \\
-	&=   \frac{N_S}{2}\tr{\frac{Z_S\bar{\Delta}\left(\partial_t r_k - \eta_s r_k\right)}{Z_S \bar{\Delta}\left(1 + r_k\right)}} \nonumber
+	&=   \frac{N_S}{2}\tr{\frac{\bar{\Delta}\left(\partial_t r_k - \eta_s r_k\right)}{\bar{\Delta}\left(1 + r_k\right)}} \nonumber
 \end{align}
 
 \subsection{Fermionic  fields}
@@ -79,7 +79,7 @@ standard gauge field term:
 \begin{align}
 \mathcal{S}_{V} &=  \frac{Z_V}{4}\int_x \sqrt{\operatorname{det}g} \ \sum\limits_{i=1}^{N_{\text{V}}} g^{\mu\nu}g^{\kappa\lambda}F^{i}_{\mu\kappa}F^{i}_{\nu\lambda} \nonumber \\
 &=  \frac{Z_{V}}{4}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \bar{g}^{\mu\nu}\bar{g}^{\kappa\lambda}\bar{F}^{i}_{\mu\kappa}\bar{F}^{i}_{\nu\lambda} + \mathcal{O}(h) \\
-&\overset{(\ref{eqn:FF2})}{=} \frac{Z_{V}}{2}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} A_{\lambda}^{i}\left[ \bar{g}^{\mu\lambda}\bar{\nabla}^{\mu}\bar{\nabla}^{\lambda} + \bar{\Delta}\right]A_{\mu}^{i} + \mathcal{O}(h) \nonumber
+&\overset{(\ref{eqn:FF2})}{=} \frac{Z_{V}}{2}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} A_{\lambda}^{i}\left[ \bar{\nabla}^{\mu}\bar{\nabla}^{\lambda} + \bar{g}^{\mu\lambda}\bar{\Delta}\right]A_{\mu}^{i} + \mathcal{O}(h) \nonumber
 \end{align}
 %TODO: Fix reference
 gauge fixing term:
@@ -95,7 +95,7 @@ Ghosts have to be considered separately \dots
 \section{Perturbative Approximation}
 
 \section{Some Words on Fermionic fields}
-This section is mainly based on \cite{LippoldtPHD} and \cite{Lippoldt2015} where the spin-base invariant formalism for treating fermions in curved spacetimes has been developed. The goal of this part of the thesis is to get a rough idea on how to perform calculations involving Dirac fermions, especially in the context of Asymptotic Safety of gravity-matter systems.  
+This section is mainly based on \cite{LippoldtPHD}  where the spin-base invariant formalism for treating fermions in curved spacetimes has been developed. The goal of this part of the thesis is to get a rough idea on how to perform calculations involving Dirac fermions, especially in the context of Asymptotic Safety of gravity-matter systems.  
 
 Covariant derivative:
 \begin{align}

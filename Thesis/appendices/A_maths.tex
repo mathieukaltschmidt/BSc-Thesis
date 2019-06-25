@@ -1,10 +1,84 @@
-\chapter{Mathematical Appendix}
-In this part of the appendix we want to discuss some of the mathematical tools we used during the calculations presented in the scope of this thesis in a more formal manner.
+\chapter{Mathematical Background}\label{chap:AppA}
+In this part of the appendix we want to discuss some of the mathematical tools we used during the calculations presented in the scope of this thesis in a more formal manner. 
+The part on the York decomposition is mainly inspired by \cite{Percacci2017}, whereas the conventions for the heat-kernel computations are taken from \cite{PawlowskiNPgaugeLecture} and extended for the matter part, using the conventions from \cite{CodelloPercacciRahmede2008}.
 
 \section{York Decomposition}
+In the discussion of gauge theories, it is often very useful to decompose the gauge field $A_{\mu}$ into transversal and longitudinal parts:
+\begin{align}
+	A_{\mu} = A_{\mu}^{\mathrm{T}} + \nabla_{\mu}\phi.
+\end{align}
+The transversal part is characterized by the fact, that $\nabla^{\mu}A_{\mu}^{\mathrm{T}} = 0$. Using this decomposition, we are able to separate the pure gauge spin-$0$ degrees of freedom from the physical ones, contained in the spin-$1$ part $A_{\mu}^{\mathrm{T}}$.\\
+Assuming vanishing boundary terms, integration by parts allows us to change the integration variables in the functional integral, i.\,e.
+\begin{align}
+	\int_x \sqrt{g} \ A_{\mu}A^{\mu} = \int_x \sqrt{g} \ A_{\mu}^{\mathrm{T}}A^{\mathrm{T}, \mu} + \int_x \sqrt{g} \ \phi\left(-\nabla^2\right)\phi.
+\end{align}
+Note, that we have to take care of the Jacobian $J$ of this variable transformation:
+\begin{align}
+	\left(\dd A_{\mu}\right) \longrightarrow J\left(\dd A_{\mu}^{\mathrm{T}}\right)\left(\dd\phi\right).
+\end{align}
+To be able to determine the Jacobian for our transformation, the integration measure needs to be normalized. A quite convenient choice is to evaluate the Gaussian integral over the different fields $\psi$ and set the result to one:
+\begin{align}\label{eqn:york_measure}
+	\int\left(\dd\psi\right) \exp\left\{-\int\dd x \ \sqrt{g} \ \psi^2 \right\} = 1,
+\end{align} 
+where we are assuming an Euclidean signature and a curved background metric. With this condition we find:
+\begin{align}
+	1&=J \int\left(\dd A_{\mu}^{\mathrm{T}}\right) \operatorname{e}^{-\int \dd x \sqrt{g} \ A_{\mu}^{\mathrm{T}} A^{\mathrm{T}, \mu}} 
+	\int(\dd\phi) \operatorname{e}^{-\int \dd x \sqrt{g} \  \phi\left(-\nabla^{2}\right) \phi} = J\left(\operatorname{det}_{\phi}^{\prime}\left(-\nabla^{2}\right)\right)^{-1/2}.
+\end{align}
+This allows us to determine the Jacobian $J$ as follows:
+\begin{align}
+	J = \left(\operatorname{det}_{\phi}^{\prime}\left(-\nabla^{2}\right)\right)^{1/2}.
+\end{align}
+The prime denotes the fact, that the zero mode has to be removed, when computing the determinant to obtain a consistent result. Physically this is in accordance with the fact, that a constant $\phi$ does not contribute to $A_{\mu}$.\\
+%TODO: Some words on non-local redefinitions
+Four our computation in chapters \ref{chap:EHT} and \ref{chap:Matter}, we were using the background field method, where we assume a linear split of the \textit{full} metric $g_{\mu\nu}$ into a background metric $\bar{g}_{\mu\nu}$ and a fluctuation field $h_{\mu\nu}$. There is an analogous way of decomposing the fluctuation field in the background field formalism. First, we split $h_{\mu\nu}$ into
+\begin{align}
+	h_{\mu\nu} = h_{\mu\nu}^{\mathrm{T}} + \frac{1}{d}\ \bar{g}_{\mu\nu}h,
+\end{align} 
+where $h_{\mu\nu}^{\mathrm{T}}$ is traceless, i.\,e. $\bar{g}^{\mu\nu}h_{\mu\nu}^{\mathrm{T}}=0$ and $h=\bar{g}^{\mu\nu}h_{\mu\nu}$. The traceless part can be further decomposed in flat space using the irreducible representations of the Lorentz group with spins 0, 1 and 2 respectively, but in our case a more sophisticated approach, the so-called \textit{York decomposition} is chosen:
+\begin{align}
+	h_{\mu\nu} = h_{\mu\nu}^{\text{TT}} + 2\bar{\nabla}_{(\mu}\xi_{\nu)} + \left(\bar{\nabla}_{\mu}\bar{\nabla}_{\nu} - \frac{1}{d} \ \bar{g}_{\mu\nu}\bar{\nabla}^2\right)\sigma + \frac{1}{d} \ \bar{g}_{\mu\nu}h.
+\end{align}
+Here, $ h_{\mu\nu}^{\text{TT}}$ is a transverse-traceless, spin-2 degree of freedom, $\xi_{\mu}$ is transverse and carries a spin-1 d.\,o.\,f. and $\sigma$ and $h$ have spin-0. The brackets around the indices denote symmetrization, i.\,e. $\bar{\nabla}_{(\mu}\xi_{\nu)} = \frac{1}{2}\left(\bar{\nabla}_{\mu}\xi_{\nu} + \bar{\nabla}_{\nu}\xi_{\mu}\right)$. As before, we want to find the Jacobian $J$ for this variable transformation:
+\begin{align}
+	\left(\dd h_{\mu\nu}\right) \longrightarrow J	\left(\dd h_{\mu\nu}^{\mathrm{TT}}\right) \left(\dd\xi_{\mu}\right)\left(\dd\sigma\right)\left(\dd h\right).
+\end{align}
+This is again possible after specifying a suitable normalization of the functional measure as
+\begin{align}
+	\int (\dd h_{\mu\nu}) \exp\left\{-\mathcal{G}(h, h)\right\} = 1,
+\end{align}
+where $\mathcal{G}$ is an inner product in the space of symmetric two-tensors, defined as
+\begin{equation}
+\begin{aligned} 
+\mathcal{G}(h, h)&= \int_x \sqrt{\bar{g}} \ \left(h_{\mu \nu} h^{\mu \nu}+\frac{a}{2} h^{2}\right) \\[10pt]
+&= \int_x \sqrt{\bar{g}} \ \left[h^{\mathrm{TT}}_{\mu \nu} h^{\mathrm{TT}, \mu \nu}+2 \xi_{\mu}\left(-\overline{\nabla}^{2}-\frac{\overline{R}}{d}\right) \xi^{\mu}\right. \\
+&+\left.\frac{d-1}{d} \sigma\left(-\overline{\nabla}^{2}\right)\left(-\overline{\nabla}^{2}-\frac{\overline{R}}{d-1}\right) \sigma+\left(\frac{1}{d}+\frac{a}{2}\right) h^{2} \right] 
+\end{aligned}
+\end{equation}
+in the case of an Einstein type background metric\footnote{A metric is of Einstein type, if $R_{\mu\nu}$ is a constant multiple of $g_{\mu\nu}$, i.\,e. $R_{\mu\nu} = \frac{1}{d} \mathcal{R} g_{\mu\nu}$.}. This yields
+\begin{align}
+	J=\left(\operatorname{det}_{\xi}\left(-\overline{\nabla}^{2}-\frac{R}{d}\right)\right)^{1 / 2}\left(\operatorname{det}_{\sigma}^{\prime}\left(-\overline{\nabla}^{2}\right)\right)^{1 / 2}\left(\operatorname{det}_{\sigma}\left(-\overline{\nabla}^{2}-\frac{R}{d-1}\right)\right)^{1 / 2}.
+\end{align}
+Note, that the prime has the same meaning and physical definition as in the previous case: If $\sigma$ is constant, it does not contribute to $h_{\mu\nu}$. \\
+ For both cases, the decomposition of the general gauge field and the York decomposition of the fluctuation field, appropriate rescalings of the fields $\phi$, $\xi_{\mu}$ and $\sigma$ respectively, help us to cancel the non-trivial Jacobians and to achieve, that all modes have the same mass dimension. For the sake of completeness, we present the rescaled versions of the fields:
+ \begin{align}
+\hat{\phi} &= \sqrt{-\nabla^2}\ \phi \\[10pt]
+ \hat{\xi}_{\mu} &= \sqrt{-\bar{\nabla}^{2}-\frac{\bar{R}}{d}}\  \xi_{\mu} \\[10pt]
+  \hat{\sigma} &= \sqrt{-\bar{\nabla}^{2}} \sqrt{-\bar{\nabla}^{2}-\frac{\bar{R}}{d-1}}\ \sigma. 
+ \end{align}
+ The resulting graviton two-point function, after decomposition of the fluctuation field has the following structure:
+\begin{equation} \Gamma^{(2)}_{hh} = 
+\begin{pmatrix}
+\Gamma^{(2)}_{h^{\mathrm{TT}}h^{\mathrm{TT}}} & 0 & 0 & 0 \\[10pt]
+0 & \Gamma^{(2)}_{\xi\xi}  & 0 & 0 \\[10pt]
+0 & 0 & \Gamma^{(2)}_{h^{\mathrm{Tr}}h^{\mathrm{Tr}}}  & \Gamma^{(2)}_{h^{\mathrm{Tr}}\sigma} \\[10pt]
+0 & 0 & \Gamma^{(2)}_{\sigma h^{\mathrm{Tr}}} & \Gamma^{(2)}_{\sigma\sigma} \\
 
-
-\section{Heat-Kernel Techniques}\label{sec:heat-kernel}
+\end{pmatrix}
+\end{equation}
+ This concludes our discussion of the York decomposition, as a useful tool to simplify calculations in the background field method.
+ 
+ \section{Heat-Kernel Techniques}\label{sec:heat-kernel}
 We use heat-kernel techniques to evaluate the r.h.s. of the flow equation (\ref{eqn:Wetterich}), where we need to compute traces over functions depending on the Laplacian on a curved background. In general, the method can be understood as a curvature expansion about a flat background. \\
 The formula to compute such traces is given by
 \begin{align}
@@ -12,19 +86,19 @@ The formula to compute such traces is given by
 	\label{eqn:heat-kernel}
 \end{align}
 with some normalization $N$, the spectral values $\lambda(\ell)$ and their corresponding multiplicities $\rho(\ell)$. \\
-On flat backgrounds, the computation of (\ref{eqn:heat-kernel}) is simply a standard momentum integral, whereas on curved backgrounds, consider for example a four-sphere with constant background curvature $r = \frac{\bar{\mathcal{R}}}{k^2} > 0$, the spectrum of the Laplacian is discrete and we need to sum over all spectral values in (\ref{eqn:heat-kernel}). \\
+On flat backgrounds, the computation of (\ref{eqn:heat-kernel}) is simply a standard momentum integral, whereas on curved backgrounds, consider for example a four-sphere $\mathbb{S}^4$ with constant background curvature $r = \frac{\bar{\mathcal{R}}}{k^2} > 0$, the spectrum of the Laplacian is discrete and we need to sum over all spectral values in (\ref{eqn:heat-kernel}). \\
 For our example of the four-sphere, we have
 \begin{align}
 	\lambda(\ell) = \frac{\ell(3+\ell)}{12}r \qquad \text{and} \qquad \rho(\ell) = \frac{(2\ell + 3)(l+2)!}{6\ell!}.
 \end{align}
-and the normalization is given by the inverse of the four-sphere-volume $N= V_{S^4}^{-1} = \frac{k^4r^2}{384\pi^2}$. This leads us to the formula for our computation of the r.h.s. of the flow equation on a background with constant positive curvature
+The normalization is then given by the inverse of the four-sphere-volume $ \left(V_{\mathbb{S}^4}\right)^{-1} = \frac{k^4r^2}{384\pi^2}$. This leads us to the formula for our computation of the r.h.s. of the flow equation on a background with constant positive curvature
 \begin{align}
-\operatorname{Tr} f(\Delta)=\frac{k^{4} r^{2}}{384 \pi^{2}} \sum_{\ell=0}^{\infty} \frac{(2 \ell+3)(\ell+2) !}{6 \ell !} f\left(\frac{\ell(3+\ell)}{12} r\right)	.
+\operatorname{Tr} f(\Delta)=\frac{k^{4} r^{2}}{384 \pi^{2}} \sum_{\ell=0}^{\infty} \frac{(2 \ell+3)(\ell+2) !}{6 \ell !} f\left(\frac{\ell(3+\ell)}{12} r\right).
 \end{align}
 This is called the spectral sum. For large curvatures $r$ the convergence of the series is rather fast, whereas in the limit $r\rightarrow 0$ one finds exponentially slow convergence.\\
 The master equation for heat kernel computations reads
 \begin{align}
-	\operatorname{Tr} f(\Delta)=\frac{1}{(4 \pi)^{\frac{d}{2}}}\left[B_{0}(\Delta) Q_{2}[f(\Delta)]+B_{2}(\Delta) Q_{1}[f(\Delta)]\right]+\mathcal{O}\left(\mathcal{R}^{2}\right)
+	\operatorname{Tr} f(\Delta)=\frac{1}{(4 \pi)^{\frac{d}{2}}}\left[B_{0}(\Delta) Q_{2}[f(\Delta)]+B_{2}(\Delta) Q_{1}[f(\Delta)]\right]+\mathcal{O}\left(\mathcal{R}^{2}\right),
 \end{align}
 with the heat-kernel coefficients 
 \begin{align}
@@ -34,7 +108,7 @@ and
 \begin{align}
 	Q_{n}[f(x)]=\frac{1}{\Gamma(n)} \int \mathrm{d} x x^{n-1} f(x).
 \end{align}
-For our computation on $S^4$, the traces over the coefficients $b_n(\bar{\Delta})$ are presented in the following.
+For our computation on $\mathbb{S}^4$, the values for the traces over the coefficients $b_n(\bar{\Delta})$ are presented in the following.
 \begin{table}[H]
 	\centering
 	\setlength{\tabcolsep}{5mm}
@@ -44,7 +118,7 @@ For our computation on $S^4$, the traces over the coefficients $b_n(\bar{\Delta}
 	   $\operatorname{Tr} b_{0}$ & 5 &  3 & 1\\
 	  $\operatorname{Tr} b_{2}$ & $-\frac{5}{6}\mathcal{R}$ & $\frac{1}{4}\mathcal{R}$& $\frac{1}{6}\mathcal{R}$\\
 	\end{tabular}
-	\caption{Heat-kernel coefficients for transverse-traceless tensors (TT), transverse vectors (TV) and scalars (S) for computations on the four-sphere $S^4$.}
+	\caption{Heat-kernel coefficients for transverse-traceless tensors (TT), transverse vectors (TV) and scalars (S) for computations on the four-sphere $\mathbb{S}^4$.}
 \end{table}
 
 The basic idea of the proof of equation (\ref{eqn:heat-kernel}) is based on the Laplace transform

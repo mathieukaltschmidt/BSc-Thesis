@@ -1,15 +1,15 @@
-\chapter{Additional calculations}
+\chapter{Additional calculations}\label{chap:AppB}
 \blindtext
 
 \section{Matter contributions}
 auxiliary calculation:
-\begin{align}
+\begin{align}\label{eqn:FF2} 
 g^{\mu\nu}g^{\kappa\lambda} F_{\mu\kappa}F_{\nu\lambda} =  F_{\mu}^{\phantom{\mu}\lambda}F_{\phantom{\mu}\lambda}^{\mu}	&= F_{\mu\lambda}F^{\mu\lambda} \nonumber	\\
 &= \left(\partial_{\mu}A_{\lambda} - \partial_{\lambda}A_{\mu}\right)F^{\mu\lambda} + \mathcal{O}\left(A^3\right)\nonumber \\
 &\overset{(\star)}{=} 2\partial_{\mu}A_{\lambda} F^{\mu\lambda}\nonumber  \\
 &=  2\partial_{\mu}A_{\lambda}\left(\partial^{\mu}A^{\lambda} - \partial^{\lambda}A^{\mu}\right) \\
 &= 2\left(\partial_{\mu}A_{\lambda}\partial^{\mu}A^{\lambda} - \partial_{\mu}A_{\lambda}\partial^{\lambda}A^{\mu}\right) \nonumber\\
 &\overset{(\dagger)}{=} -2\left( A_{\lambda}\partial^2A^{\lambda} - A_{\lambda}\partial_{\mu}\partial^{\lambda}A^{\mu}\right) \nonumber\\
-&= 2A_{\lambda}\left[\partial^{\mu}\partial^{\lambda} - g^{\mu\lambda}\partial^2\right]A_{\mu}\nonumber \label{eqn:FF2} 
+&= 2A_{\lambda}\left[\partial^{\mu}\partial^{\lambda} - g^{\mu\lambda}\partial^2\right]A_{\mu}\nonumber 
 \end{align}
-%TODO: Explain important steps..
+
