@@ -59,7 +59,7 @@ in the case of an Einstein type background metric\footnote{A metric is of Einste
 \begin{align}
 	J=\left(\operatorname{det}_{\xi}\left(-\overline{\nabla}^{2}-\frac{R}{d}\right)\right)^{1 / 2}\left(\operatorname{det}_{\sigma}^{\prime}\left(-\overline{\nabla}^{2}\right)\right)^{1 / 2}\left(\operatorname{det}_{\sigma}\left(-\overline{\nabla}^{2}-\frac{R}{d-1}\right)\right)^{1 / 2}.
 \end{align}
-Note, that the prime has the same meaning and physical definition as in the previous case: If $\sigma$ is constant, it does not contribute to $h_{\mu\nu}$. \\
+Note, that the prime has the same meaning and physical interpretation as in the previous case: If $\sigma$ is constant, it does not contribute to $h_{\mu\nu}$. \\
  For both cases, the decomposition of the general gauge field and the York decomposition of the fluctuation field, appropriate rescalings of the fields $\phi$, $\xi_{\mu}$ and $\sigma$ respectively, help us to cancel the non-trivial Jacobians and to achieve, that all modes have the same mass dimension. For the sake of completeness, we present the rescaled versions of the fields:
  \begin{align}
 \hat{\phi} &= \sqrt{-\nabla^2}\ \phi \\[10pt]
@@ -77,54 +77,83 @@ Note, that the prime has the same meaning and physical definition as in the prev
 \end{pmatrix}
 \end{equation}
  This concludes our discussion of the York decomposition, as a useful tool to simplify calculations in the background field method.
- 
+ \newpage
  \section{Heat-Kernel Techniques}\label{sec:heat-kernel}
-We use heat-kernel techniques to evaluate the r.h.s. of the flow equation (\ref{eqn:Wetterich}), where we need to compute traces over functions depending on the Laplacian on a curved background. In general, the method can be understood as a curvature expansion about a flat background. \\
-The formula to compute such traces is given by
+We use heat-kernel techniques to evaluate the r.\,h.\,s. of the flow equation (\ref{eqn:Wetterich}), where we need to compute the functional trace over functions depending on the Laplacian on a curved background. In general, the method can be understood as a curvature expansion about a flat background. \\
+The general formula to compute such traces is given by
 \begin{align}
 	\operatorname{Tr} f(\Delta)= N \  \int\kern-1.3em\sum_{\ell} \rho(\ell) f(\lambda(\ell)),
 	\label{eqn:heat-kernel}
 \end{align}
 with some normalization $N$, the spectral values $\lambda(\ell)$ and their corresponding multiplicities $\rho(\ell)$. \\
-On flat backgrounds, the computation of (\ref{eqn:heat-kernel}) is simply a standard momentum integral, whereas on curved backgrounds, consider for example a four-sphere $\mathbb{S}^4$ with constant background curvature $r = \frac{\bar{\mathcal{R}}}{k^2} > 0$, the spectrum of the Laplacian is discrete and we need to sum over all spectral values in (\ref{eqn:heat-kernel}). \\
-For our example of the four-sphere, we have
+On flat backgrounds, the computation of (\ref{eqn:heat-kernel}) is simply a standard momentum integral, whereas on curved backgrounds, consider for example a four-sphere $\mathbb{S}^4$ with constant background curvature $r = \frac{\bar{\mathcal{R}}}{k^2} > 0$, the spectrum of the Laplacian is discrete and we need to sum over all spectral values. \\
+For our example of $\mathbb{S}^4$, we have
 \begin{align}
 	\lambda(\ell) = \frac{\ell(3+\ell)}{12}r \qquad \text{and} \qquad \rho(\ell) = \frac{(2\ell + 3)(l+2)!}{6\ell!}.
 \end{align}
-The normalization is then given by the inverse of the four-sphere-volume $ \left(V_{\mathbb{S}^4}\right)^{-1} = \frac{k^4r^2}{384\pi^2}$. This leads us to the formula for our computation of the r.h.s. of the flow equation on a background with constant positive curvature
+The normalization is then given by the inverse of the four-sphere-volume $ \left(V_{\mathbb{S}^4}\right)^{-1} = \frac{k^4r^2}{384\pi^2}$. This leads us to the formula for our computation of the r.h.s. of the flow equation on a background with constant positive curvature:
 \begin{align}
 \operatorname{Tr} f(\Delta)=\frac{k^{4} r^{2}}{384 \pi^{2}} \sum_{\ell=0}^{\infty} \frac{(2 \ell+3)(\ell+2) !}{6 \ell !} f\left(\frac{\ell(3+\ell)}{12} r\right).
 \end{align}
-This is called the spectral sum. For large curvatures $r$ the convergence of the series is rather fast, whereas in the limit $r\rightarrow 0$ one finds exponentially slow convergence.\\
+This is called spectral sum. For large curvatures $r$ the convergence of the series is rather fast, whereas in the limit $r\rightarrow 0$ one finds exponentially slow convergence.\\
 The master equation for heat kernel computations reads
 \begin{align}
-	\operatorname{Tr} f(\Delta)=\frac{1}{(4 \pi)^{\frac{d}{2}}}\left[B_{0}(\Delta) Q_{2}[f(\Delta)]+B_{2}(\Delta) Q_{1}[f(\Delta)]\right]+\mathcal{O}\left(\mathcal{R}^{2}\right),
+	\operatorname{Tr} f(\Delta)=\frac{1}{(4 \pi)^{\frac{d}{2}}}\left[\mathbf{B}_{0}(\Delta) Q_{2}[f(\Delta)]+\mathbf{B}_{2}(\Delta) Q_{1}[f(\Delta)]\right]+\mathcal{O}\left(\mathcal{R}^{2}\right),
+\label{eqn:master-eqn}
 \end{align}
 with the heat-kernel coefficients 
 \begin{align}
-	B_{n}(\bar{\Delta})=\int \mathrm{d}^{d} x \sqrt{\operatorname{det}\bar{g}} \  \operatorname{Tr} b_{n}(\bar{\Delta})
+	\mathbf{B}_{n}(\bar{\Delta})=\int_x  \sqrt{\operatorname{det}\bar{g}} \  \operatorname{Tr} \mathbf{b}_{n}(\bar{\Delta})
 \end{align}
 and 
 \begin{align}
-	Q_{n}[f(x)]=\frac{1}{\Gamma(n)} \int \mathrm{d} x x^{n-1} f(x).
+	Q_{n}[f(x)]=\frac{1}{\Gamma(n)} \int \dd x \ x^{n-1} f(x).\label{eqn:Qfunc}
 \end{align}
-For our computation on $\mathbb{S}^4$, the values for the traces over the coefficients $b_n(\bar{\Delta})$ are presented in the following.
+For computations on $\mathbb{S}^4$, the values for the heat kernel coefficients $\mathbf{B}_n(\bar{\Delta})$ are presented in the following.
 \begin{table}[H]
 	\centering
 	\setlength{\tabcolsep}{5mm}
 	\setlength\extrarowheight{2mm}
 	\begin{tabular}{c | c c c}
 	   & TT & TV & S\\ \hline
-	   $\operatorname{Tr} b_{0}$ & 5 &  3 & 1\\
-	  $\operatorname{Tr} b_{2}$ & $-\frac{5}{6}\mathcal{R}$ & $\frac{1}{4}\mathcal{R}$& $\frac{1}{6}\mathcal{R}$\\
+	   $\operatorname{Tr} \mathbf{b}_{0}$ & 5 &  3 & 1\\
+	  $\operatorname{Tr} \mathbf{b}_{2}$ & $-\frac{5}{6}\mathcal{R}$ & $\frac{1}{4}\mathcal{R}$& $\frac{1}{6}\mathcal{R}$\\
 	\end{tabular}
-	\caption{Heat-kernel coefficients for transverse-traceless tensors (TT), transverse vectors (TV) and scalars (S) for computations on the four-sphere $\mathbb{S}^4$.}
+	\caption{Heat-kernel coefficients for transverse-traceless tensors (TT), transverse vectors (TV) and scalars (S) for computations on $\mathbb{S}^4$.}
 \end{table}
 
 The basic idea of the proof of equation (\ref{eqn:heat-kernel}) is based on the Laplace transform
 \begin{align}
-	f(\Delta) = \int_0^{\infty} \dd s \operatorname{e}^{-s\Delta}\tilde{f}(s).
+	f(\Delta) = \int_0^{\infty} \dd s \ \operatorname{e}^{-s\Delta}\tilde{f}(s).
 \end{align}
-%TODO: Finish this proof. Add entire calculation.
+We insert this definition of the Laplace transform into equation (\ref{eqn:heat-kernel}) and find
+\begin{align}
+	\operatorname{Tr} f(\Delta)=\int_{0}^{\infty} \dd s \ \tilde{f}(s) \operatorname{Tr} \operatorname{e}^{-s \Delta}.
+\label{eqn:hk2}
+\end{align}
+The trace on the r.\,h.\,s. is explicitly the trace of the heat kernel. We expand this term as follows:
+\begin{align}
+	\operatorname{Tr} \operatorname{e}^{-s \Delta}=\frac{1}{(4 \pi)^{\frac{d}{2}}} \sum_{n=0}^{\infty} s^{\frac{n-d}{2}} \mathbf{B}_{n}(\Delta).
+\end{align}
+This is where the heat-kernel coefficients $\mathbf{B}_n$ become important. We proceed by inserting this expanded version of the heat-kernel trace into equation (\ref{eqn:hk2}) and find:
+\begin{equation}
+\begin{aligned} 
+\operatorname{Tr} f(\Delta) &=\frac{1}{(4 \pi)^{\frac{d}{2}}} \sum_{n=0}^{\infty} \mathbf{B}_{n}(\Delta) \int_{0}^{\infty} \dd s \ s^{\frac{n-d}{2}} \tilde{f}(s) \\[10pt] 
+&=\frac{1}{(4 \pi)^{\frac{d}{2}}} \sum_{n=0}^{\infty} \frac{1}{\Gamma\left(\frac{d-k}{2}\right)} \mathbf{B}_{n}(\Delta) \int_{0}^{\infty} \dd t \ t^{\frac{d-n}{2}-1} f(t) \\[10pt]
+ &=\frac{1}{(4 \pi)^{\frac{d}{2}}} \sum_{n=0}^{\infty} \mathbf{B}_{n}(\Delta) Q_{\frac{d-n}{2}}[f(t)] 
+\end{aligned}
+\end{equation}
+This completes the derivation of the master equation (\ref{eqn:master-eqn}) for heat-kernel computations. Note, that we used the definition of the $Q$-functionals, given in equation (\ref{eqn:Qfunc}) and the relation $\int_{s} s^{-x} \tilde{f}(x)=\frac{1}{\Gamma(x)} \int_{z} z^{x-1} f(z)$.
 
 
+When investigating matter fields, such as in chapter \ref{chap:Matter}, we often encounter kinetic operators of the form $\tilde{\Delta} = -\nabla^2\cdot\mathbbm{1} +  \mathbf{E}$, where $\mathbf{E}$ is a linear map acting on the spacetime and the internal indices of the fields. In this notation, $\mathbbm{1}$ has to be understood as the identity in the respective field space. \\
+If $\left[\Delta, \mathbf{E}\right] = 0$\footnote{In the case of $\left[\Delta, \mathbf{E}\right] \neq 0$, there would be additional terms including (higher order) commutators of $\Delta$ and $\mathbf{E}$ due to the Baker-Campbell-Hausdorff formula.}, we can relate the coefficients of the modified Laplacian $\tilde{\Delta}$ and those of the initially considered operator $-\nabla^2$ via
+\begin{align}
+	\operatorname{Tr} \operatorname{e}^{-s\left(-\nabla^{2}+\mathbf{E}\right)}=\frac{1}{(4 \pi)^{\frac{d}{2}}} \sum_{k, l=0}^{\infty} \frac{(-1)^{\ell}}{\ell !} \int_x \sqrt{g} \ \operatorname{Tr} \mathbf{b}_{k}(\Delta) \mathbf{E}^{\ell} s^{k+\ell-2}.
+\end{align}
+This results in the following, modified values for the coefficients we are interested in:
+\begin{align}
+	\mathbf{b}_0 &= \mathbbm{1} \\[10pt]
+	\mathbf{b}_2 &= \frac{\mathcal{R}}{6}\cdot\mathbbm{1} - \mathbf{E}.
+\end{align} 
+For further study and a more general treatment of the modified Laplacians, including higher order coefficients,\ \cite{CodelloPercacciRahmede2008, Percacci2017} are highly recommended.
