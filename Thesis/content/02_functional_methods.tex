@@ -27,7 +27,7 @@ and higher order correlation functions
 \begin{align}
 \cf{\varphi_1 \cdots \varphi_n} := \cf{\varphi^n} = \frac{1}{Z}\eval{\frac{\delta^n Z}{\delta^n J}}_{J=0} = \int \D\varphi \ \overbrace{\varphi_1 \cdots \varphi_n}^{:= \ \varphi^n} \ \operatorname{e}^{-\S + J\cdot\varphi}
 \end{align}
-via functional differentiation.. This means, we are basically able to compute all contributing Feynman diagrams for our theory setting, if we have knowledge of its corresponding (grand) canonical partition sum. \\
+via functional differentiation. This means, we are basically able to compute all contributing Feynman diagrams for our theory setting, if we have knowledge of its corresponding (grand) canonical partition sum. \\
  For a more efficient description of the theory in terms of only the \textit{connected} correlation functions, we define the Schwinger functional $W[J]$ as the logarithm of $Z[J]$,  
 \begin{align}
 W[J] = \ln Z[J].
@@ -47,6 +47,7 @@ It is still possible to make our computations even more efficient, because $W[J]
 \includegraphics[width=0.8\textwidth]{figs/TikZ/1PI_Yukawa}
 \caption{Contributing one-particle reducible and 1PI diagrams to the four-point-function in Yukawa theory.}	
 \label{fig:1PI_Yukawa}
+\hrulefill
 \end{figure}
 
 The generating functional for the  1PI correlation functions, the \textit{effective action} $\Gamma$, is obtained from the Schwinger functional via a Legendre transform, 
@@ -74,7 +75,7 @@ The full propagator $G$ is the inverse of the 1PI two-point function:
 \end{align}
  In the next section, we want to use these concepts to introduce the functional renormalization group (FRG)... 
 \section{Functional Renormalization Group}
-The functional renormalization group is a mathematical tool, allowing us to investigate the dynamics of physical systems on different scales, i.\,e. energy or momentum scales. This idea is based on a continuous version of Kadanoffs block spin model on the lattice and was developed by Kenneth G. Wilson in 1971. It aims at solving the theory by integrating successively momentum shell by momentum shell, being the reason why the path integral approach to quantum field theory, as introduced before, provides a suitable framework. The main advantage of the FRG approach is, that no regularization or renormalization procedure has to be applied. The latter one is already implemented systematically, which secures the self-consistency of the approach.
+The functional renormalization group is a mathematical tool, allowing us to investigate the dynamics of physical systems on different scales, i.\,e. energy or momentum scales. This idea is based on a continuous version of Kadanoffs block spin model on the lattice and was developed by Kenneth G. Wilson in 1971. It aims at solving the theory by integrating successively momentum shell by momentum shell, being the reason why the path integral approach to quantum field theory provides a suitable framework. The main advantage of the FRG approach is, that no regularization or renormalization procedure has to be applied. The latter one is already implemented systematically, which secures the self-consistency of the approach.
 
 As a first step towards a FRG equation we need to introduce an infrared cutoff scale $k$ in our theory, below which the modes are not integrated out. A common way to introduce such a scale is by  adding a scale-dependent cutoff term $\Delta\mathcal{S}_k$ in the definition of the partition sum (\ref{eqn:partition}) and therefore automatically also in the definition of the Schwinger functional (\ref{eqn:Schwinger})
 \begin{align}
@@ -138,6 +139,7 @@ It has a rather simple diagrammic representation as one-loop equation:
 \centering
 \includegraphics{figs/TikZ/regulator_dependence}
 \caption{Flow of $\Gamma_k$ through infinite-dimensional theory space for different regulators.}	
+\hrulefill
 \end{figure}
 
 

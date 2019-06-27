@@ -1,5 +1,5 @@
 \chapter{Curved Spacetimes and Gravity}\label{chap:GR}
-Our current understanding of gravity is manifested in Einsteins theory of General Relativity. Different to the treatment of the other fundamental forces, all described by gauge theories and summarized in the Standard Model of Particle Physics, gravity is based on the concept of curved spacetime. This chapter summarizes some of the general concepts and notions of General Relativity, needed for a basic understanding of the subject. For most of the concepts we present here, we are following Carrolls notes \cite{CarrollGR}. At the end of this chapter, we show why gravity can not be quantized in a perturbative manner, opposite to the other three fundamental forces. This will lead us to our discussion of Asymptotic Safety as a non-perturbative approach based on the functional renormalization group methods we presented in the last chapter.  
+Our current understanding of gravity is manifested in Einsteins theory of General Relativity. Different to the treatment of the other fundamental forces, all described by gauge theories and summarized in the Standard Model of Particle Physics, gravity is based on the concept of curved spacetime. This chapter summarizes some of the general concepts and notions of General Relativity, needed for a basic understanding of the subject. For most of the concepts we present here, we are following Sean Carrolls notes \cite{CarrollGR}. At the end of this chapter, we show why gravity can not be quantized in a perturbative manner, opposite to the other three fundamental forces. This will lead us to our discussion of Asymptotic Safety as a non-perturbative approach based on the functional renormalization group methods we presented in the last chapter.  
 
 \section{An Introduction to Spacetime Geometry}
  When talking about the concept of curved spacetimes, one first needs a mathematical framework to quantify curvature and to understand how mathematical concepts such as differentiation and integration are generalized to curved spaces. 
@@ -75,7 +75,7 @@ Curvature Scalar:
 
 The Einstein-Hilbert action:
 \begin{align}
-	\mathcal{S}_{\text{EH}}[g_{\mu\nu}] = \frac{1}{16\pi G} \int\limits_x \sqrt{-\operatorname{det}g_{\mu\nu}} (\Ricci - 2\Lambda)
+	\mathcal{S}_{\text{EH}}[g_{\mu\nu}] = \frac{1}{16\pi G} \int\limits_x \sqrt{g} (\Ricci - 2\Lambda)
 \end{align}
 Varying this action as usual yields the Einstein equations in absence of matter:
 \begin{align}
@@ -97,7 +97,7 @@ Energy-Momentum Tensor:
 
 Matter part of the action for a minimally coupled scalar field $\phi$:
 \begin{align}
-	\mathcal{S}_{\text{matter}}[g_{\mu\nu}, \phi] = -\frac{1}{2} \int\limits_x \sqrt{-\operatorname{det}g_{\mu\nu}}\left( g^{\mu\nu}\nabla_{\mu}\phi\nabla_{\nu}\phi - g_{\mu\nu} V(\phi) \right)
+	\mathcal{S}_{\text{matter}}[g_{\mu\nu}, \phi] = -\frac{1}{2} \int\limits_x \sqrt{g}\left( g^{\mu\nu}\nabla_{\mu}\phi\nabla_{\nu}\phi - g_{\mu\nu} V(\phi) \right)
 \end{align}
 
 From this, we get the Einstein equations including matter by demanding the variation $\sqrt{-\operatorname{det}g_{\mu\nu}}\frac{\delta\mathcal{S}}{\delta g^{\mu\nu}}$ to vanish. This yields:

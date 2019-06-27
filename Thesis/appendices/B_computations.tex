@@ -1,15 +1,15 @@
 \chapter{Additional calculations}\label{chap:AppB}
-\blindtext
-
+For the sake of completeness, we present some auxiliary calculations and important steps, that were used to obtain the results presented in scope of this work, but were in general too long or unsuitable to be included in the main part.
 \section{Matter contributions}
-auxiliary calculation:
+During the computation of the gauge field contribution to the running of $G$ and $\Lambda$, we encounter the following term, which can be simplified a lot after a few manipulations:
 \begin{align}\label{eqn:FF2} 
-g^{\mu\nu}g^{\kappa\lambda} F_{\mu\kappa}F_{\nu\lambda} =  F_{\mu}^{\phantom{\mu}\lambda}F_{\phantom{\mu}\lambda}^{\mu}	&= F_{\mu\lambda}F^{\mu\lambda} \nonumber	\\
-&= \left(\partial_{\mu}A_{\lambda} - \partial_{\lambda}A_{\mu}\right)F^{\mu\lambda} + \mathcal{O}\left(A^3\right)\nonumber \\
-&\overset{(\star)}{=} 2\partial_{\mu}A_{\lambda} F^{\mu\lambda}\nonumber  \\
-&=  2\partial_{\mu}A_{\lambda}\left(\partial^{\mu}A^{\lambda} - \partial^{\lambda}A^{\mu}\right) \\
-&= 2\left(\partial_{\mu}A_{\lambda}\partial^{\mu}A^{\lambda} - \partial_{\mu}A_{\lambda}\partial^{\lambda}A^{\mu}\right) \nonumber\\
-&\overset{(\dagger)}{=} -2\left( A_{\lambda}\partial^2A^{\lambda} - A_{\lambda}\partial_{\mu}\partial^{\lambda}A^{\mu}\right) \nonumber\\
-&= 2A_{\lambda}\left[\partial^{\mu}\partial^{\lambda} - g^{\mu\lambda}\partial^2\right]A_{\mu}\nonumber 
+\int g^{\mu\nu}g^{\kappa\lambda} F_{\mu\kappa}F_{\nu\lambda} = \int F_{\mu}^{\phantom{\mu}\lambda}F_{\phantom{\mu}\lambda}^{\mu}	&= \int  F_{\mu\lambda}F^{\mu\lambda} \nonumber	\\
+&= \int \left(\partial_{\mu}A_{\lambda} - \partial_{\lambda}A_{\mu}\right)F^{\mu\lambda} + \mathcal{O}\left(A^3\right)\nonumber \\
+&\overset{(\star)}{=} \int 2\partial_{\mu}A_{\lambda} F^{\mu\lambda}\nonumber  \\
+&=  \int 2\partial_{\mu}A_{\lambda}\left(\partial^{\mu}A^{\lambda} - \partial^{\lambda}A^{\mu}\right) \\
+&= \int 2\left(\partial_{\mu}A_{\lambda}\partial^{\mu}A^{\lambda} - \partial_{\mu}A_{\lambda}\partial^{\lambda}A^{\mu}\right) \nonumber\\
+&\overset{(\dagger)}{=} -\int 2\left( A_{\lambda}\partial^2A^{\lambda} - A_{\lambda}\partial_{\mu}\partial^{\lambda}A^{\mu}\right) \nonumber\\
+&= \int 2A_{\lambda}\left[\partial^{\mu}\partial^{\lambda} - g^{\mu\lambda}\partial^2\right]A_{\mu}\nonumber 
 \end{align}
 
+For the first non-trivial step ($\star$) we use that $2\partial_{\mu}A_{\lambda} = \partial_{(\mu}A_{\lambda)} + \partial_{[\mu}A_{\lambda]}$, where $(\cdots)$ and $[\cdots]$ denote symmetrization and antisymmetrization w.\,r.\,t. the indices, respectively. The symmetric part vanishes due to the fact, that $F^{\mu\lambda}$ is antisymmetric under $\mu \rightleftharpoons \lambda$. This allows us to write $2\partial_{\mu}A_{\lambda}F^{\mu\lambda} = \partial_{[\mu}A_{\lambda]}F^{\mu\lambda} = \left(\partial_{\mu}A_{\lambda} - \partial_{\lambda}A_{\mu}\right)F^{\mu\lambda}$. The  second non-trivial step ($\dagger$) results from integrating by parts and assuming vanishing boundary terms.

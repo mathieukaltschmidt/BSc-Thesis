@@ -51,13 +51,13 @@ where $\mathcal{G}$ is an inner product in the space of symmetric two-tensors, d
 \begin{equation}
 \begin{aligned} 
 \mathcal{G}(h, h)&= \int_x \sqrt{\bar{g}} \ \left(h_{\mu \nu} h^{\mu \nu}+\frac{a}{2} h^{2}\right) \\[10pt]
-&= \int_x \sqrt{\bar{g}} \ \left[h^{\mathrm{TT}}_{\mu \nu} h^{\mathrm{TT}, \mu \nu}+2 \xi_{\mu}\left(-\overline{\nabla}^{2}-\frac{\overline{R}}{d}\right) \xi^{\mu}\right. \\
-&+\left.\frac{d-1}{d} \sigma\left(-\overline{\nabla}^{2}\right)\left(-\overline{\nabla}^{2}-\frac{\overline{R}}{d-1}\right) \sigma+\left(\frac{1}{d}+\frac{a}{2}\right) h^{2} \right] 
+&= \int_x \sqrt{\bar{g}} \ \left[h^{\mathrm{TT}}_{\mu \nu} h^{\mathrm{TT}, \mu \nu}+2 \xi_{\mu}\left(-\bar{\nabla}^{2}-\frac{\bar{R}}{d}\right) \xi^{\mu}\right. \\
+&+\left.\frac{d-1}{d} \sigma\left(-\bar{\nabla}^{2}\right)\left(-\bar{\nabla}^{2}-\frac{\bar{R}}{d-1}\right) \sigma+\left(\frac{1}{d}+\frac{a}{2}\right) h^{2} \right] 
 \end{aligned}
 \end{equation}
 in the case of an Einstein type background metric\footnote{A metric is of Einstein type, if $R_{\mu\nu}$ is a constant multiple of $g_{\mu\nu}$, i.\,e. $R_{\mu\nu} = \frac{1}{d} \mathcal{R} g_{\mu\nu}$.}. This yields
 \begin{align}
-	J=\left(\operatorname{det}_{\xi}\left(-\overline{\nabla}^{2}-\frac{R}{d}\right)\right)^{1 / 2}\left(\operatorname{det}_{\sigma}^{\prime}\left(-\overline{\nabla}^{2}\right)\right)^{1 / 2}\left(\operatorname{det}_{\sigma}\left(-\overline{\nabla}^{2}-\frac{R}{d-1}\right)\right)^{1 / 2}.
+	J=\left(\operatorname{det}_{\xi}\left(-\bar{\nabla}^{2}-\frac{R}{d}\right)\right)^{1 / 2}\left(\operatorname{det}_{\sigma}^{\prime}\left(-\bar{\nabla}^{2}\right)\right)^{1 / 2}\left(\operatorname{det}_{\sigma}\left(-\bar{\nabla}^{2}-\frac{R}{d-1}\right)\right)^{1 / 2}.
 \end{align}
 Note, that the prime has the same meaning and physical interpretation as in the previous case: If $\sigma$ is constant, it does not contribute to $h_{\mu\nu}$. \\
  For both cases, the decomposition of the general gauge field and the York decomposition of the fluctuation field, appropriate rescalings of the fields $\phi$, $\xi_{\mu}$ and $\sigma$ respectively, help us to cancel the non-trivial Jacobians and to achieve, that all modes have the same mass dimension. For the sake of completeness, we present the rescaled versions of the fields:
@@ -103,7 +103,7 @@ The master equation for heat kernel computations reads
 \end{align}
 with the heat-kernel coefficients 
 \begin{align}
-	\mathbf{B}_{n}(\bar{\Delta})=\int_x  \sqrt{\operatorname{det}\bar{g}} \  \operatorname{Tr} \mathbf{b}_{n}(\bar{\Delta})
+	\mathbf{B}_{n}(\bar{\Delta})=\int_x  \sqrt{g} \  \operatorname{Tr} \mathbf{b}_{n}(\bar{\Delta})
 \end{align}
 and 
 \begin{align}
@@ -140,7 +140,7 @@ This is where the heat-kernel coefficients $\mathbf{B}_n$ become important. We p
 \begin{aligned} 
 \operatorname{Tr} f(\Delta) &=\frac{1}{(4 \pi)^{\frac{d}{2}}} \sum_{n=0}^{\infty} \mathbf{B}_{n}(\Delta) \int_{0}^{\infty} \dd s \ s^{\frac{n-d}{2}} \tilde{f}(s) \\[10pt] 
 &=\frac{1}{(4 \pi)^{\frac{d}{2}}} \sum_{n=0}^{\infty} \frac{1}{\Gamma\left(\frac{d-k}{2}\right)} \mathbf{B}_{n}(\Delta) \int_{0}^{\infty} \dd t \ t^{\frac{d-n}{2}-1} f(t) \\[10pt]
- &=\frac{1}{(4 \pi)^{\frac{d}{2}}} \sum_{n=0}^{\infty} \mathbf{B}_{n}(\Delta) Q_{\frac{d-n}{2}}[f(t)] 
+ &=\frac{1}{(4 \pi)^{\frac{d}{2}}} \sum_{n=0}^{\infty} \mathbf{B}_{n}(\Delta) Q_{\frac{d-n}{2}}[f(t)].
 \end{aligned}
 \end{equation}
 This completes the derivation of the master equation (\ref{eqn:master-eqn}) for heat-kernel computations. Note, that we used the definition of the $Q$-functionals, given in equation (\ref{eqn:Qfunc}) and the relation $\int_{s} s^{-x} \tilde{f}(x)=\frac{1}{\Gamma(x)} \int_{z} z^{x-1} f(z)$.
@@ -156,4 +156,4 @@ This results in the following, modified values for the coefficients we are inter
 	\mathbf{b}_0 &= \mathbbm{1} \\[10pt]
 	\mathbf{b}_2 &= \frac{\mathcal{R}}{6}\cdot\mathbbm{1} - \mathbf{E}.
 \end{align} 
-For further study and a more general treatment of the modified Laplacians, including higher order coefficients,\ \cite{CodelloPercacciRahmede2008, Percacci2017} are highly recommended.
+For further study and a more general treatment of the modified Laplacians, including higher order coefficients,\ \cite{CodelloPercacciRahmede2008, Percacci2017} are recommended.

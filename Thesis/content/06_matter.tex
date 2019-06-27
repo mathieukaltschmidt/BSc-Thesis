@@ -1,100 +1,111 @@
 \chapter{Asymptotic Safety of Gravity-Matter Systems}\label{chap:Matter}
-For computing the contributions of the different matter fields on the running of the cosmological constant and the Newton coupling we follow \cite{DonaEichhornPercacci2013}. 
-
-
-Some important formulas:
+The inclusion of matter in this theory setting is in principle straightforward. We extend our truncation (\ref{eqn:QGflow}) by including an additional matter term: 
 \begin{align}
-	\eta_{\Psi} = -\partial_t \ln Z_{\Psi}
+	\Gammak = \Gamma_{\text{EH}} + \mathcal{S}_{\text{gf}}+ \mathcal{S}_{\text{gh}}+ \Gamma_{\text{matter}},
 \end{align}
-
+where $\Gamma_{\mathrm{matter}}$ consists of scalar, fermion and gauge field contributions, denoted with $\mathcal{S}_S, \mathcal{S}_D$ and $\mathcal{S}_V$ respectively:
 \begin{align}
-	R_{k, \Psi}(z) = Z_{\Psi} \ \mathbbm{1} \ z \ r\left(\frac{z}{k^2}\right)
+	\Gamma_{\text{matter}} = \mathcal{S}_S + \mathcal{S}_D + \mathcal{S}_V.
 \end{align}
-where $r$ is the same Litim-type shape function as defined in (\ref{eqn:Litim}).
+The different actions will be specified later on, every matter type will be treated separately. For conventions regarding the choice of the respective regulators and the general structure of this calculation, we are following \cite{DonaEichhornPercacci2013}. \\
+In this truncation we have two essential couplings, $G$ and $\Lambda$ and five inessential\footnote{Inessential in this sense means, that they can be eliminated by field rescalings.} wave function renormalizations $Z_{\Psi}$ with $\Psi = (h,c,S,D,V)$. As before, the wave function renormalizations $Z_{\Psi}$ do not enter the beta functions for $G$ and $\Lambda$ directly, but are still present in a non-trivial way via the anomalous dimension $\eta_{\Psi}$, defined as
+\begin{align}
+	\eta_{\Psi} = -\partial_t \ln Z_{\Psi}.
+\end{align}
+For the scalar and gauge field regulators we choose
+\begin{align}
+	R_{k}(z) = Z \cdot \mathbbm{1} \cdot \tilde{\Delta}\cdot r_k\left(\frac{\tilde{\Delta}}{k^2}\right),
+	\label{eqn:Rk_matter}
+\end{align}
+where $\tilde{\Delta}= -\nabla^2 + \mathbf{E}_{\Psi}$ is a modified Laplacian\footnote{A more detailed discussion on how these modified Laplacians effect the values of the heat-kernel coef-\\ \phantom{........}ficients is presented in appendix \ref{chap:AppA}.}, occurring as kinetic operator in the different matter field actions. The regulator choice for the Dirac fermions is slightly different, details are discussed in the respective subsection. Nevertheless, we already present the values of $\mathbf{E}_{\Psi}$ for all three kinetic operators:
+\begin{align}
+	\mathbf{E}_{\Psi} =  \left\{\begin{array}{ll}{0} & {\text { for } \Psi = S} \\ {\sfrac{\mathcal{R}}{4}} & {\text { for } \Psi = D}\\ {R^{\mu}_{\phantom{\mu}\nu}} & {\text { for } \Psi = V.}\end{array}\right.
+\end{align}
+The Litim-type shape function $r_k$ is in this case the same as the one defined in equation (\ref{eqn:Litim}), now as a function of the modified Laplacian $\tilde{\Delta}$.
+%TODO: Some words on fermions ...
 \section{Matter Contributions from Background Field Computation}
-\begin{align}
-	\Gammak = \Gamma_{\text{EH}} + \mathcal{S}_{\text{gf}}+ \mathcal{S}_{\text{gh}}+ \Gamma_{\text{matter}}
-\end{align}
-where the different matter contributions come from
-\begin{align}
-	\Gamma_{\text{matter}} = \mathcal{S}_{\text{S}} + \mathcal{S}_{\text{D}} + \mathcal{S}_{\text{V}} 
-\end{align}
-with 
-\begin{align}
-	\mathcal{S}_{\text{S}} &= \frac{Z_{\text{S}}}{2}\int_x \sqrt{\operatorname{det}g} \ g^{\mu\nu} \ \sum\limits_{i=1}^{N_{\text{S}}} \partial_{\mu}\phi^{i}\partial_{\nu}\phi^{i} \\
-	\phantom{.}\nonumber\\
-	\mathcal{S}_{\text{D}} &= iZ_{\text{D}}\int_x \sqrt{\operatorname{det}g} \ \sum\limits_{i=1}^{N_{\text{D}}} \bar{\psi}^{i}\slashed{\nabla}\psi^{i}\\
-	\phantom{.}\nonumber\\
-		\mathcal{S}_{\text{V}} &= \frac{Z_{\text{V}}}{4}\int_x \sqrt{\operatorname{det}g} \ \sum\limits_{i=1}^{N_{\text{V}}} g^{\mu\nu}g^{\kappa\lambda}F^{i}_{\mu\kappa}F^{i}_{\nu\lambda} \nonumber \\
-		&+ \frac{Z_{\text{V}}}{2\xi}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \left(\bar{g}^{\mu\nu}\bar{D}_{\mu}A_{\nu}^{i}\right)^2  \\
-		&+ \frac{1}{2}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \bar{c}_i(-\bar{D}^2)c_i \nonumber
-\end{align}
-\begin{figure}[H]
+After having introduced the setup for the following calculation, we are now able to determine the different contributions from the matter fields step by step, by evaluating the functional traces ocurring on the r.\,h.\,s. of the flow equation separately. For the matter configuration in our setting the flow equation reads
+\begin{equation}
+\begin{aligned} \partial_t\Gamma_{k} =\frac{1}{2} \operatorname{Tr}\left[\left(\Gamma_{k}^{(2)}+R_{k}\right)^{-1} \partial_t R_{k}\right]_{h h} &+ \frac{1}{2}\operatorname{Tr}\left[\left(\Gamma_{k}^{(2)}+R_{k}\right)^{-1} \partial_t R_{k}\right]_{\phi\phi} \\[10pt] -\operatorname{Tr}\left[\left(\Gamma_{k}^{(2)}+R_{k}\right)^{-1}\partial_t R_{k}\right]_{\bar{\psi} \psi}&+\frac{1}{2} \operatorname{Tr}\left[\left(\Gamma_{k}^{(2)}+R_{k}\right)^{-1}\partial_t R_{k}\right]_{AA}.\end{aligned}
+\label{eqn:matter_flow}
+\end{equation}
+
+In figure (\ref{fig:matter_calc}), a digrammatical representation of the flow equation (\ref{eqn:matter_flow}) is depicted.
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figs/TikZ/matter_corrections}
-	\caption[Flow equation for the average effective action $\Gamma_k$ including different matter contributions in diagrammatic representation.]{Flow equation for the average effective action $\Gamma_k$ including different matter contributions in diagrammatic representation. The double, dashed, solid and  wiggly lines correspond to the graviton, scalar, fermion and gauge field  propagators, respectively. The crossed circles denote the insertion of the respective regulator.}
+\caption[Flow equation for the average effective action $\Gamma_k$ including different matter contributions in diagrammatic representation.]{Flow equation (\ref{eqn:matter_flow}) for the average effective action $\Gamma_k$ including different matter contributions in diagrammatic representation. The double, dashed, solid and  wiggly lines correspond to the graviton, scalar, fermion and gauge field  propagators, respectively. The crossed circles denote the insertion of the respective regulator.}
+	\label{fig:matter_calc}
+	\hrulefill
 \end{figure}
 
-\begin{itemize}
-	\item wo essential couplings, $G$ and $\Lambda$ and five inessential\footnote{Inessential in this sense means, that they can be eliminated by field rescalings.} wave function renormalizations $Z_{\Psi}$ with $\Psi = (h,c,S,D,V)$.
-\end{itemize}
 \subsection{Scalar fields}
+The action for $N_S$ scalar fields, minimally coupled to gravity reads
 \begin{align}
-	\mathcal{S}_S &= \frac{Z_{S}}{2}\int_x \sqrt{\operatorname{det}g} \ g^{\mu\nu} \ \sum\limits_{i=1}^{N_{\text{S}}} \partial_{\mu}\phi^{i}\partial_{\nu}\phi^{i} \nonumber \\
-&=  \frac{Z_{S}}{2}\int_x \sqrt{\operatorname{det}\bar{g}} \ \bar{g}^{\mu\nu} \ \sum\limits_{i=1}^{N_{\text{S}}} \partial_{\mu}\phi^{i}\partial_{\nu}\phi^{i} + \mathcal{O}(h) \\
-&\overset{(\star)}{=} \frac{Z_{S}}{2}\int_x \sqrt{\operatorname{det}\bar{g}} \ \ \sum\limits_{i=1}^{N_{\text{S}}} \phi^{i}\left(-\bar{\nabla}^2\right)\phi^{i} + \mathcal{O}(h) \nonumber
+	\mathcal{S}_S &= \frac{Z_{S}}{2}\int_x \sqrt{g} \ g^{\mu\nu} \ \sum\limits_{i=1}^{N_{\text{S}}} \partial_{\mu}\phi^{i}\partial_{\nu}\phi^{i} \nonumber \\
+&=  \frac{Z_{S}}{2}\int_x \sqrt{\bar{g}} \ \bar{g}^{\mu\nu} \ \sum\limits_{i=1}^{N_{\text{S}}} \partial_{\mu}\phi^{i}\partial_{\nu}\phi^{i} + \mathcal{O}(h) \\
+&= \frac{Z_{S}}{2}\int_x \sqrt{\bar{g}} \ \ \sum\limits_{i=1}^{N_{\text{S}}} \phi^{i}\left(-\bar{\nabla}^2\right)\phi^{i} + \mathcal{O}(h). \nonumber
 \end{align}
-
-Two-point function:
+For our computation, we expand the action on some background $\bar{g}_{\mu\nu}$ and drop all contributions of $\mathcal{O}(h)$. In the last step, we use integration by parts and assume vanishing boundary terms. Since $\mathbf{E} =0$ for scalars, we use the initial definition of the Laplacian $\bar{\Delta} = -\bar{\nabla}^2$ for further calculations. These simple manipulations directly allow us to read off the corresponding two-point function
 \begin{align}
-	\Gamma^{(2)}_{\phi\phi} = \frac{\delta^2 \mathcal{S}_S}{\delta\phi^{i}\ \delta\phi^{j}} = Z_S \cdot\bar{\Delta}\cdot\mathbbm{1}_S + \mathcal{O}(h)  
+	\Gamma^{(2)}_{\phi\phi} = \frac{\delta^2 \mathcal{S}_S}{\delta\phi^{i}\ \delta\phi^{j}} = Z_S \cdot\bar{\Delta}\cdot\mathbbm{1}_S + \mathcal{O}(h),
 \end{align}
-
-Regularized Two-Point-Function:
+where $\mathbbm{1}_S$ has to be understood as the identity in field space. Using the regulator defined in (\ref{eqn:Rk_matter}), we find the regularized two-point-function as
 \begin{align}
-	\Gamma^{(2)}_{k, \phi\phi} = \left[\Gamma^{(2)}_{\phi\phi}+ R_{k, S}\right]  = Z_S \cdot\bar{\Delta}\cdot\mathbbm{1}_S\left(1 + r_k\left(\frac{\bar{\Delta}}{k^2}\right)\right) 
+	\Gamma^{(2)}_{k, \phi\phi} = \left[\Gamma^{(2)}_{\phi\phi}+ R_{k, S}\right]  = Z_S \cdot\bar{\Delta}\cdot\mathbbm{1}_S\left(1 + r_k\left(\frac{\bar{\Delta}}{k^2}\right)\right).
 \end{align}
-
-
-
-RHS of the flow equation:
+This expression is already diagonal in field space, meaning we are directly able to invert it to obtain the propagator. Together with the scale derivative of the regulator
+\begin{align}
+	\partial_t R_{k, S} = Z_S\cdot\bar{\Delta}\left(\partial_t r_k - \eta_S r_k\right),
+\end{align}
+we can start to evaluate the r.\,h.\,s. of the flow equation:
 \begin{align}
 	\frac{1}{2}\tr{\left(\Gamma^{(2)}_{k, \phi\phi}\right)^{-1}\partial_t R_{k,S}} &= \frac{1}{2}\tr{\frac{Z_S\bar{\Delta}\left(\partial_t r_k - \eta_s r_k\right)}{Z_S \bar{\Delta}\left(1 + r_k\right)}\mathbbm{1}_S} \nonumber\\
 	\phantom{.} \\
-	&=   \frac{N_S}{2}\tr{\frac{\bar{\Delta}\left(\partial_t r_k - \eta_s r_k\right)}{\bar{\Delta}\left(1 + r_k\right)}} \nonumber
+	&=   \frac{N_S}{2}\tr{\frac{\bar{\Delta}\left(\partial_t r_k - \eta_s r_k\right)}{\bar{\Delta}\left(1 + r_k\right)}}. \nonumber
 \end{align}
-
+Here, we already performed the trace operation on the internal indices, leading to an overall factor of $N_S$. The functional trace is again evaluated using heat-kernel techniques.
+\begin{equation}
+\begin{aligned}
+	\frac{N_S}{2}\tr{\frac{\bar{\Delta}\left(\partial_t r_k - \eta_s r_k\right)}{\bar{\Delta}\left(1 + r_k\right)}} &= \frac{N_S}{2}\frac{1}{(4\pi^2)}\left(\int_x\sqrt{\bar{g}} \  \Phi_2^1(0) + \frac{1}{6}\int_x\sqrt{\bar{g}} \ \bar{\mathcal{R}}\ \Phi_1^1(0) \right)\\[10pt]
+	&= 	\frac{N_S}{2}\frac{1}{(4\pi)^2}\int_x\sqrt{\bar{g}}\left(\left(1-\frac{\eta_S}{6}\right) + \frac{\bar{\mathcal{R}}}{3}\left(1-\frac{\eta_S}{6}\right)\right)
+\end{aligned}
+\end{equation}
 \subsection{Fermionic  fields}
+\blindtext %TODO: Explain regulator choice
 
-\subsection{Gauge fields}
-\begin{align}
-	\mathcal{S}_{V, \mathrm{tot}} &= \frac{Z_{\text{V}}}{4}\int_x \sqrt{\operatorname{det}g} \ \sum\limits_{i=1}^{N_{\text{V}}} g^{\mu\nu}g^{\kappa\lambda}F^{i}_{\mu\kappa}F^{i}_{\nu\lambda}  
-		+ \frac{Z_{\text{V}}}{2\xi}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \left(\bar{g}^{\mu\nu}\bar{D}_{\mu}A_{\nu}^{i}\right)^2  \nonumber\\
-		&+ \frac{1}{2}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \bar{c}_i(-\bar{D}^2)c_i 
-\end{align}
+\subsection{Gauge fields}  
+\begin{equation}
+\begin{aligned}
+\mathcal{S}_{V} &= \frac{Z_{\text{V}}}{4}\int_x \sqrt{g} \ \sum\limits_{i=1}^{N_{\text{V}}} g^{\mu\nu}g^{\kappa\lambda}F^{i}_{\mu\kappa}F^{i}_{\nu\lambda}  
+		+ \overbrace{\frac{Z_{\text{V}}}{2\xi}\int_x \sqrt{\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \left(\bar{g}^{\mu\nu}\bar{\nabla}_{\mu}A_{\nu}^{i}\right)^2}^{\text{gauge fixing}}  \nonumber\\
+		&+ \underbrace{\frac{1}{2}\int_x \sqrt{\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \bar{c}_i(-\bar{\nabla}^2)c_i}_{\text{Fadeev-Popov ghosts}} 
+\end{aligned}
+\end{equation}
 
 
 
 standard gauge field term:
 \begin{align}
-\mathcal{S}_{V} &=  \frac{Z_V}{4}\int_x \sqrt{\operatorname{det}g} \ \sum\limits_{i=1}^{N_{\text{V}}} g^{\mu\nu}g^{\kappa\lambda}F^{i}_{\mu\kappa}F^{i}_{\nu\lambda} \nonumber \\
-&=  \frac{Z_{V}}{4}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \bar{g}^{\mu\nu}\bar{g}^{\kappa\lambda}\bar{F}^{i}_{\mu\kappa}\bar{F}^{i}_{\nu\lambda} + \mathcal{O}(h) \\
-&\overset{(\ref{eqn:FF2})}{=} \frac{Z_{V}}{2}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} A_{\lambda}^{i}\left[ \bar{\nabla}^{\mu}\bar{\nabla}^{\lambda} + \bar{g}^{\mu\lambda}\bar{\Delta}\right]A_{\mu}^{i} + \mathcal{O}(h) \nonumber
+\mathcal{S}_{V} =  &\frac{Z_V}{4}\int_x \sqrt{g} \ \sum\limits_{i=1}^{N_{\text{V}}} g^{\mu\nu}g^{\kappa\lambda}F^{i}_{\mu\kappa}F^{i}_{\nu\lambda} \nonumber \\
+=  &\frac{Z_{V}}{4}\int_x \sqrt{\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \bar{g}^{\mu\nu}\bar{g}^{\kappa\lambda}\bar{F}^{i}_{\mu\kappa}\bar{F}^{i}_{\nu\lambda} + \mathcal{O}(h) \\
+\overset{(\mathrm{\ref{eqn:FF2}})}{=} &\frac{Z_{V}}{2}\int_x \sqrt{\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} A_{\lambda}^{i}\left[ \bar{\nabla}^{\mu}\bar{\nabla}^{\lambda} + \bar{g}^{\mu\lambda}\bar{\Delta}\right]A_{\mu}^{i} + \mathcal{O}(h) \nonumber
 \end{align}
 %TODO: Fix reference
 gauge fixing term:
 \begin{align}
-	\mathcal{S}_{V, \mathrm{gf}} &= \frac{Z_{\text{V}}}{2\xi}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \left(\bar{g}^{\mu\nu}\bar{\nabla}_{\mu}A_{\nu}^{i}\right)^2  \nonumber\\
-	&= \frac{Z_{\text{V}}}{2\xi}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \bar{g}^{\mu\nu}\bar{\nabla}_{\mu}A_{\nu}^{i}g^{\kappa\lambda}\bar{\nabla}_{\kappa}A_{\lambda}^{i} \\
-	&\overset{(\star)}{=} \frac{Z_{\text{V}}}{2\xi}\int_x \sqrt{\operatorname{det}\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} A_{\lambda}^{i}\left[-\bar{\nabla}^{\lambda}\bar{\nabla}^{\mu}\right]A_{\mu}^{i} \nonumber
+	\mathcal{S}_{V, \mathrm{gf}} &= \frac{Z_{\text{V}}}{2\xi}\int_x \sqrt{\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \left(\bar{g}^{\mu\nu}\bar{\nabla}_{\mu}A_{\nu}^{i}\right)^2  \nonumber\\
+	&= \frac{Z_{\text{V}}}{2\xi}\int_x \sqrt{\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \bar{g}^{\mu\nu}\bar{\nabla}_{\mu}A_{\nu}^{i}g^{\kappa\lambda}\bar{\nabla}_{\kappa}A_{\lambda}^{i} \\
+	&= \frac{Z_{\text{V}}}{2\xi}\int_x \sqrt{\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} A_{\lambda}^{i}\left[-\bar{\nabla}^{\lambda}\bar{\nabla}^{\mu}\right]A_{\mu}^{i} \nonumber
 \end{align}
+In the last step, we integrated by parts and assumed vanishing boundary terms. \\
 Both together 
 Ghosts have to be considered separately \dots
 
 
-\section{Perturbative Approximation}
+\section{Beta-Functions in Perturbative Approximation}
 
-\section{Some Words on Fermionic fields}
+\section{Fermions in curved spacetimes?}
 This section is mainly based on \cite{LippoldtPHD}  where the spin-base invariant formalism for treating fermions in curved spacetimes has been developed. The goal of this part of the thesis is to get a rough idea on how to perform calculations involving Dirac fermions, especially in the context of Asymptotic Safety of gravity-matter systems.  
 
 Covariant derivative:
