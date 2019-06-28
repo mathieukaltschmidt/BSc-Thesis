@@ -12,4 +12,12 @@ During the computation of the gauge field contribution to the running of $G$ and
 &= \int 2A_{\lambda}\left[\partial^{\mu}\partial^{\lambda} - g^{\mu\lambda}\partial^2\right]A_{\mu}\nonumber 
 \end{align}
 
-For the first non-trivial step ($\star$) we use that $2\partial_{\mu}A_{\lambda} = \partial_{(\mu}A_{\lambda)} + \partial_{[\mu}A_{\lambda]}$, where $(\cdots)$ and $[\cdots]$ denote symmetrization and antisymmetrization w.\,r.\,t. the indices, respectively. The symmetric part vanishes due to the fact, that $F^{\mu\lambda}$ is antisymmetric under $\mu \rightleftharpoons \lambda$. This allows us to write $2\partial_{\mu}A_{\lambda}F^{\mu\lambda} = \partial_{[\mu}A_{\lambda]}F^{\mu\lambda} = \left(\partial_{\mu}A_{\lambda} - \partial_{\lambda}A_{\mu}\right)F^{\mu\lambda}$. The  second non-trivial step ($\dagger$) results from integrating by parts and assuming vanishing boundary terms.
+For the first non-trivial step ($\star$) we use that $2\partial_{\mu}A_{\lambda} = \partial_{(\mu}A_{\lambda)} + \partial_{[\mu}A_{\lambda]}$, where $(\cdots)$ and $[\cdots]$ denote symmetrization and antisymmetrization w.\,r.\,t. the indices, respectively. The symmetric part vanishes due to the fact, that $F^{\mu\lambda}$ is antisymmetric under $\mu \rightleftharpoons \lambda$. This allows us to write $2\partial_{\mu}A_{\lambda}F^{\mu\lambda} = \partial_{[\mu}A_{\lambda]}F^{\mu\lambda} = \left(\partial_{\mu}A_{\lambda} - \partial_{\lambda}A_{\mu}\right)F^{\mu\lambda}$. The  second non-trivial step ($\dagger$) results from integrating by parts and assuming vanishing boundary terms. \\
+Later on in the gauge field calculation, after specifying the gauge parameter $\xi=1$, we encounter a commutator of covariant derivatives acting on $A_{\mu}$. With the definition of the curvature tensor, given in equation (\ref{eqn:Riemann}), we find
+\begin{equation}
+\begin{aligned}
+\left[\nabla^{\mu}, \nabla^{\lambda}\right]A_{\mu} &= R_{\mu}^{\phantom{\mu}\rho\mu\lambda}A_{\rho} \\
+&= R^{\rho\lambda}A_{\rho} \label{eqn:RiemannB}
+\end{aligned}	
+\end{equation}
+Now, one simply has to rename the dummy indices $\rho \rightleftharpoons \mu$ to find the wanted expression. 	
