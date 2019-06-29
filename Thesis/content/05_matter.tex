@@ -1,4 +1,4 @@
-\chapter{Asymptotic Safety of Gravity-Matter Systems}\label{chap:Matter}
+\chapter{Asymptotic Safety of Gravity-Matter Systems}\label{chap:Matter} 
 The inclusion of matter in this theory setting is in principle straightforward. We extend our truncation (\ref{eqn:QGflow}) by including an additional matter term: 
 \begin{align}
 	\Gammak = \Gamma_{\text{EH}} + \mathcal{S}_{\text{gf}}+ \mathcal{S}_{\text{gh}}+ \Gamma_{\text{matter}},
@@ -34,7 +34,7 @@ In figure (\ref{fig:matter_calc}), a digrammatical representation of the flow eq
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figs/TikZ/matter_corrections}
-\caption[Flow equation for the average effective action $\Gamma_k$ including different matter contributions in diagrammatic representation.]{Flow equation (\ref{eqn:matter_flow}) for the average effective action $\Gamma_k$ including different matter contributions in diagrammatic representation. The double, dashed, solid and  wiggly lines correspond to the graviton, scalar, fermion and gauge field  propagators, respectively. The crossed circles denote the insertion of the respective regulator.}
+\caption[Flow equation for the average effective action $\Gamma_k$ including different matter contributions in diagrammatic representation.]{Flow equation (\ref{eqn:matter_flow}) for the average effective action $\Gamma_k$ including different matter contributions in diagrammatic representation. The double, dotted,dashed, solid and  wiggly lines correspond to the graviton, ghost, scalar, fermion and gauge field  propagators, respectively. The crossed circles denote the insertion of the respective regulator.}
 	\label{fig:matter_calc}
 	\hrulefill
 \end{figure}
@@ -68,13 +68,37 @@ Here, we already performed the trace operation on the internal indices, leading 
 \begin{equation}
 \begin{aligned}
 	\frac{N_S}{2}\tr{\frac{\bar{\Delta}\left(\partial_t r_k - \eta_s r_k\right)}{\bar{\Delta}\left(1 + r_k\right)}} &= \frac{N_S}{2}\frac{1}{(4\pi^2)}\left[\int_x\sqrt{\bar{g}} \  \Phi_2^1(0) + \frac{1}{6}\int_x\sqrt{\bar{g}} \ \bar{\mathcal{R}}\ \Phi_1^1(0) \right]\\[10pt]
-	&= 	\frac{N_S}{2}\frac{1}{(4\pi)^2}\int_x\sqrt{\bar{g}}\left[\left(1-\frac{\eta_S}{6}\right) + \frac{\bar{\mathcal{R}}}{3}\left(1-\frac{\eta_S}{6}\right)\right]
+	&= 	\frac{N_S}{2}\frac{1}{(4\pi)^2}\int_x\sqrt{\bar{g}}\left[\left(1-\frac{\eta_S}{6}\right) + \frac{\bar{\mathcal{R}}}{3}\left(1-\frac{\eta_S}{6}\right)\right].
 \end{aligned}
 \end{equation}
 \subsection{Fermionic  fields}
-\blindtext %TODO: Explain regulator choice
+For the fermionic contribution, we  proceed slightly different. First, we present the action for $N_D$ minimally coupled Dirac fermions:
+\begin{equation}
+	\begin{aligned}
+		\mathcal{S}_D &= iZ_D\int_x \sqrt{g} \ \sum\limits_{i=1}^{N_D}\bar{\psi}^{i}\slashed{\nabla}\psi^{i} \\[10pt]
+		&=  iZ_D\int_x \sqrt{\bar{g}} \ \sum\limits_{i=1}^{N_D}\bar{\psi}^{i}\bar{\slashed{\nabla}}\psi^{i} + \mathcal{O}(h).
+	\end{aligned}
+\end{equation}
+The notation for the conjugated field $\bar{\psi} = \psi^{\dagger}\gamma^0$ should not be confused with the bar referring to the background field. As usual, the slashed notation implies contraction with gamma matrices\footnote{In the discussion of Dirac fermions, the gamma matrices $\left\{\gamma^0, \gamma^1, \gamma^2, \gamma^3\right\}$ are a set of complex valued matrices, that constitute an irreducible representation of the Clifford algebra, defined by the anticommutation relation $\left\{\gamma_{\mu}, \gamma_{\nu}\right\}= 2g_{\mu\nu} \mathbbm{1}_{d_{\gamma}\times d_{\gamma}}$, with $d_{\gamma} = 2^{\left[\sfrac{d}{2}\right]}$. A more formal treatment of fermions in curved spacetimes is presented in \cite{LippoldtPHD}.}, i.\,e. $\slashed{\nabla} = \gamma^{\mu}\nabla_{\mu}$. \\
+In principle, this allows us to read off the fermion two-point function
+\begin{align}
+	\Gamma^{(2)}_{\bar{\psi}\psi} = \frac{\delta^2 \mathcal{S}_D}{\delta \psi^{i}\ \delta \bar{\psi}^{j}} = iZ_D\cdot\slashed{\nabla}\cdot\mathbbm{1}_D + \mathcal{O}(h).
+\end{align}
+In general one chooses the regulator, such that the symmetries of the kinetic term are conserved. As before, the general form of such a regulator is given by
+\begin{align}
+	R_{k,D} = Z_D\cdot\tilde{\Delta}\cdot\mathbbm{1}_D\cdot r_{k, D}\left(\frac{\tilde{\Delta}}{k^2}\right).
+\end{align} 
+When computing fermion propagators in other theory settings, it follows quite naturally to consider the Dirac dispersion as the "square root" of the scalar Klein-Gordon dispersion. For a more detailed discussion of this idea in the context of Fermi-Bose gases, we refer to chapter 2 of \cite{PawlowskiNPgaugeLecture} or in the context of gravity-matter systems in quantum gravity to the appendix of \cite{BritoHamadaPereiraYamada2019}. \\
+This allows us to express $r_k$ for the fermions as a function of the scalar shape function:
+\begin{align}
+\left[1+r_{k,D}\right]^2 = 1+r_{k,S} \qquad \longrightarrow \qquad r_{k, D} = \sqrt{1+r_{k,S}} - 1
+\end{align}
+In total, this yields the final expression for regularized two-point function for the fermions:
+\begin{align}
+	\Gamma^{(2)}_{\bar{\psi}\psi, k} = 
+\end{align}
 \subsection{Gauge fields}  
-The structure of the gauge field contribution is more complex than for the other fields. This is due to the fact, that we have to employ a gauge fixing procedure w.\,r.\,t. the background field $\bar{g}_{\mu\nu}$. This ensures gauge invariance, at least on the background. The action for $N_V$ gauge fields, minimally coupled to gravity reads
+The structure of the gauge field contribution is more complex than for the other fields. This is due to the fact, that we have to employ a gauge fixing procedure w.\,r.\,t. the background field $\bar{g}_{\mu\nu}$. This ensures gauge invariance w.\,r.\,t. background gauge transformations. The action for $N_V$ gauge fields, minimally coupled to gravity reads
 \begin{equation}
 \begin{aligned}
 \mathcal{S}_{V} &= \frac{Z_{\text{V}}}{4}\int_x \sqrt{g} \ \sum\limits_{i=1}^{N_{\text{V}}} g^{\mu\nu}g^{\kappa\lambda}F^{i}_{\mu\kappa}F^{i}_{\nu\lambda}  
@@ -103,7 +127,7 @@ In the last step, we integrated by parts and assumed vanishing boundary terms.\\
 \begin{equation}
 \mathcal{S}_V = \frac{Z_{V}}{2} \int_x \sqrt{\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} A_{\lambda}^{i}\left[ - \bar{g}^{\mu\lambda}\bar{\nabla}^2 +  \bar{\nabla}^{\mu}\bar{\nabla}^{\lambda} - \frac{1}{\xi} \bar{\nabla}^{\lambda}\bar{\nabla}^{\mu}\right]A_{\mu}^{i} \ + \ \text{ghost term}
 \end{equation}
-In Feynman gauge, where we set $\xi=1$, this simplifies to
+In Feynman gauge, where we set $\xi \equiv 1$, this simplifies to
 \begin{equation}
 \begin{aligned}
 \mathcal{S}_V &= \frac{Z_{V}}{2} \int_x \sqrt{\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} A_{\lambda}^{i}\left[ - \bar{g}^{\mu\lambda}\bar{\nabla}^2 +  \left[\bar{\nabla}^{\mu}, \bar{\nabla}^{\lambda}\right]\right]A_{\mu}^{i} \ + \ \text{ghost term} \\
@@ -124,8 +148,21 @@ and
 \begin{align}
 	\partial_t R_{k, V} = Z_V\cdot\mathbbm{1}_V\cdot\bar{\Delta}_{(1)}^{\mu\nu}\cdot\left(\partial_t r_k - \eta_V r_k\right).
 \end{align}
+As for the fermions, we have to take care of the heat-kernel coefficients for $\bar{\Delta}^{\mu\nu}_{(1)}$. With equation (\ref{eqn:coefficients}), we find 
+\begin{equation}
+\begin{aligned}
+	\operatorname{Tr}\mathbf{b}_0 &= 4 \\
+	\operatorname{Tr}\mathbf{b}_2 &= -\frac{\bar{\mathcal{R}}}{3}, \\
+\end{aligned} 
+\end{equation}
+and therefore, the result for the heat-kernel expansion for the gauge fields is given by:
 
-%TODO: Finish this part..
+\begin{align}
+	\frac{1}{2}\tr{\frac{Z_V\bar{\Delta}^{\mu\nu}_{(1)}\left(\partial_t r_k - \eta_Vr_k\right)}{Z_V\bar{\Delta}^{\mu\nu}_{(1)}(1+r_k)}\mathbbm{1}_V} &= \frac{N_V}{2}\tr{\frac{\bar{\Delta}^{\mu\nu}_{(1)}\left(\partial_t r_k - \eta_Vr_k\right)}{\bar{\Delta}^{\mu\nu}_{(1)}(1+r_k)}}\nonumber \\[10pt]
+	&= \frac{N_V}{2}\frac{1}{(4\pi)^2}\left[\int_x\sqrt{\bar{g}}\ \Phi_2^1(0) - \frac{1}{3}\int_x\sqrt{\bar{g}}\  \bar{\mathcal{R}} \  \Phi_1^1(0) \right] \\[10pt]
+	&=  \frac{N_V}{2}\frac{1}{(4\pi)^2}\int_x\sqrt{\bar{g}}\left[\left(1-\frac{\eta_V}{6}\right)- \frac{2}{3}\bar{\mathcal{R}}\left(1-\frac{\eta_V}{6}\right)\right]\nonumber
+\end{align}
+
 
 To finish the calculation of the gauge field contribution, we need to take the ghost term into account. Fortunately, it has already the desired form, where we can directly read off the two-point function:
 \begin{equation}
@@ -188,4 +225,5 @@ We investigate the impact of the different matter fields in a qualitative analys
 % \hfill
 % \caption[Contributing diagrams to the fermion anomalous dimension $\eta_D$.]{Contributing diagrams to the fermion anomalous dimension $\eta_D$. Analogous contributions arise for external scalars and gauge fields to $\eta_S$ and $\eta_V$.} 	
 % \end{figure}
+ 
  
