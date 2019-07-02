@@ -1,10 +1,10 @@
 \chapter{Curved Spacetimes and Gravity}\label{chap:GR}
-Our current understanding of gravity is manifested in Einsteins theory of General Relativity. Different to the treatment of the other fundamental forces, all described by gauge theories and summarized in the Standard Model of Particle Physics, gravity is based on the concept of curved spacetime. This chapter summarizes some of the general concepts and notions of General Relativity, needed for a basic understanding of the subject. For most of the concepts we present here, we are following Sean Carrolls notes \cite{CarrollGR}. At the end of this chapter, we show why gravity can not be quantized in a perturbative manner, opposite to the other three fundamental forces. This will lead us to our discussion of Asymptotic Safety as a non-perturbative approach based on the functional renormalization group methods we presented in the last chapter.  
+Our current understanding of gravity is manifested in Einsteins theory of General Relativity. Different to the treatment of the other fundamental forces, all described by gauge theories and summarized in the Standard Model of Particle Physics, gravity is based on the concept of curved spacetime. This chapter summarizes some of the general concepts and notions of General Relativity, needed for a basic understanding of the subject. For most of the concepts we present here, we are following Sean Carrolls notes \cite{CarrollGR}. At the end of this chapter, we show why gravity can not be quantized in a perturbative manner, opposite to the other three fundamental forces. For this part, we follow \cite{PawlowskiNPgaugeLecture}. 
 
 \section{An Introduction to Spacetime Geometry}
  When talking about the concept of curved spacetimes, one first needs a mathematical framework to quantify curvature and to understand how mathematical concepts such as differentiation and integration are generalized to curved spaces. 
  The central objects in our discussion of curved spaces are \textit{differentiable manifolds}, i\,e. topological spaces, that are  locally diffeomorphic to $\mathbb{R}^n$. Locally in this sense means, that we can find coordinate maps $\phi_i: M \underset{\mathrm{open}}{\supset} U_i \rightarrow \mathbb{R}^n$, such that the image $\phi_i(U_i)$ is open in  $\mathbb{R}^n$, for every point on $M$, whereas globally the manifold may have a very complicated topology. A set of such coordinate maps $\{(U_{\alpha}, \phi_{\alpha})\}$ that covers the entire manifold and where the charts are smoothly sewed together is called an \textit{atlas}. For overlapping charts $U_{\alpha}\cap U_{\beta} \neq \emptyset$, the maps $(\phi_{\alpha} \circ \phi_{\beta}^{-1})$, a.\,k.\,a. coordinate transformations, must be smooth and differentiable. They are directly connected to the coordinates $x^{\mu}$ we'll work with later on. \\
-Further, we need to introduce additional structures, such as vectors and tensors on manifolds, since they are the objects we are interested in when it comes to the discussion of physical models. To be able to talk about vectors, one needs to associate  a \textit{tangent space} $T_p$ to every point $p$ of the manifold. The tangent space is the set of all vectors at  $p$ and  has the structure of a vector space with the same dimension as $M$. The disjoint union of all tangent spaces on $M$ is called the \textit{tangent bundle}. To specify the concept of the tangent space we claim, that it can be identified with the space of directional derivative operators along curves $\gamma: \mathbb{R} \rightarrow M$  through $p$. In this case, we find a basis of $T_p$ as the set $\{\hat{\partial}_{\mu}\}$ of directional derivatives at $p$. It can be shown, that the directional derivatives can be decomposed into a sum of real numbers times partial derivatives, i.\,e. $\frac{\dd}{\dd \lambda} = \frac{\dd x^{\mu}}{\dd \lambda}\partial_{\mu}$, where $\lambda$ is the parameter of the curve $\gamma$. This allows us to represent a vector $V=V^{\mu}\partial_{\mu}$ independent of the chosen coordinates. The basis vectors in some different coordinate system $x^{\mu^{\prime}}$ are then simply related to the initial basis via $\partial_{\mu^{\prime}}=\frac{\partial x^{\mu}}{\partial x^{\mu^{\prime}}} \partial_{\mu}$ which yields the transformation law for vector components under general coordinate transformations,
+Further, we need to introduce additional structures, such as vectors and tensors on manifolds, since they are the objects we are interested in when it comes to the discussion of physical models. To be able to talk about vectors, one needs to associate  a \textit{tangent space} $T_p$ to every point $p$ of the manifold. The tangent space is the set of all vectors at  $p$ and  has the structure of a vector space with the same dimension as $M$. The disjoint union of all tangent spaces on $M$ is called the \textit{tangent bundle}. To specify the concept of the tangent space we claim, that it can be identified with the space of directional derivative operators along curves $\gamma: \mathbb{R} \rightarrow M$  through $p$. In this case, we find a basis of $T_p$ as the set $\{\hat{\partial}_{\mu}\}$ of directional derivatives at $p$. It can be shown, that the directional derivatives can be decomposed into a sum of real numbers times partial derivatives, i.\,e. $\frac{d}{d \lambda} = \frac{d x^{\mu}}{d \lambda}\partial_{\mu}$, where $\lambda$ is the parameter of the curve $\gamma$. This allows us to represent a vector $V=V^{\mu}\partial_{\mu}$ independent of the chosen coordinates. The basis vectors in some different coordinate system $x^{\mu^{\prime}}$ are then simply related to the initial basis via $\partial_{\mu^{\prime}}=\frac{\partial x^{\mu}}{\partial x^{\mu^{\prime}}} \partial_{\mu}$ which yields the transformation law for vector components under general coordinate transformations,
 \begin{align}
 	V^{\mu^{\prime}}=\frac{\partial x^{\mu^{\prime}}}{\partial x^{\mu}} V^{\mu}. \label{eqn:contravariant_trafo}
 \end{align}
@@ -22,90 +22,104 @@ The general transformation law for tensors follows naturally as expected from eq
 \begin{align}
 	T_{\phantom{\mu_{1}^{\prime} \cdots \mu_{k}^{\prime}}\nu_{1}^{\prime} \cdots \nu_{l}^{\prime}}^{\mu_{1}^{\prime} \cdots \mu_{k}^{\prime}}=\frac{\partial x^{\mu_{1}^{\prime}}}{\partial x^{\mu_{1}}} \cdots \frac{\partial x^{\mu_{k}^{\prime}}}{\partial x^{\mu_{k}}} \frac{\partial x^{\nu_{1}}}{\partial x^{\nu_{1}^{\prime}}} \cdots \frac{\partial x^{\nu_{l}}}{\partial x^{\nu_{l}^{\prime}}} T^{\mu_{1} \cdots \mu_{k}}_{\phantom{\mu_{1} \cdots \mu_{k}}\nu_{1} \cdots \nu_{l}}.
 \end{align}
-Having understood the basic structures and their respective behavior under coordinate transformations, we are now able to introduce some of the most important tensors in general relativity. \\
+Having understood the basic structures and their respective behavior under coordinate transformations, we are now able to present some of the most important tensors in general relativity. \\
 Maybe the most important object to quantify curved space is the \textit{metric tensor} $g_{\mu\nu}$\footnote{It is convenient to write the components $T_{\phantom{\mu_{1} \cdots \mu_{k}}\nu_{1} \cdots \nu_{l}}^{\mu_{1} \cdots \mu_{k}}$ when speaking about tensors $T$.} and its inverse  $g^{\mu\nu}$, related via $g^{\mu\nu}g_{\nu\sigma} = \delta^{\mu}_{\phantom{\mu}\sigma}$. The metric and its inverse can be used to raise and lower indices, e.\,g. $x^{\mu} = g^{\mu\nu}x_{\nu}$. Additionally we can compute path lengths and proper time via the definition of the line element 
 \begin{align}
 	d s^{2}=g_{\mu \nu} \mathrm{d} x^{\mu} \mathrm{d} x^{\nu}.
 \end{align}
-For arbitrary vector fields $X$ and $Y$ the scalar product induced by the metric tensor reads
+For arbitrary vector fields $V$ and $W$ the scalar product induced by the metric tensor reads
 \begin{align}
-	g(X,Y) = g_{\mu\nu}X^{\mu}Y^{\nu} = X^{\mu}Y_{\mu}= g^{\mu\nu}X_{\mu}Y_{\nu} = X_{\mu}Y^{\mu}.
+	g(V,W) = g_{\mu\nu}V^{\mu}W^{\nu} = V^{\mu}W_{\mu}= g^{\mu\nu}V_{\mu}W_{\nu} = V_{\mu}W^{\mu}.
 \end{align}
-
-We will see, that the metric tensor already contains all the information on the geometrical structure of the respective manifold we need to quantify curvature. Nevertheless, we first have to think about differentiation of general tensors again. 
-
-%TODO: Covariant derivatives, text to formulas i already printet..
- 
+We will see, that the metric tensor already contains all the information on the geometrical structure of the respective manifold we need to quantify curvature. Nevertheless, we first have to think about differentiation of general tensors again. \\
+In flat space, the partial derivative is a map from $(k, l)$ to $(k, l+1)$ tensor fields satisfying linearity and the Leibniz product rule. We want to generalize this concept to curved space by introducing the \textit{covariant derivative} $\nabla$\footnote{In the context of quantum field theory, the gauge covariant derivative is often written as $D$. Nevertheless, throughout this thesis we will use $\nabla$ to indicate any kind of covariant derivative.}. Different to the usual partial derivative, the covariant derivative is independent on the chosen set of coordinates. Consider for example the covariant derivative of a vector field $V$, which can be written as a partial derivative plus some correction term due to its property to obey the Leibniz rule:
 \begin{align}
-\Gamma_{\phantom{\alpha}\mu \nu}^{\alpha}=\frac{1}{2} g^{\mu \lambda}\left(\partial_{\mu} g_{\nu \lambda}+\partial_{\nu} g_{\mu \lambda}-\partial_{\lambda} g_{\mu \nu}\right)	
+\nabla_{\mu} V^{\nu}=\partial_{\mu} V^{\nu}+\Gamma_{\phantom{\nu}\mu \lambda}^{\nu} V^{\lambda}.
+\label{eqn:cov_deriv}
 \end{align}
-Geodesic equation:
+Here, the correction term is specified by the so-called \textit{Christoffel symbols} a.\,k.\,a. \textit{connection coefficients}. They are determined by derivatives of the metric tensor:  
 \begin{align}
-	\int d s=\int d \tau \sqrt{g_{\mu \nu} \frac{d x^{\mu}}{d \tau} \frac{d x^{\mu}}{d \tau}}
+\Gamma_{\phantom{\alpha}\mu \nu}^{\alpha}=\frac{1}{2} g^{\mu \lambda}\left(\partial_{\mu} g_{\nu \lambda}+\partial_{\nu} g_{\mu \lambda}-\partial_{\lambda} g_{\mu \nu}\right)\footnotemark.	
 \end{align}
-
+\footnotetext{This holds only true, if the connection is \textit{torsion free} i.\,e. $
+T_{\phantom{\lambda}\mu \nu}^{\lambda}=\Gamma_{\phantom{\lambda}\mu \nu}^{\lambda}-\Gamma_{\phantom{\lambda}\nu \mu}^{\lambda}=2 \Gamma_{\phantom{\lambda}[\mu \nu ]}^{\lambda} = 0$ and fullfils \textit{metric compatibility} i.\,e.$
+\nabla_{\rho} g_{\mu \nu}=0$. For the most important connection in the context of General Relativity, the \textit{Levi-Civita connection}, these properties are fullfilled. The fundamental theorem of Riemannian geometry states, that for every Riemannian manifold there exists a unique Levi-Civita connection. It is determined by the Koszul formula.}
+It can be shown, that the connection coefficients themselves do \textit{not} transform like tensor components, but are constructed in a way such that the combination (\ref{eqn:cov_deriv}) does. Note, that the covariant derivative reduces to the partial when applied to scalars. With this definition of the connection, we are now finally able to introduce the remaining tensor structures needed for the understanding of the calculations presented later on in this work. \\
+The central object in our discussion of curvature is the \textit{Riemann tensor} $R_{\phantom{\alpha}\beta \gamma \delta}^{\alpha}$. It is a $(1, 3)$-tensor given by
+\begin{align} 
+	R_{\phantom{\alpha}\beta \gamma \delta}^{\alpha}=\partial_{\gamma} \Gamma_{\phantom{\alpha}\beta \delta}^{\alpha}-\partial_{\delta} \Gamma_{\phantom{\alpha}\beta \gamma}^{\alpha}+\Gamma_{\phantom{\alpha}\beta \delta}^{\epsilon} \Gamma_{\phantom{\alpha}\epsilon \gamma}^{\alpha}-\Gamma_{\phantom{\alpha}\beta \gamma}^{\epsilon} \Gamma_{\phantom{\alpha}\epsilon \delta}^{\alpha}.
+\end{align}
+It contains all the information about the curvature of the respective manifold. Another useful definition of the Riemann tensor is related to the commutator of two covariant derivatives, acting on a vector field:
 \begin{align}
-	\ddot{x}^{\mu}+\Gamma_{\phantom{\mu}\sigma \rho}^{\mu} \dot{x}^{\sigma} \dot{x}^{\rho}=0
+	\left[\nabla_{\mu}, \nabla_{\nu}\right] A^{\sigma}=R_{\phantom{\alpha}\rho \mu \nu}^{\sigma} A^{\rho}. \label{eqn:Riemann}
 \end{align}
-Riemann/Curvature tensor:
-\begin{align}
-	R_{\phantom{\alpha}\beta \gamma \delta}^{\alpha}=\partial_{\gamma} \Gamma_{\phantom{\alpha}\beta \delta}^{\alpha}-\partial_{\delta} \Gamma_{\phantom{\alpha}\beta \gamma}^{\alpha}+\Gamma_{\phantom{\alpha}\beta \delta}^{\epsilon} \Gamma_{\phantom{\alpha}\epsilon \gamma}^{\alpha}-\Gamma_{\phantom{\alpha}\beta \gamma}^{\epsilon} \Gamma_{\phantom{\alpha}\epsilon \delta}^{\alpha}
-\end{align}
-Definition using the commutator of covariant derivatives
-\begin{align}
-	\left[\nabla_{\mu}, \nabla_{\nu}\right] A^{\sigma}=R_{\phantom{\alpha}\rho \mu \nu}^{\sigma} A^{\rho} \label{eqn:Riemann}
-\end{align}
-
-Contractions of the Curvature tensor:
+We are also interested in contractions of the Riemann tensor, especially the \textit{Ricci tensor} 
 \begin{align}
 	R_{\mu\nu} = R^{\alpha}_{\phantom{\alpha}\mu\alpha\nu} = g_{\alpha\beta} R^{\beta}_{\phantom{\alpha}\mu\alpha\nu}
 \end{align}
-Curvature Scalar:
+and the \textit{Ricci scalar} 
 \begin{align}
-\mathcal{R} = g_{\mu\nu}R^{\mu\nu} = R^{\mu}_{\phantom{\mu}\mu}
+\mathcal{R} = g_{\mu\nu}R^{\mu\nu} = R^{\mu}_{\phantom{\mu}\mu}.
 \end{align}
-
-
-
-
-
-
-\section{From Geometry to the Einstein Equations}
-
-
-The Einstein-Hilbert action:
+At this point, we also want to introduce the \textit{Einstein tensor}, defined as
 \begin{align}
-	\mathcal{S}_{\text{EH}}[g_{\mu\nu}] = \frac{1}{16\pi G} \int\limits_x \sqrt{g} (\Ricci - 2\Lambda)
+	 G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}\mathcal{R}.
 \end{align}
-Varying this action as usual yields the Einstein equations in absence of matter:
+Having introduced the setup for the calculations performed in this work, we are now ready to introduce the \textit{Einstein-Hilbert action}, providing the starting point for an investigation of quantum gravity within the Functional Renormalization Group approach. 
+\section{From Geometry to Einsteins Equations}
+The Einstein-Hilbert action, given by
 \begin{align}
-	G_{\mu\nu} + \Lambda g_{\mu\nu} = 0
+	\mathcal{S}_{\text{EH}} = \frac{1}{16\pi G} \int_x \sqrt{g} \ (\Ricci - 2\Lambda), 
 \end{align}
-where we used $G_{\mu\nu} = \mathcal{R}_{\mu\nu} - \frac{1}{2}g_{\mu\nu}\mathcal{R}$. \\
-
-Diffeomorphism invariance, Lie derivatives:
+where $G$ is Newtons coupling and $\Lambda$ is the cosmological constant, describes a minimally coupled theory of gravity, leading to a $\sfrac{1}{r}$ gravitational potential in the non-relativistic limit. Note, that compared to the usual spacetime measure a factor of $\sqrt{g} := \sqrt{-\operatorname{det}g_{\mu\nu}}$ is included to preserve diffeomorphism invariance.\footnote{Diffeomorphism invariance, i.\,e. the freedom of choosing an appropriate coordinate system, is the central symmetry in the context of General Relativity, based  on the assumption, that coordinates do not exist a priori in nature, but are rather a mathematical tool used to describe it, that should not change the fundamental laws of physics.\nopagebreak} \\ 
+Varying the Einstein-Hilbert action w.\,r.\,t. the inverse metric $g^{\mu\nu}$ yields Einsteins equations in absence of matter:
 \begin{align}
-	\mathcal{L}_{\omega}\phi = \omega^{\mu}\partial^{\mu}\phi = \omega^{\mu}\nabla^{\mu}\phi
+	G_{\mu\nu} + \Lambda g_{\mu\nu} = 0.
 \end{align}
-
-\section{Gravity with Matter} 
-
-Energy-Momentum Tensor:
+The non-vacuum Einstein equations are obtained the same way, after the inclusion of matter in this setting  by adding a matter part to the Einstein-Hilbert action:
+\begin{equation}
+	\mathcal{S} = \frac{1}{8\pi G}\mathcal{S}_{\mathrm{EH}} + \mathcal{S}_{\text{matter}}.
+\end{equation}
+With the definition of the Energy-Momentum tensor $T_{\mu\nu}$, given by
 \begin{align}
-	T_{\mu\nu} = \frac{-2}{\sqrt{-\operatorname{det}g_{\mu\nu}}} \frac{\delta\mathcal{S}_{\text{matter}}}{\delta g^{\mu\nu}}
+	T_{\mu\nu} = \frac{-2}{\sqrt{g}} \frac{\delta\mathcal{S}_{\text{matter}}}{\delta g^{\mu\nu}},
 \end{align}
-
-Matter part of the action for a minimally coupled scalar field $\phi$:
+we arrive at 
 \begin{align}
-	\mathcal{S}_{\text{matter}}[g_{\mu\nu}, \phi] = -\frac{1}{2} \int\limits_x \sqrt{g}\left( g^{\mu\nu}\nabla_{\mu}\phi\nabla_{\nu}\phi - g_{\mu\nu} V(\phi) \right)
+\frac{1}{8\pi G}\left[G_{\mu\nu} + \Lambda g_{\mu\nu}\right] = T_{\mu\nu}.	
 \end{align}
-
-From this, we get the Einstein equations including matter by demanding the variation $\sqrt{-\operatorname{det}g_{\mu\nu}}\frac{\delta\mathcal{S}}{\delta g^{\mu\nu}}$ to vanish. This yields:
-
-\begin{align}
-\frac{1}{8\pi G}\left[\Ricci_{\mu\nu} - \frac{1}{2}(\Ricci - 2\Lambda)g_{\mu\nu}\right] = T_{\mu\nu}	
-\end{align}
-
-
+In this form, Einsteins equations perfectly embody the direct correlation between curvature (l.\,h.\,s.) and the dynamics of the matter content of the theory (r.\,h.\,s.). \\
+At the end of this chapter we want to emphasize the problem of perturbative non-renormali- zability in the context of finding a quantum field theoretical description of gravity. 
 \section{Perturbative Non-Renormalizability of Gravity}
-
+Naively, one could try to quantize gravity via the path integral formalism with a generating functional, given by $\int_{g_{\mu\nu}} \operatorname{e}^{-\mathcal{S}_{\mathrm{EH}}}$, as usual. The main problem in this approach is the lack of positivity of $\mathcal{S}_{\mathrm{EH}}$ causing problems with unitarity of the theory. In quantum gravity one usually introduces a linear split of the \textit{full} metric $g_{\mu\nu}$, to perform expansions about a given background $\bar{g}_{\mu\nu}$, comparable to classical perturbation theory, which is based on coupling or amplitude expansions about the free Gaussian theory. The linear split reads
+\begin{align}
+	g_{\mu\nu} = \bar{g}_{\mu\nu} + \sqrt{G}h_{\mu\nu},
+\end{align}
+with the metric fluctuation $h_{\mu\nu}$ defined as $h_{\mu\nu}= 1/\sqrt{G}\left(g_{\mu\nu}-\bar{g}_{\mu\nu}\right)$. This allows us to write the path integral in terms of the fluctuation field as
+\begin{equation}
+Z\left[J^{\mu \nu} ; \overline{g}_{\mu \nu}\right] \propto \int_{h_{\mu \nu}} \operatorname{e}^{-S_{\mathrm{EH}}\left[\overline{g}_{\mu \nu}+\sqrt{G} h_{\mu \nu}\right]+\int_x \sqrt{\bar{g}} \  J^{\mu \nu} h_{\mu \nu}}.
+\end{equation}
+Note, that the source term depends on the determinant of the background metric, otherwise the usual $J^{\mu\nu}$ derivatives would not generate the $n$-point functions of the fluctuation field $h_{\mu\nu}$. We will come back to this problem, which is often referred to as \textit{background independence}, at the end of this thesis in chapter \ref{chap:BGindependence}. \\
+After a suitable tensor decomposition of the fluctuation field and a gauge fixing procedure \`a la Faddeev-Popov\footnote{The functional quantization of gauge theories requires a gauge fixing procedure due to redundancies in the path integral measure. The idea of Faddeev and Popov is to represent the gauge fixing condition, implemented in the functional integral, as an additional functional integral over a set of Grassmann fields $c$ and $\bar{c}$, known as \textit{Faddeev-Popov ghosts}. Even though they are anticommuting Grassmann fields, they transform as scalars under Lorentz transformations. They also violate spin statistics. Nevertheless, they can be treated as additional particles in the computation of Feynman diagrams. For a detailed discussion, see e.\,g. ch. 16 in \cite{PeskinSchroeder1995} or  sec. 5.2 in \cite{PawlowskiNPgaugeLecture}.},  we are left with the gauge fixed Einstein-Hilbert action
+\begin{align}
+	\mathcal{S}_{\text{grav}}[\bar{g},\Phi] = \mathcal{S}_{\text{EH}}[g] + \mathcal{S}_{\text{gf}}[\bar{g}, h] + \mathcal{S}_{\text{gh}}[\bar{g},\Phi] .
+\end{align}
+ Here the pure gravity multi-field $\Phi=(h_{\mu\nu}, c_{\mu}, \bar{c}_{\mu})$ was introduced. All together, this yields the gauge-fixed path integral representation of quantum gravity:
+ \begin{equation}
+Z[J ; \bar{g}]=\int_{\Phi} \operatorname{e}^{-\mathcal{S}_{\text{grav}}\left[\bar{g}_{\mu\nu}, \Phi\right]+\int_x \sqrt{\bar{g}} \ J \cdot \Phi}.
+\end{equation}
+An analysis of the canonical momentum dimensions of the essential couplings of this theory, $G$ and $\Lambda$ results in:
+\begin{equation}
+\left[G\right] = \left[\dd^dx \sqrt{g}\ \mathcal{R}\right] = 2-d,  \qquad\qquad\qquad \left[\Lambda\right] = 2.
+\end{equation}
+This implies, that the Newton coupling has a negative mass dimension in $d=4$ spacetime dimensions. To investigate the consequences of this, one can consider the grade of divergence $\Lambda^{\delta(\gamma)}$ for a general graph $\gamma$ with $E$ external lines, $I$ internal propagators and $L$ loops. Here, $\Lambda$ is a UV cutoff for the momentum integrals and $\delta(\gamma)$ is the index of the graph,
+\begin{equation}
+	\delta(\gamma) = dL- 2\left(I-\sum_{n=3}^{\infty}\nu_n\right),
+\end{equation}
+where the $\nu_n$ represent $n$-graviton vertices. After expressing the number of loops in terms of the internal lines and the $n$-graviton vertices and restricting ourselves to graphs satisfying $E + 2I = \sum_{n=3}^{\infty}\nu_n$, we find
+\begin{equation}
+	\delta(\gamma)=d-\frac{d-2}{2} E+\sum\limits_{n=3}^{\infty} v_{n} \delta\left(v_{n}\right),
+\end{equation}
+where $\delta\left(v_{n}\right)=\frac{1}{2}(n-2)(d-2)$.
+After fixing the number of external lines, e.\,g. to $E=2$, representing the case of vacuum polarization, one is now able to investigate the grade of divergence for diagrams of different loop orders. t'Hooft and Veltman proved that the theory is renormalizable up to 1-loop order \cite{tHooftVeltmann1974}, but already at 2-loop order, Goroff and Sagnotti showed, that non-vanishing counterterms are generated \cite{GoroffSanotti1985}. In general, this is interpreted as the failure of perturbative quantization of gravity due to the negative mass dimension of the Newton coupling. This leads us to our discussion of Asymptotic Safety as a non-perturbative approach based on the functional renormalization group methods we presented in the last chapter.  
+  

@@ -1,4 +1,20 @@
 \chapter{Asymptotic Safety of Gravity-Matter Systems}\label{chap:Matter} 
+The calculation in $h^{\mathrm{TT}}$ approximation in the last chapter already allowed us to investigate the characteristic fixed point structure of the Einstein-Hilbert truncation. Nevertheless, in this part of the thesis, where the impact of minimally coupled matter fields is investigated, we want to work with the full result, including also the vector and scalar modes arising after the York decomposition (\ref{eqn:York}) of the fluctuation field. This also means, that we have to take care of additional gauge fixing and ghost terms, given by 
+\begin{align}
+\mathcal{S}_{\mathrm{gf}} &= \frac{1}{2\alpha} \int_x \sqrt{\bar{g}} \  \bar{g}^{\mu\nu} F_{\mu}F_{\nu}	\nonumber\\
+\phantom{.} \\
+\mathcal{S}_{\mathrm{gh}} &= \int_x \sqrt{\bar{g}} \  \bar{g}^{\mu\mu'} \bar{g}^{\nu\nu'}\bar{c}_{\mu'} \mathcal{M}_{\mu\nu}  c_{\nu'} \nonumber
+\end{align}
+with the Faddeev-Popov operator $\mathcal{M}_{\mu\nu}(\bar{g},h)$ for the gauge fixing $F_{\mu}(\bar{g},h)$. 
+\begin{align}
+	F_{\mu} &= \bar{\nabla}^{\nu}h_{\mu\nu} - \frac{1+\beta}{4}\bar{\nabla}_{\mu}h^{\nu}_{\phantom{\nu}\nu} \nonumber \\
+	\phantom{.} \\
+	\mathcal{M}_{\mu\nu} &= \bar{\nabla}^{\rho}(g_{\mu\nu}\nabla_{\rho} + g_{\rho\nu}\nabla_{\mu}) - \bar{\nabla}_{\mu}\nabla_{\nu}, \nonumber
+\end{align}
+
+
+%TODO: Explain which formulas we are using and introduce gauge fixing etc. Reference to Pawlowski script..
+ 
 The inclusion of matter in this theory setting is in principle straightforward. We extend our truncation (\ref{eqn:QGflow}) by including an additional matter term: 
 \begin{align}
 	\Gammak = \Gamma_{\text{EH}} + \mathcal{S}_{\text{gf}}+ \mathcal{S}_{\text{gh}}+ \Gamma_{\text{matter}},
@@ -26,7 +42,10 @@ The Litim-type shape function $r_k$ is in this case the same as the one defined 
 \section{Matter Contributions in Background Field Approximation}
 After having introduced the setup for the following calculation, we are now able to determine the different contributions from the matter fields step by step, by evaluating the functional traces ocurring on the r.\,h.\,s. of the flow equation separately. For the matter configuration in our setting the flow equation reads
 \begin{equation}
-\begin{aligned} \partial_t\Gamma_{k} =\frac{1}{2} \operatorname{Tr}\left[\left(\Gamma_{k}^{(2)}+R_{k}\right)^{-1} \partial_t R_{k}\right]_{h h} &+ \frac{1}{2}\operatorname{Tr}\left[\left(\Gamma_{k}^{(2)}+R_{k}\right)^{-1} \partial_t R_{k}\right]_{\phi\phi} \\[10pt] -\operatorname{Tr}\left[\left(\Gamma_{k}^{(2)}+R_{k}\right)^{-1}\partial_t R_{k}\right]_{\bar{\psi} \psi}&+\frac{1}{2} \operatorname{Tr}\left[\left(\Gamma_{k}^{(2)}+R_{k}\right)^{-1}\partial_t R_{k}\right]_{AA}.\end{aligned}
+\begin{aligned}
+ \partial_t\Gamma_{k} =\frac{1}{2} \operatorname{Tr}&\left[\left(\Gamma^{(2)}+R_{k}\right)^{-1} \partial_t R_{k}\right]_{h h} - \operatorname{Tr}\left[\left(\Gamma^{(2)}+R_{k}\right)^{-1} \partial_t R_{k}\right]_{\bar{c}c}\\[10pt]
+ + \frac{1}{2}\operatorname{Tr}&\left[\left(\Gamma^{(2)}+R_{k}\right)^{-1} \partial_t R_{k}\right]_{\phi\phi}  -\operatorname{Tr}\left[\left(\Gamma^{(2)}+R_{k}\right)^{-1}\partial_t R_{k}\right]_{\bar{\psi} \psi} \\[10pt]
+ +\frac{1}{2} \operatorname{Tr}&\left[\left(\Gamma^{(2)}+R_{k}\right)^{-1}\partial_t R_{k}\right]_{AA}.\end{aligned}
 \label{eqn:matter_flow}
 \end{equation}
 %TODO: Explain signs and prefactors
@@ -79,7 +98,8 @@ For the fermionic contribution, we  proceed slightly different. First, we presen
 		&=  iZ_D\int_x \sqrt{\bar{g}} \ \sum\limits_{i=1}^{N_D}\bar{\psi}^{i}\bar{\slashed{\nabla}}\psi^{i} + \mathcal{O}(h).
 	\end{aligned}
 \end{equation}
-The notation for the conjugated field $\bar{\psi} = \psi^{\dagger}\gamma^0$ should not be confused with the bar referring to the background field. As usual, the slashed notation implies contraction with gamma matrices\footnote{In the discussion of Dirac fermions, the gamma matrices $\left\{\gamma^0, \gamma^1, \gamma^2, \gamma^3\right\}$ are a set of complex valued matrices, that constitute an irreducible representation of the Clifford algebra, defined by the anticommutation relation $\left\{\gamma_{\mu}, \gamma_{\nu}\right\}= 2g_{\mu\nu} \mathbbm{1}_{d_{\gamma}\times d_{\gamma}}$, with $d_{\gamma} = 2^{\left[\sfrac{d}{2}\right]}$. A more formal treatment of fermions in curved spacetimes is presented in \cite{LippoldtPHD}.}, i.\,e. $\slashed{\nabla} = \gamma^{\mu}\nabla_{\mu}$. \\
+The Dirac operator $\slashed{\nabla}$ satisfies $-\slashed{\nabla}^2 = -\nabla^2 + \frac{\bar{\mathcal{R}}}{4} := \Delta_{\left(\sfrac{1}{2}\right)}$.
+The notation for the conjugated field $\bar{\psi} = \psi^{\dagger}\mathfrak{h}$\footnote{The spin metric $\mathfrak{h}$ satisfies $\abs{\operatorname{det} \mathfrak{h}} = 1$ and $\mathfrak{h}^{-1} = -\mathfrak{h}$.} should not be confused with the bar referring to the background field. As usual, the slashed notation implies contraction with gamma matrices\footnote{In the discussion of Dirac fermions, the gamma matrices $\left\{\gamma^0, \gamma^1, \gamma^2, \gamma^3\right\}$ are a set of complex valued matrices, that constitute an irreducible representation of the Clifford algebra, defined by the anticommutation relation $\left\{\gamma_{\mu}, \gamma_{\nu}\right\}= 2g_{\mu\nu} \mathbbm{1}_{d_{\gamma}\times d_{\gamma}}$, with $d_{\gamma} = 2^{\left[\sfrac{d}{2}\right]}$. A more formal treatment of fermions in curved spacetimes is presented in \cite{LippoldtPHD}.}, i.\,e. $\slashed{\nabla} = \gamma^{\mu}\nabla_{\mu}$.  \\
 In principle, this allows us to read off the fermion two-point function
 \begin{align}
 	\Gamma^{(2)}_{\bar{\psi}\psi} = \frac{\delta^2 \mathcal{S}_D}{\delta \psi^{i}\ \delta \bar{\psi}^{j}} = iZ_D\cdot\slashed{\nabla}\cdot\mathbbm{1}_D + \mathcal{O}(h).
@@ -88,8 +108,8 @@ In general one chooses the regulator, such that the symmetries of the kinetic te
 \begin{align}
 	R_{k,D} = Z_D\cdot\tilde{\Delta}\cdot\mathbbm{1}_D\cdot r_{k, D}\left(\frac{\tilde{\Delta}}{k^2}\right).
 \end{align} 
-When computing fermion propagators in other theory settings, it follows quite naturally to consider the Dirac dispersion as the "square root" of the scalar Klein-Gordon dispersion. For a more detailed discussion of this idea in the context of Fermi-Bose gases, we refer to chapter 2 of \cite{PawlowskiNPgaugeLecture} or in the context of gravity-matter systems in quantum gravity to the appendix of \cite{BritoHamadaPereiraYamada2019}. \\
-This allows us to express $r_k$ for the fermions as a function of the scalar shape function:
+When computing fermion propagators in other theory settings, it follows quite naturally to consider the Dirac dispersion as the "square root" of the scalar Klein-Gordon dispersion. For a more detailed discussion of this idea in the context of Fermi-Bose mixtures, we refer to chapter 2 of \cite{PawlowskiNPgaugeLecture} or in the context of gravity-matter systems in quantum gravity to the appendix of \cite{BritoHamadaPereiraYamada2019}. \\
+This assumption allows us to express $r_k$ for the fermions as a function of the scalar shape function:
 \begin{align}
 \left[1+r_{k,D}\right]^2 = 1+r_{k,S} \qquad \longrightarrow \qquad r_{k, D} = \sqrt{1+r_{k,S}} - 1
 \end{align}
@@ -97,6 +117,7 @@ In total, this yields the final expression for regularized two-point function fo
 \begin{align}
 	\Gamma^{(2)}_{\bar{\psi}\psi, k} = 
 \end{align}
+%TODO: To do..
 \subsection{Gauge fields}  
 The structure of the gauge field contribution is more complex than for the other fields. This is due to the fact, that we have to employ a gauge fixing procedure w.\,r.\,t. the background field $\bar{g}_{\mu\nu}$. This ensures gauge invariance w.\,r.\,t. background gauge transformations. The action for $N_V$ gauge fields, minimally coupled to gravity reads
 \begin{equation}
@@ -166,7 +187,7 @@ and therefore, the result for the heat-kernel expansion for the gauge fields is 
 
 To finish the calculation of the gauge field contribution, we need to take the ghost term into account. Fortunately, it has already the desired form, where we can directly read off the two-point function:
 \begin{equation}
-	\Gamma^{(2)}_{\bar{C}C} = \frac{\delta^2 \mathcal{S}_V}{\delta C^{i}\ \delta \bar{C}^(j)} = \mathbbm{1}_V\cdot\bar{\Delta}.
+	\Gamma^{(2)}_{\bar{C}C} = \frac{\delta^2 \mathcal{S}_V}{\delta C^{i}\ \delta \bar{C}^{j}} = \mathbbm{1}_V\cdot\bar{\Delta}.
 \end{equation} 
 Note, that we have the usual Laplacian $\bar{\Delta} = -\bar{\nabla}^2$ as kinetic operator and that no wave function renormalization was introduced for the Abelian ghosts. The ghost regulator $R_{k, \mathrm{gh}}$ is the same as for the scalar fields and therefore the regularized two-point function reads
 \begin{equation}

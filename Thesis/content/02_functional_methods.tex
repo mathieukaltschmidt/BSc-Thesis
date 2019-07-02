@@ -8,8 +8,7 @@ Consider a theory setting of $N$ real scalar fields $\varphi_a(x), a \in \{1,\do
 	Z[J] = \frac{1}{\mathcal{N}} \int \D\varphi \operatorname{e}^{-\S + J\cdot\varphi}.
 	\label{eqn:partition}
 \end{align}
-The action $\mathcal{S}$ is specified together with an ultraviolet cutoff scale $\Lambda$, later being the momentum scale where we initialize the flow equations and some normalization factor $\mathcal{N}$.
-
+The action $\mathcal{S}$ is specified together with an ultraviolet cutoff scale $\Lambda$, later being the momentum scale where we initialize the flow equations and some normalization factor $\mathcal{N}$.\\
 In this notation, the scalar product sums over field components and integrates over all space,
 \begin{align}
 	J\cdot\varphi = \int_x J_a(x) \ \varphi_a(x) = \int_p \tilde{J}_a(p) \ \tilde{\varphi}_a(p),
@@ -67,7 +66,7 @@ where we used, that $\sfrac{\delta\phi}{\delta J} = \sfrac{\delta W^{(1)}}{\delt
 \begin{align}
  \int_{y} \frac{\delta^{2} W}{\delta J\left(x_{1}\right) \delta J(y)} \frac{\delta^{2} \Gamma}{\delta \phi(y) \delta\phi\left(x_{2}\right)} &=\int_{y} \frac{\delta}{\delta J\left(x_{1}\right)}\left[\frac{\delta W}{\delta J(y)}\right] \frac{\delta}{\delta \phi(y)}\left[\frac{\delta \Gamma}{\delta \phi\left(x_{2}\right)}\right] \nonumber\\[10pt]
 	&=\int_{y} \frac{\delta \phi(y)}{\delta J\left(x_{1}\right)} \frac{\delta}{\delta \phi(y)} J\left(x_{2}\right) \\[10pt] 
-	&=\delta_{\mathrm{D}}\left(x_{1}-x_{2}\right).\nonumber
+	&=\delta\left(x_{1}-x_{2}\right).\nonumber
 \end{align} 
 The full propagator $G$ is the inverse of the 1PI two-point function:
 \begin{align}
@@ -75,7 +74,7 @@ The full propagator $G$ is the inverse of the 1PI two-point function:
 \end{align}
  In the next section, we want to use these concepts to introduce the functional renormalization group (FRG)... 
 \section{Functional Renormalization Group}
-The functional renormalization group is a mathematical tool, allowing us to investigate the dynamics of physical systems on different scales, i.\,e. energy or momentum scales. This idea is based on a continuous version of Kadanoffs block spin model on the lattice and was developed by Kenneth G. Wilson in 1971. It aims at solving the theory by integrating successively momentum shell by momentum shell, being the reason why the path integral approach to quantum field theory provides a suitable framework. The main advantage of the FRG approach is, that no regularization or renormalization procedure has to be applied. The latter one is already implemented systematically, which secures the self-consistency of the approach.
+The functional renormalization group is a mathematical tool, allowing us to investigate the dynamics of physical systems on different scales, i.\,e. energy or momentum scales. This idea is based on a continuous version of Kadanoffs block spin model on the lattice and was developed by Kenneth G. Wilson in 1971. It aims at solving the theory by integrating successively momentum shell by momentum shell, being the reason why the path integral approach to quantum field theory provides a suitable framework. The main advantage of the FRG approach is, that no regularization or renormalization procedure has to be applied. The latter one is already implemented systematically, which secures the self-consistency of the approach. 
 
 As a first step towards a FRG equation we need to introduce an infrared cutoff scale $k$ in our theory, below which the modes are not integrated out. A common way to introduce such a scale is by  adding a scale-dependent cutoff term $\Delta\mathcal{S}_k$ in the definition of the partition sum (\ref{eqn:partition}) and therefore automatically also in the definition of the Schwinger functional (\ref{eqn:Schwinger})
 \begin{align}
@@ -99,7 +98,7 @@ with $ y := \frac{p^2}{k^2}$, and a dimensionless regulator shape function $r_k$
 \begin{align}
 r_k(y) = \left(\frac{1}{y} - 1\right)\theta(1-y),	
 \end{align}
-where $\theta$ is the Heaviside step function. This class of (sharp) regulators is a good choice for finding analytic FRG equations in simple approximations. For numerical approaches, exponential regulators, which are in general more complicated, are well suited.
+where $\theta$ is the Heaviside step function. This class of \textit{sharp} regulators is a good choice for finding analytic FRG equations in simple approximations. For numerical approaches, exponential regulators, which are in general more complicated, are well suited.
 In this setting, (\ref{eqn:Wk}) provides a good starting point for solving the theory by successively lowering the cutoff scale $k$ infinitesimally and integrating out all momentum modes $\varphi_{p\approx k}$. \\
 This procedure can be formalized by taking a scale derivative of our scale-dependent functional (\ref{eqn:Wk})
 \begin{align}
@@ -142,7 +141,7 @@ It has a rather simple diagrammic representation as one-loop equation:
 \hrulefill
 \end{figure}
 
-
+$\mathbb{Z}$
 
 \section{Systematic expansion schemes}
 %Derivative expansion, vertex expansion and other stuff ß

@@ -1,7 +1,7 @@
 \chapter{Functional Renormalization and Quantum Gravity}\label{chap:EHT}
 %TODO: GAUGE FIXING! Faddeev-Popov
 %TODO: Have a look at the derivation of the equation.. still some terms missing
-\section{RG approach to Quantum Gravity}
+\section{Asymptotic Safety}
 
 \section{Einstein-Hilbert Truncation}
 We want to solve the Flow equation (\ref{eqn:QGflow}) approximately. All terms that are invariant under the imposed symmetry, i.\,e. invariant under diffeomorphism transformations need to be taken into account. \\
@@ -19,20 +19,7 @@ with
 	\kappa^2 = \frac{1}{32\pi G}, \qquad\qquad G_k = GZ^{-1}_k
 \end{align}
 
-Linear gauge fixing $F_{\mu}$ and corresponding ghost term induced by the Faddeev-Popov procedure:
-\begin{align}
-\mathcal{S}_{\text{gf}} &= \frac{1}{2\alpha} \int_x \sqrt{\bar{g}} \  \bar{g}^{\mu\nu} F_{\mu}F_{\nu}	\nonumber\\
-\phantom{.} \\
-\mathcal{S}_{\text{gh}} &= \int_x \sqrt{\bar{g}} \  \bar{g}^{\mu\mu'} \bar{g}^{\nu\nu'}\bar{c}_{\mu'} \mathcal{M}_{\mu\nu}  c_{\nu'} \nonumber
-\end{align}
-with the Faddeev-Popov operator $\mathcal{M}_{\mu\nu}(\bar{g},h)$ for the gauge fixing $F_{\mu}(\bar{g},h)$. \\
-A linear, de-Donder type gauge fixing with 
-\begin{align}
-	F_{\mu} &= \bar{\nabla}^{\nu}h_{\mu\nu} - \frac{1+\beta}{4}\bar{\nabla}_{\mu}h^{\nu}_{\phantom{\nu}\nu} \nonumber \\
-	\phantom{.} \\
-	\mathcal{M}_{\mu\nu} &= \bar{\nabla}^{\rho}(g_{\mu\nu}\nabla_{\rho} + g_{\rho\nu}\nabla_{\mu}) - \bar{\nabla}_{\mu}\nabla_{\nu}, \nonumber
-\end{align}
-is employed, where $\beta=1$ and $\alpha\rightarrow 0$ represents a fixed point of the RG flow. Note, that the limit  $\alpha\rightarrow 0$ is performed after the gauge fixing process.  \\
+
 
 anomalous dimension: 
 \begin{align*}
@@ -63,9 +50,7 @@ maximally symmetric space:
 \end{align}
 
 suitable tensor basis:
-\begin{align}
-	h_{\mu\nu} = h_{\mu\nu}^{\text{TT}} + \bar{\nabla}_{\mu}\xi_{\nu} + \left(\bar{\nabla}_{\mu}\bar{\nabla}_{\nu} - \frac{1}{d} \ \bar{g}_{\mu\nu}\bar{\Delta}\right)\sigma + \frac{1}{d} \ \bar{g}_{\mu\nu}h
-\end{align}
+
 %TODO: Adapt this to the definition given in the Appendix 
 As a first approximation, we only take the contribution from the spin-two graviton mode $h_{\mu\nu}^{\text{TT}}$ into account. This is motivated by the fact, that this mode carries the the most degrees of freedom.\\ %TODO: Extend this explanation (exercise sheet...)
 In this setting, we want to solve the Wetterich equation (\ref{eqn:Wetterich}) by computing the left hand side and the right hand side separately and extract the $\beta$-functions for the Newton coupling $g_k$ and the cosmological constant $\lambda_k$ by a comparison of all terms of order $\sim\sqrt{g}$ and $\sim \sqrt{g} \ \mathcal{R}$. Here, only the most important steps of the calculation are presented. For the complete calculation have a look at Appendix A. \\%TODO:Referencing the Appendix. 

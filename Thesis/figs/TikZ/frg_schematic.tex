@@ -1,0 +1,27 @@
+\documentclass{standalone}
+\input{feynman_settings}
+\usetikzlibrary{patterns, decorations.markings}
+\usepackage{relsize}
+
+
+\begin{document}
+
+\raisebox{6.3ex}{$\partial_t\Gamma_k[\phi] = \mathlarger{\frac{1}{2}} \mathlarger{\sum}\limits_{i, j=1}^{N} \ \mathlarger{\int}_{p, q} \partial_{t} R_{k, i j}\left(p, q\right)$ }
+
+\begin{tikzpicture}[cross/.style={path picture={ 
+\draw[black]
+(path picture bounding box.south east) -- (path picture bounding box.north west) (path picture bounding box.south west) -- (path picture bounding box.north east);
+}}]
+\draw[thick, decoration={markings, mark=at position 0.75 with {\arrow{>}}},
+        postaction={decorate}] circle(1);
+\draw[thick, decoration={markings, mark=at position 0.25 with {\arrow{>}}},
+        postaction={decorate}] circle(1);
+\node [draw, fill = white, circle,cross,minimum width= 0.1 cm] at (-1,0){}; 
+\node [draw, fill = BScGray!30, circle] at (1,0){}; 
+
+\node at (0,0.65){$p$};
+\node at (0,-0.65){$q$};
+\end{tikzpicture}
+
+\raisebox{6.3ex}{$\left[\Gamma_{k}^{(2)}[\phi]+R_{k}\right]_{j i}^{-1}\left(q, p\right)$, } 
+\end{document}
