@@ -1,0 +1,28 @@
+\documentclass[tikz, border=3mm]{standalone}
+\input{fig_settings}
+\usepackage{pgfplots}
+\begin{document}
+
+\begin{tikzpicture}
+    \begin{axis}[
+        domain=0.1:1.85,
+        ytick = \empty,
+        xtick = \empty,
+        xmin=0.385, xmax=1.9,
+        ymin=0, ymax=3,
+        samples=200,
+        axis y line=center,
+        axis x line=middle,
+        xlabel = $p^2$,
+        thick
+    ]
+        \addplot+[mark=none,thick, red] {(x^6/(exp(x^6)-1))};
+        \addplot+[mark=none,thick, BScBlue] {(-10*x^6/(exp(x^6)-1) + 12*x^12*exp(x^6)/(exp(x^6)-1)^2)/2};
+    \end{axis}
+    \node at (3.15,-0.3) {$k^2$};
+    \node at (3.1, 0) {\tiny$|$};
+    \node[red] at (1.6,	1.2) {\Large$\frac{R_k}{k^2}$};
+    \node[BScBlue] at (4.5,	3.7) {\Large$\frac{\partial_tR_k}{2k^2}$};
+\end{tikzpicture}
+
+\end{document} 
