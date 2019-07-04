@@ -1,19 +1,20 @@
 \chapter{Functional Renormalization and Quantum Gravity}\label{chap:EHT}
-%TODO: GAUGE FIXING! Faddeev-Popov
-%TODO: Have a look at the derivation of the equation.. still some terms missing
+In this chapter, we 
 \section{Asymptotic Safety}
 \begin{itemize}
 	\item Taking the UV limit ..
 \end{itemize}
 \section{Einstein-Hilbert Truncation}
-We want to solve the Flow equation (\ref{eqn:QGflow}) approximately. All terms that are invariant under the imposed symmetry, i.\,e. invariant under diffeomorphism transformations need to be taken into account. \\
+
+We want to solve the Flow equation ()%TODO: define QG flow equation to refero to
+approximately. All terms that are invariant under the imposed symmetry, i.\,e. invariant under diffeomorphism transformations need to be taken into account. \\
 
 Easiest truncation takes only the scalar curvature $\mathcal{R}$ and the cosmological constant $\Lambda$ into account (No higher order terms \dots) and was performed by Martin Reuter in 1993 \cite{ReuterSaueressig2002}. \\
 
 
-This truncation reads
+This full truncation reads
 \begin{align}
-	\Gammak = 2\kappa^2Z_k \int_x \sqrt{g} \ [-\mathcal{R} + 2\Lambda_k] + \mathcal{S}_{\text{gf}} + \mathcal{S}_{\text{gh}}
+	\Gammak = 2\kappa^2Z_k \int_x \sqrt{g} \ [-\mathcal{R} + 2\Lambda_k] + \mathcal{S}_{\text{gf}} + \mathcal{S}_{\text{gh}}.
 \label{eqn:QGflow}
 \end{align}
 with 
@@ -55,7 +56,7 @@ suitable tensor basis:
 
 %TODO: Adapt this to the definition given in the Appendix 
 As a first approximation, we only take the contribution from the spin-two graviton mode $h_{\mu\nu}^{\text{TT}}$ into account. This is motivated by the fact, that this mode carries the the most degrees of freedom.\\ %TODO: Extend this explanation (exercise sheet...)
-In this setting, we want to solve the Wetterich equation (\ref{eqn:Wetterich}) by computing the left hand side and the right hand side separately and extract the $\beta$-functions for the Newton coupling $g_k$ and the cosmological constant $\lambda_k$ by a comparison of all terms of order $\sim\sqrt{g}$ and $\sim \sqrt{g} \ \mathcal{R}$. Here, only the most important steps of the calculation are presented. For the complete calculation have a look at Appendix A. \\%TODO:Referencing the Appendix. 
+In this setting, we want to solve the Wetterich equation (\ref{eqn:Wetterich}) by computing the l.\,h.\,s. and the r.\,h.\,s. separately and extract the $\beta$-functions for the Newton coupling $g_k$ and the cosmological constant $\lambda_k$ by a comparison of all terms of order $\sim\sqrt{g}$ and $\sim \sqrt{g} \ \mathcal{R}$. \\
 In our spin-two graviton mode approximation, we don't have to deal with the gauge-fixing and ghost parts ocuring in the effective action. The simplified version of equation (\ref{eqn:QGflow}) reads
 \begin{align}
 	\Gamma_{k, h^{\text{TT}}} = 2\kappa^2Z_k \int_x \sqrt{g} \ [-\mathcal{R} + 2\Lambda_k].
@@ -66,7 +67,7 @@ We start by computing the transverse-traceless graviton two-point function
 \end{align}
 Using a regulator of the form
 \begin{align}
-R_k  = \eval{\Gamma_{h^{\text{TT}}h^{\text{TT}}}^{(2)}}_{\Lambda_k=\bar{\mathcal{R}}=0} \cdot r_k\left(\frac{\bar{\Delta}}{k^2}\right) = \frac{Z_k}{32\pi}\bar{\Delta}\left(\frac{k^2}{\bar{\Delta}}-1\right)\Theta\left(1-\frac{\bar{\Delta}}{k^2}\right), \nonumber
+R_k  = \eval{\Gamma_{h^{\text{TT}}h^{\text{TT}}}^{(2)}}_{\Lambda_k=\bar{\mathcal{R}}=0} \cdot r_k\left(\frac{\bar{\Delta}}{k^2}\right) = \frac{Z_k}{32\pi}\bar{\Delta}\left(\frac{k^2}{\bar{\Delta}}-1\right)\theta\left(1-\frac{\bar{\Delta}}{k^2}\right), \nonumber
 \end{align}
 with a Litim-type cutoff
 \begin{align}

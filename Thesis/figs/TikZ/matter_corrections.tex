@@ -50,7 +50,7 @@
 %actual code
 
 \hspace{-0.7cm}
-\raisebox{4ex}{$\partial_t\Gamma_k[\bar{g}, 0] = \mathlarger{\frac{1}{2}}$
+\raisebox{4ex}{\Large$\partial_t\Gamma_k[\bar{g}, 0] = \mathlarger{\frac{1}{2}}$
  }
 
 \begin{tikzpicture}[cross/.style={path picture={ 
@@ -61,19 +61,19 @@
 \draw[thick] circle(0.67);
 \node [draw, fill = white, circle, cross, minimum width= 0.1 cm] at (0,0.7){}; 
 \end{tikzpicture}
-\raisebox{4ex}{$ \ \ - \ $
+\raisebox{4ex}{\Large$ \ \ - \ $
  }
 
 \begin{tikzpicture}[cross/.style={path picture={ 
 \draw[black]
 (path picture bounding box.south east) -- (path picture bounding box.north west) (path picture bounding box.south west) -- (path picture bounding box.north east);
 }}]
-\draw[thick, dotted, decoration={markings, mark=at position 0.5 with {\arrow{<}}}, postaction={decorate}] circle(0.7);
-\draw[thick, dotted, decoration={markings, mark=at position 0.007 with {\arrow{<}}}, postaction={decorate}] circle(0.7);
+\draw[thick, dotted, decoration={markings, mark=at position 0.5 with {\arrow{<}}}, postaction={decorate}] circle(0.73);
+\draw[thick, dotted, decoration={markings, mark=at position 0.007 with {\arrow{<}}}, postaction={decorate}] circle(0.73);
 \node [draw, fill = white, circle, cross, minimum width= 0.1 cm] at (0,0.7){}; 
 \end{tikzpicture}
 
-\raisebox{4ex}{$ \ + \ \mathlarger{\frac{1}{2}}$
+\raisebox{4ex}{\Large$ \ + \ \mathlarger{\frac{1}{2}}$
  }
 
 \begin{tikzpicture}[cross/.style={path picture={ 
@@ -84,7 +84,7 @@
 \node [draw, fill = white, circle, cross, minimum width= 0.1 cm] at (0,0.7){}; 
 \end{tikzpicture}
 
-\raisebox{4ex}{$ \ \ - \ $
+\raisebox{4ex}{\Large$ \ \ - \ $
  }
 
 \begin{tikzpicture}[cross/.style={path picture={ 
@@ -97,7 +97,7 @@
 \node [draw, fill = white, circle, cross, minimum width= 0.1 cm] at (0,0.7){}; 
 \end{tikzpicture}
 
-\raisebox{4ex}{$ \ + \ \mathlarger{\frac{1}{2}}$
+\raisebox{4ex}{\Large$ \ + \ \mathlarger{\frac{1}{2}}$
  }
  
  \begin{tikzpicture}[
@@ -118,7 +118,27 @@ cross/.style={path picture={
 \node [draw, fill = white, circle, cross, minimum width= 0.1 cm] at (0,0.7){}; 
 
 \end{tikzpicture}
+\raisebox{4ex}{\Large$ \ \ - \ $
+ }
 
+ \begin{tikzpicture}[
+    sines/.style={
+        thick,
+        line join=round, 
+        draw=black, 
+        decorate, 
+        decoration={complete sines, number of sines=11, amplitude=4pt}
+    },
+cross/.style={path picture={ 
+\draw[black]
+(path picture bounding box.south east) -- (path picture bounding box.north west) (path picture bounding box.south west) -- (path picture bounding box.north east);
+}}]
+
+\draw [densely dotted, white, postaction={sines}, thin] 
+        (0,0) circle [radius=0.7];
+\node [draw, fill = white, circle, cross, minimum width= 0.1 cm] at (0,0.7){}; 
+
+\end{tikzpicture}
 %\raisebox{4ex}{$ \ \ - \ $
 %}
 
