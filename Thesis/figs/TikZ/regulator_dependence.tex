@@ -6,17 +6,17 @@
 
 %Coordinate system 
 \draw[->, thick] (0,0,0) to (4,0,0);
-\node at (4.3,0,0) {$\lambda_{\infty}$};
+\node at (4.3,0,0) {$g_{\infty}$};
 \draw[->, thick] (0,0,0) to (0,2.5,0);
-\node at (0.05,2.7,0) {$\lambda_1$};
+\node at (0.05,2.7,0) {$g_1$};
 \draw[->, thick] (0,0,0) to (0,0,5);
-\node at (0,0,5.25) {$\lambda_2$};
+\node at (0,0,5.35) {$g_2$};
 
 %Additional axes
 \draw[->, thick] (0,0,0) to (2.9,0,6.3);
-\node at (3.2,0,6.8) {$\lambda_3$};
+\node at (3.2,0,6.8) {$g_3$};
 \draw[->, thick] (0,0,0) to (4.2,0,4.2);
-\node at (4.5,0,4.5) {$\lambda_4$};
+\node at (4.55,0,4.5) {$g_4$};
 
 %Dotted extension
 \filldraw (4.23,0,3.4) circle (0.5pt);
@@ -33,24 +33,20 @@
     markings,
     mark=at position 0.5 with {\arrow{>}}}
     ] 	
-\draw[thick, dashed, postaction={decorate}] (3.9,2,0)[out=250, in=0] to (1,0,4.4);
-\draw[thick, dashed, postaction={decorate}] (2.5,1.2,0)[out=200, in=20] to (1,0,4.4);
-\draw[thick, dashed, postaction={decorate}] (1.75,2.6,0)[out=190, in=50] to (1,0,4.4);	
+\draw[thick, dashed, postaction={decorate}] (3.5,2.3,0)[out=250, in=0] to (1,0,4.4);
+\draw[thick, postaction={decorate}] (3.5,2.3,0)[out=200, in=20] to (1,0,4.4);
+\draw[thick, dashed, postaction={decorate}] ((3.5,2.3,0)[out=170, in=70] to (1,0,4.4);	
 \end{scope}
 
 %Gammas
 \filldraw[color = BScRed] (1,0,4.4) circle (1.5pt);
 
 %Gamma_Lambdas
-\filldraw[color = BScBlue] (3.9,2,0) circle (1.5pt);
-\filldraw[color = BScBlue] (1.75,2.6,0) circle (1.5pt);
-\filldraw[color = BScBlue] (2.5,1.2,0) circle (1.5pt);
+\filldraw[color = BScBlue] (3.5,2.3,0) circle (1.5pt);
 
 %Nodes
-\node[color = BScRed] at (1.1,0,5.1) {$\Gamma_{0}$};
-\node[color = BScBlue] at (2.2,2.6,0) {$\Gamma_{\Lambda_1}$};
-\node[color = BScBlue] at (2.95,1.35,0) {$\Gamma_{\Lambda_2}$};
-\node[color = BScBlue] at (4.1,2.3,0) {$\Gamma_{\Lambda_3}$};
+\node[color = BScRed] at (1.4,0,5.3) {$\Gamma_{0} \equiv \Gamma$};
+\node[color = BScBlue] at (3.6,2.75,0) {$\Gamma_{\Lambda} \equiv \mathcal{S}$};
 
 
 \end{tikzpicture}

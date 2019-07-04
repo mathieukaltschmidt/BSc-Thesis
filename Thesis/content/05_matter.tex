@@ -98,7 +98,7 @@ For the fermionic contribution, we  proceed slightly different. First, we presen
 		&=  iZ_D\int_x \sqrt{\bar{g}} \ \sum\limits_{i=1}^{N_D}\bar{\psi}^{i}\bar{\slashed{\nabla}}\psi^{i} + \mathcal{O}(h).
 	\end{aligned}
 \end{equation}
-The Dirac operator $\slashed{\nabla}$ satisfies $-\slashed{\nabla}^2 = -\nabla^2 + \frac{\bar{\mathcal{R}}}{4} := \Delta_{\left(\sfrac{1}{2}\right)}$.
+The Dirac operator $\slashed{\nabla}$ satisfies $-\slashed{\nabla}^2 = -\nabla^2 + \frac{\bar{\mathcal{R}}}{4} =: \Delta_{\left(\sfrac{1}{2}\right)}$.
 The notation for the conjugated field $\bar{\psi} = \psi^{\dagger}\mathfrak{h}$\footnote{The spin metric $\mathfrak{h}$ satisfies $\abs{\operatorname{det} \mathfrak{h}} = 1$ and $\mathfrak{h}^{-1} = -\mathfrak{h}$.} should not be confused with the bar referring to the background field. As usual, the slashed notation implies contraction with gamma matrices\footnote{In the discussion of Dirac fermions, the gamma matrices $\left\{\gamma^0, \gamma^1, \gamma^2, \gamma^3\right\}$ are a set of complex valued matrices, that constitute an irreducible representation of the Clifford algebra, defined by the anticommutation relation $\left\{\gamma_{\mu}, \gamma_{\nu}\right\}= 2g_{\mu\nu} \mathbbm{1}_{d_{\gamma}\times d_{\gamma}}$, with $d_{\gamma} = 2^{\left[\sfrac{d}{2}\right]}$. A more formal treatment of fermions in curved spacetimes is presented in \cite{LippoldtPHD}.}, i.\,e. $\slashed{\nabla} = \gamma^{\mu}\nabla_{\mu}$.  \\
 In principle, this allows us to read off the fermion two-point function
 \begin{align}
@@ -111,7 +111,7 @@ In general one chooses the regulator, such that the symmetries of the kinetic te
 When computing fermion propagators in other theory settings, it follows quite naturally to consider the Dirac dispersion as the "square root" of the scalar Klein-Gordon dispersion. For a more detailed discussion of this idea in the context of Fermi-Bose mixtures, we refer to chapter 2 of \cite{PawlowskiNPgaugeLecture} or in the context of gravity-matter systems in quantum gravity to the appendix of \cite{BritoHamadaPereiraYamada2019}. \\
 This assumption allows us to express $r_k$ for the fermions as a function of the scalar shape function:
 \begin{align}
-\left[1+r_{k,D}\right]^2 = 1+r_{k,S} \qquad \longrightarrow \qquad r_{k, D} = \sqrt{1+r_{k,S}} - 1
+\left(1+r_{k,D}\right)^2 = 1+r_{k,S} \qquad \longrightarrow \qquad r_{k, D} = \sqrt{1+r_{k,S}} - 1
 \end{align}
 In total, this yields the final expression for regularized two-point function for the fermions:
 \begin{align}
@@ -130,8 +130,8 @@ The structure of the gauge field contribution is more complex than for the other
 where the second term is the gauge fixing term with gauge parameter $\xi$ and the third term is the Abelian ghost term. Since the two-point function is obtained from a functional derivative w.\,r.\,t. the fields $A^{i}$, we have to evaluate the ghost-term separately. We start by manipulating the first term:
 \begin{equation}
 \begin{aligned}
-\frac{Z_V}{4}\int_x \sqrt{g} \ \sum\limits_{i=1}^{N_{\text{V}}} g^{\mu\nu}g^{\kappa\lambda}F^{i}_{\mu\kappa}F^{i}_{\nu\lambda} =  \frac{Z_{V}}{4} &\int_x \sqrt{\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \bar{g}^{\mu\nu}\bar{g}^{\kappa\lambda}\bar{F}^{i}_{\mu\kappa}\bar{F}^{i}_{\nu\lambda} + \mathcal{O}(h) \\[5pt]
-\overset{(\mathrm{\ref{eqn:FF2}})}{=} \frac{Z_{V}}{2} &\int_x \sqrt{\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} A_{\lambda}^{i}\left[ \bar{\nabla}^{\mu}\bar{\nabla}^{\lambda} - \bar{g}^{\mu\lambda}\bar{\nabla}^2\right]A_{\mu}^{i} + \mathcal{O}(h).
+\frac{Z_V}{4}\int_x \sqrt{g} \ \sum\limits_{i=1}^{N_{\text{V}}} g^{\mu\nu}g^{\kappa\lambda}F^{i}_{\mu\kappa}F^{i}_{\nu\lambda} &\overset{\phantom{(\mathrm{\ref{eqn:FF2}})}}{=}  \frac{Z_{V}}{4} \int_x \sqrt{\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} \bar{g}^{\mu\nu}\bar{g}^{\kappa\lambda}\bar{F}^{i}_{\mu\kappa}\bar{F}^{i}_{\nu\lambda} + \mathcal{O}(h) \\[5pt]
+&\overset{(\mathrm{\ref{eqn:FF2}})}{=} \frac{Z_{V}}{2} \int_x \sqrt{\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} A_{\lambda}^{i}\left[ \bar{\nabla}^{\mu}\bar{\nabla}^{\lambda} - \bar{g}^{\mu\lambda}\bar{\nabla}^2\right]A_{\mu}^{i} + \mathcal{O}(h).
 \end{aligned}
 \end{equation}
 %TODO: Alignment..
@@ -151,7 +151,7 @@ In the last step, we integrated by parts and assumed vanishing boundary terms.\\
 In Feynman gauge, where we set $\xi \equiv 1$, this simplifies to
 \begin{equation}
 \begin{aligned}
-\mathcal{S}_V &= \frac{Z_{V}}{2} \int_x \sqrt{\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} A_{\lambda}^{i}\left[ - \bar{g}^{\mu\lambda}\bar{\nabla}^2 +  \left[\bar{\nabla}^{\mu}, \bar{\nabla}^{\lambda}\right]\right]A_{\mu}^{i} \ + \ \text{ghost term} \\
+\mathcal{S}_V &\overset{\phantom{(\mathrm{\ref{eqn:RiemannB}})}}{=} \frac{Z_{V}}{2} \int_x \sqrt{\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} A_{\lambda}^{i}\left[ - \bar{g}^{\mu\lambda}\bar{\nabla}^2 +  \left[\bar{\nabla}^{\mu}, \bar{\nabla}^{\lambda}\right]\right]A_{\mu}^{i} \ + \ \text{ghost term} \\
 &\overset{(\mathrm{\ref{eqn:RiemannB}})}{=} \frac{Z_{V}}{2} \int_x \sqrt{\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} A_{\lambda}^{i}\left[ - \bar{g}^{\mu\lambda}\bar{\nabla}^2 +  \bar{R}^{\mu\lambda}\right]A_{\mu}^{i} \ + \ \text{ghost term}
 \end{aligned}
 \end{equation}
