@@ -1,21 +1,24 @@
 \chapter{Functional Renormalization and Quantum Gravity}\label{chap:EHT}
-In this chapter, we 
+After the formal introduction of the physical and mathematical concepts in the last chapters, we are now able to motivate and formulate the key idea of the Asymptotic Safety approach to quantum gravity, which aims at finding a quantum field theoretical description of gravity within the language of the Functional Renormalization Group. This chapter briefly discusses the requirements for the existence of such a theory. We proceed by solving the flow equation for quantum gravity within the Einstein-Hilbert truncation in a transverse-traceless spin-$2$ graviton approximation and investigate its fixed point structure. 
 \section{Asymptotic Safety}
-\begin{itemize}
-	\item Taking the UV limit ..
-\end{itemize}
+In 1978, Steven Weinberg proposed the \cite{Weinberg1980}
+\textit{Asymptotic Safety}, also often referred to as \textit{Non-Perturbative Renormalizability}, generalizes the concept of Asymptotic freedom.The requirements for an asymptotically safe quantum field theory of gravity can be summarized as follows: 
+\begin{enumerate}
+	\item The existence of an UV-attractive NGFP of the Renormalization Group Flow of $\Gammak$ has to be guaranteed. 
+	
+	\item For the predictivity of the theory, it is crucial to be able to fix the trajectory $\Gammak$ by a finite amount of measurements, i.\,e. the corresponding UV hypersurface $\Sigma_{\mathrm{UV}}$ of the NGFP should be of finite dimension: 
+	\begin{equation*}
+		\operatorname{dim}\Sigma_{\mathrm{UV}} < \infty.
+	\end{equation*} 
+\end{enumerate} 
+
+
+For a more detailed discussion of current Asymptotic Safety research, we refer the interested reader to \cite{Eichhorn2018}. Recently, very detailed textbooks covering both, the physical and the mathematical concepts of Asymptotic Safety have been released. For a very detailed treatment of the subject see e.\,g. \cite{Percacci2017} or \cite{ReuterSaueressig_2019}.
 \section{Einstein-Hilbert Truncation}
-
-We want to solve the Flow equation ()%TODO: define QG flow equation to refero to
-approximately. All terms that are invariant under the imposed symmetry, i.\,e. invariant under diffeomorphism transformations need to be taken into account. \\
-
-Easiest truncation takes only the scalar curvature $\mathcal{R}$ and the cosmological constant $\Lambda$ into account (No higher order terms \dots) and was performed by Martin Reuter in 1993 \cite{ReuterSaueressig2002}. \\
-
-
-This full truncation reads
+Solving the flow equation analytically is nothing but impossible. Therefore it is unavoidable to truncate the initially infinite dimensional theory space to a finite subspace, to be able to find approximated solutions. It is important, that all terms, that are invariant under the imposed symmetry, i.\,e. invariant under diffeomorphism transformations need to be taken into account. The easiest truncation fulfilling this requirement is the \textit{Einstein-Hilbert truncation}. In 1996, Martin Reuter was the first to investigate quantum gravity in the Einstein-Hilbert truncation \cite{Reuter1996}. This truncation takes only the scalar curvature $\Ricci$ and the cosmological constant $\Lambda$ into account\footnote{More recently, truncations including higher-order curvature terms ($\Ricci^2$, $f(\Ricci)$, $R^{\mu\nu}R_{\mu\nu}$ \dots) have been investigated, see e.\,g. \cite{AlkoferSaueressig2018}}. The full Einstein-Hilbert  truncation reads:
 \begin{align}
 	\Gammak = 2\kappa^2Z_k \int_x \sqrt{g} \ [-\mathcal{R} + 2\Lambda_k] + \mathcal{S}_{\text{gf}} + \mathcal{S}_{\text{gh}}.
-\label{eqn:QGflow}
+\label{eqn:EHtruncation}
 \end{align}
 with 
 \begin{align}
@@ -71,7 +74,7 @@ R_k  = \eval{\Gamma_{h^{\text{TT}}h^{\text{TT}}}^{(2)}}_{\Lambda_k=\bar{\mathcal
 \end{align}
 with a Litim-type cutoff
 \begin{align}
-r_k(y) = \left(\frac{1}{y}-1\right)\Theta(1-y), \label{eqn:Litim}
+r_k(y) = \left(\frac{1}{y}-1\right)\theta(1-y), \label{eqn:Litim}
 \end{align}
 as discussed in chapter (\ref{chap:QFT}), we are directly able to compute the l.\,h.\,s. of the Wetterich equation, i.\,e. the scale derivative of the effective average action:
 \begin{align}
@@ -101,9 +104,14 @@ Now we are able to evaluate these two terms separately using heat-kernel techniq
 \operatorname{Tr}\left[\frac{\bar{\Delta}\left(\partial_t r_k - \eta_g r_k\right)}{\bar{\Delta}(1+r_k)-2\Lambda_k}\right] = \frac{1}{(4\pi)^2}\int_x \sqrt{g} \left[5\Phi_2^1(-2\Lambda_k) - \frac{5}{6}\bar{\mathcal{R}}\Phi^1_1(-2\Lambda_k)\right],
 \end{align}
 with the threshold functions 
-\begin{align}
-	\Phi_n^p(\omega) = \frac{1}{\Gamma(n)}\int_0^{\infty}\dd z \ z^{n-1} \frac{z(-2zr_k(z)-\eta_gr_k(z))}{(z(1+r_k(z))+\omega)^p}.
-\end{align}
+\begin{equation}
+\begin{aligned}
+	\Phi_n^p(\omega) &= \frac{1}{\Gamma(n)}\int_0^{\infty}\dd z \ z^{n-1} \frac{z(-2zr_k(z)-\eta_{\Psi}r_k(z))}{(z(1+r_k(z))+\omega)^p}\\[10pt] 
+	&= \frac{1}{\Gamma(n)}\frac{1}{\left(1+\omega\right)^p}\left(\frac{2}{n} - \frac{\eta_{\Psi}}{n(n+1)}\right)
+\end{aligned}
+\label{eqn:threshold}
+\end{equation}
+In the last step, the evaluated the threshold functions for the Litim-type shape function. We used $\eta_\Psi$, since we want to keep this formula as general as possible and we will use it multiple times for different fields throughout this thesis.\\
 Analogously, the second term in our expansion reads
 \begin{align}
 	-\frac{2}{3}\bar{\mathcal{R}}\operatorname{Tr}\left[\frac{\bar{\Delta}\left(\partial_t r_k - \eta_g r_k\right)}{\left(\bar{\Delta}(1+r_k)-2\Lambda_k\right)^2}\right] = -\frac{10}{3}\frac{\bar{\mathcal{R}}}{(4\pi)^2}\int_x  \sqrt{g} \frac{1-\frac{\eta_g}{6}}{(1-2\lambda_k)^2}.

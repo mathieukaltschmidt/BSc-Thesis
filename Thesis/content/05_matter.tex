@@ -1,7 +1,9 @@
 \chapter{Asymptotic Safety of Gravity-Matter Systems}\label{chap:Matter} 
-The calculation in $h^{\mathrm{TT}}$ approximation in the last chapter already allowed us to investigate the characteristic fixed point structure of the Einstein-Hilbert truncation. Nevertheless, in this part of the thesis, where the impact of minimally coupled matter fields is analyzed, we want to work with the full result, including also the vector and scalar modes arising after the York decomposition (\ref{eqn:York}) of the fluctuation field. The gauge conditions and the results for the full solution are taken from \cite{PawlowskiNPgaugeLecture}.\\
+The calculation in $h^{\mathrm{TT}}$ approximation in the last chapter already allowed us to investigate the characteristic fixed point structure of quantum gravity in the Einstein-Hilbert truncation. Nevertheless, in this part of the thesis, where the impact of minimally coupled matter fields is analyzed, we want to work with the full result, including also the vector and scalar modes arising after the York decomposition (\ref{eqn:York}) of the fluctuation field. 
 
-We have to take care of an additional gauge fixing term
+\section{Inclusion of the other Graviton Modes}
+The gauge conditions and the results for the full graviton propagator are taken from \cite{PawlowskiNPgaugeLecture}.\\
+For the full solution, we have to take care of an additional gauge fixing term
 \begin{equation}
 \mathcal{S}_{\mathrm{gf}} = \frac{1}{2\alpha} \int_x \sqrt{\bar{g}} \  \bar{g}^{\mu\nu} F_{\mu}F_{\nu},
 \end{equation}
@@ -11,28 +13,106 @@ with a gauge fixing parameter $\alpha$ and a De-Donder-type gauge condition give
 \end{equation}
 We also have to include a ghost term $\mathcal{S}_{\mathrm{gh}}$ arising from the Faddeev-Popov procedure:
 \begin{equation}
-\mathcal{S}_{\mathrm{gh}} = \int_x \sqrt{\bar{g}} \  \bar{g}^{\mu\mu'} \bar{g}^{\nu\nu'}\bar{c}_{\mu'} \mathcal{M}_{\mu\nu}  c_{\nu'}.
+\mathcal{S}_{\mathrm{gh}} = Z_c\int_x \sqrt{\bar{g}} \  \bar{g}^{\mu\mu'} \bar{g}^{\nu\nu'}\bar{c}_{\mu'} \mathcal{M}_{\mu\nu}  c_{\nu'}.
+\label{eqn:ghost_action}
 \end{equation}
-The Faddeev-Popov operator $\mathcal{M}_{\mu\nu}(\bar{g},h)$ reads
+ The Faddeev-Popov operator $\mathcal{M}_{\mu\nu}(\bar{g},h)$ reads
 \begin{align}
 	\mathcal{M}_{\mu\nu} &= \bar{\nabla}^{\rho}(g_{\mu\nu}\nabla_{\rho} + g_{\rho\nu}\nabla_{\mu}) - \bar{\nabla}_{\mu}\nabla_{\nu}.
+	\label{eqn:FPop}
 \end{align}
-If we choose the gauge parameters such that $\alpha = \beta \equiv 0$, we are able to reduce the dynamical degrees of freedom to two, namely the transverse-traceless mode $h^{\mathrm{TT}}$ and the trace mode $h^{\mathrm{Tr}}$. This choice allows us to simplify the full graviton propagator a lot. We are left with:
-\begin{equation} G_{h h}=\left[\frac{1}{\Gamma^{(2)}+R_{k}}\right]_{h h} = \frac{32\pi}{Z_h}
+If we choose to work in Landau gauge, where $\alpha \equiv 0$ and also set $\beta\equiv 0$, we are able to reduce the dynamical degrees of freedom to two, namely the transverse-traceless mode $h^{\mathrm{TT}}$ and the trace mode $h^{\mathrm{Tr}}$. This choice allows us to simplify the full graviton propagator a lot. We are left with:
+\begin{equation} G_{h h}=\left(\Gamma^{(2)}+R_{k}\right)_{h h}^{-1} = \frac{32\pi}{Z_h}
 \begin{pmatrix}
-\frac{1}{\bar{\Delta}\left[1+r_{k}\right]+-2\Lambda\frac{2}{3}\mathcal{R}} & 0 & 0 & 0 \\[10pt]
+\frac{1}{\bar{\Delta}\left[1+r_{k}\right]-2\Lambda_k+\frac{2}{3}\mathcal{R}} & 0 & 0 & 0 \\[10pt]
 0 & 0  & 0 & 0 \\[10pt]
-0 & 0 & \frac{-\frac{8}{3}}{\bar{\Delta}\left[1+r_{k}\right]-\frac{4}{3} \Lambda}  &0\\[10pt]
+0 & 0 & \frac{-\frac{8}{3}}{\bar{\Delta}\left[1+r_{k}\right]-\frac{4}{3} \Lambda_k}  &0\\[10pt]
 0 & 0 & 0 & 0 \\
-
 \end{pmatrix}
+\label{eqn:G_hh}
 \end{equation}
-For this calculation, the regularized 2-point-function has been determined using a regulator of the form
+For this calculation, the regularized 2-point-function has been determined using a regulator of form
 \begin{equation}
-	\Gamma^{(2)}_k+R_{k}=\Gamma^{(2)}_k\left(\Delta \rightarrow \Delta\left[1+r_{k}(x)\right]\right),
+R_{k}=\eval{\Gamma_{k}^{(2)}}_{\bar{R}=0, \Lambda=0} \cdot r_{k}\left(\frac{\bar{\Delta}}{k^2}\right),
 \end{equation}
-where the shape function $r_k$ is again of Litim-type (\ref{eqn:Litim}). \\
-%TODO: Results for second mode + gauge fixing contributions (?) 
+where the shape function $r_k$ is again of Litim-type (\ref{eqn:Litim}). Since we already computed the contributions arising from the $h^{\mathrm{TT}}$ mode in the previous chapter, we only need to compute those from the trace mode $h^{\mathrm{Tr}}$ and the Non-Abelian ghosts. 
+
+\subsection{Trace mode}
+For the trace mode $h^{\mathrm{Tr}}$, we take the propagator given in (\ref{eqn:G_hh}):
+\begin{equation}
+	G_{h^{\mathrm{Tr}}h^{\mathrm{Tr}}} =\left(\frac{32\pi}{Z_h}\right) \left(-\frac{8}{3}\right)\frac{1}{\bar{\Delta}\left[1+r_k\right] - \frac{4}{3}\Lambda_k}.
+\end{equation}
+The respective regulator term reads
+\begin{equation}
+	R_{k,h^{\mathrm{Tr}}} = -\frac{3}{8}\left(\frac{Z_h}{32\pi}\right)\cdot\bar{\Delta}\cdot r_k\left(\frac{\bar{\Delta}}{k^2}\right).
+\end{equation}
+We proceed by computing its the scale derivative:
+\begin{align}
+	\partial_t R_{k,h^{\mathrm{Tr}}} = -\frac{3}{8}\left(\frac{Z_h}{32\pi}\right)\cdot\bar{\Delta}\left(\partial_tr_k - \eta_h r_k\right).
+\end{align}
+In total, the contribution from the r.\,h.\,s. of the flow equation is given by 
+\begin{equation}
+	\begin{aligned}
+	\frac{1}{2}\tr{\left(\Gamma^{(2)}_{k, h^{\mathrm{Tr}} h^{\mathrm{Tr}}}\right)^{-1}\partial_t R_{k, h^{\mathrm{Tr}}}} =
+		\frac{1}{2}\tr{\frac{\bar{\Delta}\left(\partial_tr_k - \eta_h r_k\right)}{\bar{\Delta}\left[1+r_k\right] - \frac{4}{3}\Lambda_k}}
+	\end{aligned}
+\end{equation}
+To evaluate the functional trace, we make again use of the heat-kernel techniques we already used for the computation in $h^{\mathrm{TT}}$ approximation:
+\begin{equation}
+\begin{aligned}
+\frac{1}{2}\tr{\frac{\bar{\Delta}\left(\partial_tr_k - \eta_h r_k\right)}{\bar{\Delta}\left[1+r_k\right] - \frac{4}{3}\Lambda_k}} &= \frac{1}{2} \frac{1}{\left(4 \pi^{2}\right)}\left[\int_{x} \sqrt{\bar{g}}\ \Phi_{2}^{1}\left(-\frac{4}{3}\Lambda_k\right)+\frac{1}{6} \int_{x} \sqrt{\bar{g}} \ \bar{\mathcal{R}} \ \Phi_{1}^{1}\left(-\frac{4}{3}\Lambda_k\right)\right] \\[10pt]
+&= 	\frac{1}{2}\frac{1}{(4\pi)^2}\int_x\sqrt{\bar{g}}\ \frac{1}{1-\frac{4}{3}\Lambda_k}\left[\left(1-\frac{\eta_h}{6}\right) + \frac{\bar{\mathcal{R}}}{3}\left(1-\frac{\eta_h}{4}\right)\right].
+	\end{aligned}
+\end{equation}
+In the last step, we evaluated the threshold functions using equation (\ref{eqn:threshold}). This already completes the computation of the additional contribution from the trace mode.  
+ %TODO: Correct prefactors!!!
+ %TODO: Contribution to LHS??
+\subsection{Non-Abelian ghosts}
+Since we work in a background field approximation where we assume $g_{\mu\nu}=\bar{g}_{\mu\nu}$, we can simplify the calculations for this part a lot. Nevertheless, we have to be very careful, since we will be confronted with a modified Laplacian, i.\,e. a spin-1 Laplacian $\bar{\Delta}_{\mu\nu}^{'(1)}$, occurring as kinetic operator in the ghost two-point function. A more detailed discussion on how these modified Laplacians effect the values of the heat-kernel coefficients is presented in appendix \ref{chap:AppA}. \\
+First we have a look at the Faddeev-Popov operator (\ref{eqn:FPop}). In background field approximation, $\mathcal{M}_{\mu\nu}$ is given by 
+\begin{equation}
+\begin{aligned}
+	\eval{\mathcal{M}_{\mu\nu}}_{g_{\mu\nu}=\bar{g}_{\mu\nu}} &= -\bar{g}_{\mu\nu}\bar{\nabla}^2 + \bar{\nabla}_{\nu}\bar{\nabla}_{\mu} - \bar{\nabla}_{\mu}\bar{\nabla}_{\nu} \\
+	&= -\bar{g}_{\mu\nu}\bar{\nabla}^2 - \left[\bar{\nabla}_{\mu}, \bar{\nabla}_{\nu}\right].
+\end{aligned}
+\end{equation} 
+The minus sign in front of the first term arises from integrating by parts to obtain the $\bar{\nabla}^2$ operator. As usual we assumed vanishing boundary terms. Inserting this result into the ghost action (\ref{eqn:ghost_action}) yields
+\begin{equation}
+	\begin{aligned}
+		\mathcal{S}_{\mathrm{gh}} &\overset{\phantom{(\mathrm{\ref{eqn:RiemannB}})}}{=} Z_c\int_x \sqrt{\bar{g}} \ \bar{c}^{\mu}\left[-\bar{g}_{\mu\nu}\bar{\nabla}^2 - \left[\bar{\nabla}_{\mu}, \bar{\nabla}_{\nu}\right]\right]  c^{\nu} \\
+		&\overset{(\mathrm{\ref{eqn:RiemannB}})}{=}  Z_c\int_x \sqrt{\bar{g}} \ \bar{c}^{\mu}\underbrace{\left[-\bar{g}_{\mu\nu}\bar{\nabla}^2 - \bar{R}_{\mu\nu}\right]}_{=: \ \bar{\Delta}_{\mu\nu}^{'(1)}} c^{\nu}.
+	\end{aligned}
+\end{equation}
+Note, that the bar referring to the background field should not be confused with bar in the notation for the conjugated ghost.
+We can directly read off the ghost two-point function:
+\begin{align}
+	\Gamma^{(2)}_{\bar{c}c} = \frac{\delta^2 \mathcal{S}_{\mathrm{gh}}}{\delta c\ \delta\bar{c}} = Z_c \cdot\bar{\Delta}_{\mu\nu}^{'(1)}.
+\end{align}
+With the following regulator 
+\begin{equation}
+	R_{k,c} = Z_c\cdot\bar{\Delta}_{\mu\nu}^{'(1)}\cdot r_k\left(\frac{\bar{\Delta}_{\mu\nu}^{'(1)}}{k^2}\right)
+\end{equation}
+and its scale derivative
+\begin{align}
+	\partial_t R_{k,c} =  Z_c\cdot\bar{\Delta}_{\mu\nu}^{'(1)}\left(\partial_tr_k - \eta_c r_k\right),
+\end{align}
+we arrive at the regularized two-point function for the ghosts: 
+\begin{align}
+	\Gamma^{(2)}_{k, \bar{c}c} = \left[\Gamma^{(2)}_{\bar{c}c}+ R_{k, c}\right]  = Z_c \cdot\bar{\Delta}_{\mu\nu}^{'(1)}\left(1 + r_k\left(\frac{\bar{\Delta}_{\mu\nu}^{'(1)}}{k^2}\right)\right).
+\end{align}
+
+
+We use (\ref{eqn:coefficients}) to find the new coefficients for the heat-kernel expansion and find:
+\begin{equation}
+\begin{aligned}
+	\operatorname{Tr}\mathbf{b}_0 &= 4 (?) \\
+	\operatorname{Tr}\mathbf{b}_2 &= \frac{5}{3}\bar{\mathcal{R}}. (?)\\
+\end{aligned} 
+\end{equation}
+All together, we compute 
+
+
+\section{Matter Contributions in Background Field Approximation}
 The inclusion of matter in this theory setting is in principle straightforward. We extend our truncation (\ref{eqn:QGflow}) by including an additional matter term: 
 \begin{align}
 	\Gammak = \Gamma_{\text{EH}} + \mathcal{S}_{\text{gf}}+ \mathcal{S}_{\text{gh}}+ \Gamma_{\text{matter}},
@@ -51,13 +131,20 @@ For the scalar and gauge field regulators we choose
 	R_{k,\sfrac{S}{V}}(z) = Z_{\sfrac{S}{V}} \cdot \mathbbm{1}_{\sfrac{S}{V}} \cdot \tilde{\Delta}\cdot r_k\left(\frac{\tilde{\Delta}}{k^2}\right),
 	\label{eqn:Rk_matter}
 \end{align}
-where $\tilde{\Delta}= -\nabla^2 + \mathbf{E}_{\Psi}$ is a modified Laplacian\footnote{A more detailed discussion on how these modified Laplacians effect the values of the heat-kernel coef-\\ \phantom{........}ficients is presented in appendix \ref{chap:AppA}.}, occurring as kinetic operator in the different matter field actions. The regulator choice for the Dirac fermions is slightly different, details are discussed in the respective subsection. Nevertheless, we already present the values of $\mathbf{E}_{\Psi}$ for all three kinetic operators:
+where $\tilde{\Delta}= -\nabla^2 + \mathbf{E}_{\Psi}$ is a modified Laplacian, occurring as kinetic operator in the different matter field actions. The regulator choice for the Dirac fermions is slightly different, details are discussed in the respective subsection. Nevertheless, we already present the values of $\mathbf{E}_{\Psi}$ for all three kinetic operators:
 \begin{align}
 	\mathbf{E}_{\Psi} =  \left\{\begin{array}{ll}{0} & {\text { for } \Psi = S} \\[5pt] {\frac{\mathcal{R}}{4}} & {\text { for } \Psi = D}\\[5pt]  {R^{\mu}_{\phantom{\mu}\nu}} & {\text { for } \Psi = V.}\end{array}\right.
 \end{align}
 The Litim-type shape function $r_k$ is in this case the same as the one defined in equation (\ref{eqn:Litim}), now as a function of the modified Laplacian $\tilde{\Delta}$.
 %TODO: Some words on fermions ...
-\section{Matter Contributions in Background Field Approximation}
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figs/TikZ/matter_corrections}
+\caption[Flow equation for the average effective action $\Gamma_k$ including different matter contributions in diagrammatic representation.]{Flow equation (\ref{eqn:matter_flow}) for the average effective action $\Gamma_k$ including different matter contributions in diagrammatic representation. The double, densely dotted, dashed, solid, wiggly and loosely dotted lines correspond to the graviton, Non-Abelian ghost, scalar, fermion, gauge field  and Abelian ghost propagators, respectively. The crossed circles denote the insertion of the respective regulator.}
+	\label{fig:matter_calc}
+	\hrulefill
+\end{figure}
 After having introduced the setup for the following calculation, we are now able to determine the different contributions from the matter fields step by step, by evaluating the functional traces ocurring on the r.\,h.\,s. of the flow equation separately. For the matter configuration in our setting the flow equation reads
 \begin{equation}
 \begin{aligned}
@@ -68,13 +155,7 @@ After having introduced the setup for the following calculation, we are now able
 \end{equation}
 %TODO: Explain signs and prefactors
 In figure (\ref{fig:matter_calc}), a digrammatical representation of the flow equation (\ref{eqn:matter_flow}) is depicted.
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=0.95\textwidth]{figs/TikZ/matter_corrections}
-\caption[Flow equation for the average effective action $\Gamma_k$ including different matter contributions in diagrammatic representation.]{Flow equation (\ref{eqn:matter_flow}) for the average effective action $\Gamma_k$ including different matter contributions in diagrammatic representation. The double, dotted,dashed, solid, wiggly and wiggly dotted lines correspond to the graviton, Non-Abelian ghost, scalar, fermion, gauge field  and Abelian ghost propagators, respectively. The crossed circles denote the insertion of the respective regulator.}
-	\label{fig:matter_calc}
-	\hrulefill
-\end{figure}
+
 
 \subsection{Scalar fields}
 The action for $N_S$ scalar fields, minimally coupled to gravity reads
@@ -98,7 +179,7 @@ This expression is already diagonal in field space, meaning we are directly able
 we can start to evaluate the r.\,h.\,s. of the flow equation:
 \begin{equation}
 \begin{aligned}
-	\frac{1}{2}\tr{\left(\Gamma^{(2)}_{k, \phi\phi}\right)^{-1}\partial_t R_{k,S}} &= \frac{1}{2}\tr{\frac{Z_S\cdot\bar{\Delta}\left(\partial_t r_k - \eta_s r_k\right)}{Z_S \cdot\bar{\Delta}\left(1 + r_k\right)}\mathbbm{1}_S}\\
+	\frac{1}{2}\tr{\left(\Gamma^{(2)}_{k, \phi\phi}\right)^{-1}\partial_t R_{k,S}} &= \frac{1}{2}\tr{\frac{Z_S\cdot\bar{\Delta}\left(\partial_t r_k - \eta_s r_k\right)}{Z_S \cdot\bar{\Delta}\left(1 + r_k\right)}\mathbbm{1}_S}\\[10pt]
 	&=   \frac{N_S}{2}\tr{\frac{\bar{\Delta}\left(\partial_t r_k - \eta_s r_k\right)}{\bar{\Delta}\left(1 + r_k\right)}}. 
 \end{aligned}
 \end{equation}
@@ -146,13 +227,13 @@ Inserting this relation into the expression for the two-point function (\ref{eqn
 	R_{k,D} &= \left(\sqrt{1+r_{k,S}} -1 \right)\cdot Z_D\cdot\left(i\bar{\slashed{\nabla}}\right)\cdot\mathbbm{1}_D.
 \end{aligned}
 \end{equation}
-To invert the Dirac operator $\left(i\slashed{\nabla}\right)$, we use:
+To invert the Dirac operator $\left(i\slashed{\nabla}\right)$, we use
 \begin{equation}
-	\frac{1}{\left(i\slashed{\nabla}\right)} = \frac{1}{\left(i\slashed{\nabla}\right)}\times\frac{\left(i\slashed{\nabla}\right)}{\left(i\slashed{\nabla}\right)} = \frac{\left(i\slashed{\nabla}\right)}{\Delta_{\left(\sfrac{1}{2}\right)}}
+	\left(i\slashed{\nabla}\right)^{-1} =\left(i\slashed{\nabla}\right)^{-1}\times\left(\left(i\slashed{\nabla}\right)\times\left(i\slashed{\nabla}\right)^{-1}\right) = \frac{\left(i\slashed{\nabla}\right)}{\Delta_{\left(\sfrac{1}{2}\right)}}
 \end{equation}
 and therefore the full fermion propagator reads
 \begin{equation}
-	\left(\Gamma^{(2)}_{k, \bar{\psi}\psi} \right)^{-1} = \frac{\left(i\bar{\slashed{\nabla}}\right)}{Z_D\cdot\bar{\Delta}_{\left(\sfrac{1}{2}\right)}\sqrt{1+r_{k,S}}}.
+	\left(\Gamma^{(2)}_{k, \bar{\psi}\psi} \right)^{-1} = \frac{\left(i\bar{\slashed{\nabla}}\right)}{Z_D\cdot\bar{\Delta}_{\left(\sfrac{1}{2}\right)}\sqrt{1+r_{k,S}}}\mathbbm{1}_D.
 \end{equation}
 For the scale derivative of the regulator we find
 \begin{equation}
