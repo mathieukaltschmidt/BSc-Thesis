@@ -1,8 +1,9 @@
 \chapter{Functional Renormalization and Quantum Gravity}\label{chap:EHT}
-After the formal introduction of the physical and mathematical concepts in the last chapters, we are now able to motivate and formulate the key idea of the Asymptotic Safety approach to quantum gravity, which aims at finding a quantum field theoretical description of gravity within the language of the Functional Renormalization Group. This chapter briefly discusses the requirements for the existence of such a theory. We proceed by solving the flow equation for quantum gravity within the Einstein-Hilbert truncation in a transverse-traceless spin-$2$ graviton approximation and investigate its fixed point structure. 
+After the formal introduction of the physical and mathematical concepts in the last chapters, we are now able to motivate and formulate the key idea of the Asymptotic Safety approach to quantum gravity, which aims at finding a quantum field theoretical description of gravity within the language of the Functional Renormalization Group. This chapter briefly discusses the requirements for the existence of such theory. We proceed by solving the flow equation for quantum gravity within the Einstein-Hilbert truncation in a transverse-traceless spin-two graviton approximation and investigate its fixed point structure. 
 \section{Asymptotic Safety}
-In 1978, Steven Weinberg proposed the \cite{Weinberg1980}
-\textit{Asymptotic Safety}, also often referred to as \textit{Non-Perturbative Renormalizability}, generalizes the concept of Asymptotic freedom.The requirements for an asymptotically safe quantum field theory of gravity can be summarized as follows: 
+Asymptotic Safety generalizes the concept of Asymptotic Freedom,
+In 1978, Steven Weinberg proposed the Asymptotic Safety scenario as a possible ultraviolet extension \cite{Weinberg1980}
+ generalizes the concept of Asymptotic freedom. The key requirements for an asymptotically safe quantum field theory of gravity can be summarized as follows: 
 \begin{enumerate}
 	\item The existence of an UV-attractive NGFP of the Renormalization Group Flow of $\Gammak$ has to be guaranteed. 
 	
@@ -15,76 +16,62 @@ In 1978, Steven Weinberg proposed the \cite{Weinberg1980}
 
 For a more detailed discussion of current Asymptotic Safety research, we refer the interested reader to \cite{Eichhorn2018}. Recently, very detailed textbooks covering both, the physical and the mathematical concepts of Asymptotic Safety have been released. For a very detailed treatment of the subject see e.\,g. \cite{Percacci2017} or \cite{ReuterSaueressig_2019}.
 \section{Einstein-Hilbert Truncation}
-Solving the flow equation analytically is nothing but impossible. Therefore it is unavoidable to truncate the initially infinite dimensional theory space to a finite subspace, to be able to find approximated solutions. It is important, that all terms, that are invariant under the imposed symmetry, i.\,e. invariant under diffeomorphism transformations need to be taken into account. The easiest truncation fulfilling this requirement is the \textit{Einstein-Hilbert truncation}. In 1996, Martin Reuter was the first to investigate quantum gravity in the Einstein-Hilbert truncation \cite{Reuter1996}. This truncation takes only the scalar curvature $\Ricci$ and the cosmological constant $\Lambda$ into account\footnote{More recently, truncations including higher-order curvature terms ($\Ricci^2$, $f(\Ricci)$, $R^{\mu\nu}R_{\mu\nu}$ \dots) have been investigated, see e.\,g. \cite{AlkoferSaueressig2018}}. The full Einstein-Hilbert  truncation reads:
+Solving the flow equation analytically is nothing but impossible. Therefore it is unavoidable to truncate the initially infinite dimensional theory space to a finite subspace, to be able to find approximated solutions. It is important, that all terms, that are invariant under the imposed symmetry, i.\,e. invariant under diffeomorphism transformations need to be taken into account. The easiest truncation fulfilling this requirement is the \textit{Einstein-Hilbert truncation}. In 1996, Martin Reuter was the first to successfully investigate quantum gravity within the Einstein-Hilbert truncation \cite{Reuter1996}. He was able to prove the existence of a NGFP for a pure-gravity setting. This truncation takes only the scalar curvature $\Ricci$ and the cosmological constant $\Lambda$ into account and therefore the truncated subspace is $2$-dimensional\footnote{Recently, more sophisticated truncations including higher-order curvature terms ($\Ricci^2$, $f(\Ricci)$, $R^{\mu\nu}R_{\mu\nu}$ \dots) have been investigated, see e.\,g. \cite{AlkoferSaueressig2018}}.\\ The full Einstein-Hilbert  truncation reads:
 \begin{align}
-	\Gammak = 2\kappa^2Z_k \int_x \sqrt{g} \ [-\mathcal{R} + 2\Lambda_k] + \mathcal{S}_{\text{gf}} + \mathcal{S}_{\text{gh}}.
+	\Gammak = 2\kappa^2Z_{h,k} \int_x \sqrt{g} \ [-\mathcal{R} + 2\Lambda_k] + \mathcal{S}_{\text{gf}} + \mathcal{S}_{\text{gh}},
 \label{eqn:EHtruncation}
 \end{align}
-with 
+where we abbreviated $\kappa^2 = \left(32\pi G\right)^{-1}$. Since we don't need to consider the gauge fixing action $\mathcal{S}_{\text{gf}}$ and the Non-Abelian ghost action $\mathcal{S}_{\text{gh}}$ for the calculation performed in this chapter, we won't specify their explicit forms at this point. We will come back to this discussion at the beginning of chapter \ref{chap:Matter}.\\
+ The index $k$ indicates the \textit{running} i.\,e. the scale dependence of the cosmological constant and the wave function renormalization $Z_{h,k}$. It is quite convenient to define the running Newton coupling as 
+ \begin{equation}
+ 	G_k = G \cdot \left(Z_{h,k}\right)^{-1}.
+ \end{equation}
+Up to this point, we did not care about the dimensionality of the two couplings. As already mentioned, one usually works with dimensionless couplings when solving the flow equation. \\
+We therefore define the dimensionless renormalized cosmological constant 
 \begin{align}
-	\kappa^2 = \frac{1}{32\pi G}, \qquad\qquad G_k = GZ^{-1}_k
+	\lambda_k = \Lambdak\cdot k^{-2}
 \end{align}
-
-
-
-anomalous dimension: 
-\begin{align*}
-	\eta_g = -\frac{\partial_t Z_k}{Z_k} = -\partial_t \ln Z_k
-\end{align*}
-
-dimensionless renormalized cosmological constant:
-\begin{align*}
-	\lambda_k = \Lambdak k^{-2}
-\end{align*}
-
-dimensionless renormalized cosmological constant:
-\begin{align*}
-	g_k = G_k k^{d-2} = \frac{Gk^{d-2}}{Z_k}
-\end{align*}
-
-corresponding beta function:
+and Newton constant
 \begin{align}
-	\beta_g = \partial_t g_k = \left(d-2 + \eta_g\right)g_k
+	g_k = G_k\cdot k^{d-2} \ \overset{(d=4)}{=} \ G_k\cdot k^{2}.
 \end{align}
-
-maximally symmetric space:
+After these redefinitions, we can already compute the l.\,h.\,s. of the flow equation, i.\,e. the scale derivative w.\,r.\,t. the RG time $t$. The derivative only acts on $\lambda_k$ and $g_k$.
 \begin{align}
-	\bar{\mathcal{R}}_{\mu\nu} = \frac{1}{d} \ \bar{g}_{\mu\nu} \bar{\mathcal{R}}
+	\partial_{t}\Gamma_{k} = 2\kappa^2 Z_{k,h}\int_x \sqrt{g} \left\{\eta_h\mathcal{R}+2\left(k^2(\partial_t\lambda_k) + \Lambda_k(2 - \eta_h)\right)\right\}.
 \end{align}
+Here we introduced the \textit{anomalous dimension} $\eta_h$, defined as
 \begin{align}
-	\bar{\mathcal{R}}_{\mu\nu\rho\sigma} = \frac{1}{d(d-1)} \ (\bar{g}_{\mu\rho}\bar{g}_{\nu\sigma} - \bar{g}_{\mu\sigma}\bar{g}_{\nu\rho}) \bar{\mathcal{R}}
-\end{align}
-
-suitable tensor basis:
-
-%TODO: Adapt this to the definition given in the Appendix 
-As a first approximation, we only take the contribution from the spin-two graviton mode $h_{\mu\nu}^{\text{TT}}$ into account. This is motivated by the fact, that this mode carries the the most degrees of freedom.\\ %TODO: Extend this explanation (exercise sheet...)
-In this setting, we want to solve the Wetterich equation (\ref{eqn:Wetterich}) by computing the l.\,h.\,s. and the r.\,h.\,s. separately and extract the $\beta$-functions for the Newton coupling $g_k$ and the cosmological constant $\lambda_k$ by a comparison of all terms of order $\sim\sqrt{g}$ and $\sim \sqrt{g} \ \mathcal{R}$. \\
-In our spin-two graviton mode approximation, we don't have to deal with the gauge-fixing and ghost parts ocuring in the effective action. The simplified version of equation (\ref{eqn:QGflow}) reads
+	\eta_h=-\partial_t \ln Z_h = -\frac{\partial_tZ_h}{Z_h}.
+\end{align} 
+We find terms proportional to $\sqrt{g}$ and proportinal to $\sqrt{g}\Ricci$. The r\,h.\,s. of the flow equation is assumed to admit an expansion in terms of invariants, which will also be of $\mathcal{O}\left(\sqrt{g}\right)$ and  $\mathcal{O}\left(\sqrt{g}\mathcal{R}\right)$ since we are working in the Einstein-Hilbert truncation\footnote{There will also appear terms of higher order in curvature, but we will drop them.}. This will allow us to determine the $\beta$-function for $\lambda_k$ and the explicit form of $\eta_h$ by a comparison of the terms of these orders on both sides of the flow equation.
+The $\beta$-function for $g_k$ follows directly from the anomalous dimension:
 \begin{align}
-	\Gamma_{k, h^{\text{TT}}} = 2\kappa^2Z_k \int_x \sqrt{g} \ [-\mathcal{R} + 2\Lambda_k].
+	\beta_g = \partial_t g_k = \left(2 + \eta_h\right)g_k.
 \end{align}
-We start by computing the transverse-traceless graviton two-point function
+At this point, we want to use the idea of the background field approximation. We assume a linear split of the metric into a background field $\bar{g}$ and a fluctuation field $h$, such as described in  equation (\ref{eqn:metric_split}). The approximation at this point is, that in the following, we set all fluctuations to zero, i.\,e. we evaluate all derivatives etc. at $g=\bar{g}$. We will critically review this approximation in chapter \ref{chap:BGindependence}. In general, there is conceptual need to fix the background metric, it nevertheless is really useful to choose specific classes of backgrounds for certain computations, since this can simplify calculations a lot. We exploit the freedom of choosing a spherical background. On the four-sphere $\mathbb{S}^4$, which is a maximally symmetric space\footnote{Maximally symmetric spaces are characterized by the fact, that they have the same number of symmetries as ordinary Euclidean space.}, the Riemann tensor the Ricci tensor can be written  as::
+\begin{equation}
+\begin{aligned}
+	\bar{R}_{\mu\nu} &= \frac{1}{4} \ \bar{g}_{\mu\nu} \bar{\mathcal{R}}\\[10pt]
+	\bar{R}_{\mu\nu\rho\sigma} &= \frac{1}{12} \ (\bar{g}_{\mu\rho}\bar{g}_{\nu\sigma} - \bar{g}_{\mu\sigma}\bar{g}_{\nu\rho}) \bar{\mathcal{R}}.
+\end{aligned}	
+\end{equation}
+The bar refers to the background $\bar{g}$. The inversion of the two-point function on general curved backgrounds is non-trivial. We need to find a suitable tensor basis for the decomposition of the metric fluctuation $h_{\mu\nu}$. We choose a \textit{York decomposition} and find:
+\begin{equation}
+	h_{\mu v}=h_{\mu v}^{\mathrm{TT}}+\bar{\nabla}_{\mu} \xi_{v}+\bar{\nabla}_{v} \xi_{\mu}+\left(\bar{\nabla}_{\mu} \bar{\nabla}_{v}-\frac{1}{d} \bar{g}_{\mu v} \bar{\Delta}\right) \sigma+\frac{1}{d} \bar{g}_{\mu v} h.
+	\label{eqn:York}
+\end{equation}
+Here, $ h_{\mu\nu}^{\text{TT}}$ is a transverse-traceless, spin-2 degree of freedom, $\xi_{\mu}$ is transverse and carries a spin-1 d.\,o.\,f. and $\sigma$ and $h$ have spin-0. For a more detailed motivation of the York decomposition, we refer to appendix \ref{chap:AppA}.\\
+As a further approximation, we only take the contribution from the spin-two graviton mode $h_{\mu\nu}^{\text{TT}}$ into account\footnote{This choice is motivated by the fact, that the spin-two mode carries the most degrees of freedom. From the $10$ initial d.\,o.\,f. in this decomposition, $4$ can be removed via gauge fixing, the remaining $6$ are divided into $5$ from the $h_{\mu\nu}^{\text{TT}}$ mode and $1$ for the trace mode $h$.}. The other modes are included later on in chapter \ref{chap:Matter}, when we couple matter to the system. \\
+Our starting point for the computation of the r.\,h.\,s. of the low equation is the transverse-traceless graviton two-point function:
 \begin{align}
 \Gamma_{h^{\text{TT}}h^{\text{TT}}}^{(2)} = \frac{Z_k}{32\pi}\left(\bar{\Delta} - 2\Lambda_k+\frac{2}{3}\bar{\mathcal{R}}\right).
 \end{align}
-Using a regulator of the form
+We use a regulator of the form 
 \begin{align}
-R_k  = \eval{\Gamma_{h^{\text{TT}}h^{\text{TT}}}^{(2)}}_{\Lambda_k=\bar{\mathcal{R}}=0} \cdot r_k\left(\frac{\bar{\Delta}}{k^2}\right) = \frac{Z_k}{32\pi}\bar{\Delta}\left(\frac{k^2}{\bar{\Delta}}-1\right)\theta\left(1-\frac{\bar{\Delta}}{k^2}\right), \nonumber
+R_k  = \eval{\Gamma_{h^{\text{TT}}h^{\text{TT}}}^{(2)}}_{\Lambda_k=\bar{\mathcal{R}}=0} \cdot r_k\left(\frac{\bar{\Delta}}{k^2}\right) 
 \end{align}
-with a Litim-type cutoff
-\begin{align}
-r_k(y) = \left(\frac{1}{y}-1\right)\theta(1-y), \label{eqn:Litim}
-\end{align}
-as discussed in chapter (\ref{chap:QFT}), we are directly able to compute the l.\,h.\,s. of the Wetterich equation, i.\,e. the scale derivative of the effective average action:
-\begin{align}
-	\partial_{t}\Gamma_{k,h^{\text{TT}}} = 2\kappa^2 Z_k\int_x \sqrt{g} \left\{\eta_g\mathcal{R}+2\left(k^2(\partial_t\lambda_k) + \Lambda_k(2 - \eta_g)\right)\right\}
-\end{align}
-One can extract the $\beta$-function for the Newton coupling without performing the analysis of the Wetterich equation, i.\,e. 
-\begin{align}
-\beta_g = \partial_t g_k = \partial_t\left(\frac{G\cdot k^2}{Z_k}\right) = g_k\left(2+\eta_g\right).
-\end{align}
-
+with a Litim-type shape function \ref{eqn:Litim}.
+%TODO: To do .. 
 The computation of the r.\,h.\,s. of the flow equation is more complicated because it involves the computation of a trace of a function depending on the Laplacian on a curved background. We can use heat-kernel techniques to solve such equations. Heat-kernel computations are based on a curvature expansion in powers of the curvature scaler $\mathcal{R}$. For more details, have a look at the appendix (\ref{sec:heat-kernel}). As a first step, we simplify the trace expression as much as possible.
 
 \begin{align}
