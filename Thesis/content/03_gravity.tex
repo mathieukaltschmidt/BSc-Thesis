@@ -1,5 +1,5 @@
 \chapter{Curved Spacetimes and Gravity}\label{chap:GR}
-Our current understanding of gravity is manifested in Einsteins theory of General Relativity. Different to the treatment of the other fundamental forces, all described by gauge theories and summarized in the Standard Model of Particle Physics, gravity is based on the concept of curved spacetime. This chapter summarizes some of the general concepts and notions of General Relativity, needed for a basic understanding of the subject. For most of the concepts we present here, we are following Sean Carrolls notes \cite{CarrollGR}. At the end of this chapter, we show why gravity can not be quantized in a perturbative manner, opposite to the other three fundamental forces. For this part, we follow \cite{PawlowskiNPgaugeLecture}. 
+Our current understanding of gravity is manifested in Einsteins theory of General Relativity. Different to the treatment of the other fundamental forces, all described by gauge theories and summarized in the Standard Model of Particle Physics, gravity is based on the concept of curved spacetime. This chapter summarizes some of the general concepts and notions of General Relativity, needed for a basic understanding of the subject. For most of the concepts we present here, we are following Sean Carrolls lecture notes \cite{CarrollGR}. At the end of this chapter, we show why gravity can not be quantized in a perturbative manner, opposite to the other three fundamental forces. For this part, we follow \cite{PawlowskiNPgaugeLecture}. 
 
 \section{An Introduction to Spacetime Geometry}
  When talking about the concept of curved spacetimes, one first needs a mathematical framework to quantify curvature and to understand how mathematical concepts such as differentiation and integration are generalized to curved spaces. 
@@ -13,11 +13,11 @@ Components obeying this transformation law are called \textit{contravariant}. At
 	\omega_{\mu^{\prime}}=\frac{\partial x_{\mu}}{\partial x^{\mu^{\prime}}} \omega_{\mu}.\label{eqn:covariant_trafo}
 \end{align}
 This transformation behavior differs from the one found for vectors. We call components transforming as in equation (\ref{eqn:covariant_trafo}) \textit{covariant}.
-
 Now we are able to generalize these concepts by introducing tensors $T$ of type $(k,l)$ as
 \begin{align}
 T=T_{\phantom{\mu_{1} \cdots \mu_{k}}\nu_{1} \cdots \nu_{l}}^{\mu_{1} \cdots \mu_{k}} \ \partial_{\mu_{1}} \otimes \cdots \otimes \partial_{\mu_{k}} \otimes \mathrm{d} x^{\nu_{1}} \otimes \cdots \otimes \mathrm{d} x^{\nu_{l}}.
 \end{align}
+Here $\otimes$ denotes the usual tensor product.
 The general transformation law for tensors follows naturally as expected from equations (\ref{eqn:contravariant_trafo}) and (\ref{eqn:covariant_trafo}),
 \begin{align}
 	T_{\phantom{\mu_{1}^{\prime} \cdots \mu_{k}^{\prime}}\nu_{1}^{\prime} \cdots \nu_{l}^{\prime}}^{\mu_{1}^{\prime} \cdots \mu_{k}^{\prime}}=\frac{\partial x^{\mu_{1}^{\prime}}}{\partial x^{\mu_{1}}} \cdots \frac{\partial x^{\mu_{k}^{\prime}}}{\partial x^{\mu_{k}}} \frac{\partial x^{\nu_{1}}}{\partial x^{\nu_{1}^{\prime}}} \cdots \frac{\partial x^{\nu_{l}}}{\partial x^{\nu_{l}^{\prime}}} T^{\mu_{1} \cdots \mu_{k}}_{\phantom{\mu_{1} \cdots \mu_{k}}\nu_{1} \cdots \nu_{l}}.

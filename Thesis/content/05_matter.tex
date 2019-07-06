@@ -35,7 +35,7 @@ For this calculation, the regularized 2-point-function has been determined using
 \begin{equation}
 R_{k}=\eval{\Gamma_{k}^{(2)}}_{\bar{R}=0, \Lambda=0} \cdot r_{k}\left(\frac{\bar{\Delta}}{k^2}\right),
 \end{equation}
-where the shape function $r_k$ is again of Litim-type (\ref{eqn:Litim}). Since we already computed the contributions arising from the $h^{\mathrm{TT}}$ mode in the previous chapter, we only need to compute those from the trace mode $h^{\mathrm{Tr}}$ and the Non-Abelian ghosts. 
+where the shape function $r_k$ is again of Litim-type (\ref{eqn:Litim}). Since we already computed the contributions arising from the $h^{\mathrm{TT}}$ mode in the previous chapter, we only need to compute those from the trace mode $h^{\mathrm{Tr}}$ and the Non-Abelian ghosts in the following. 
 
 \subsection{Trace mode}
 For the trace mode $h^{\mathrm{Tr}}$, we take the propagator given in (\ref{eqn:G_hh}):
@@ -109,9 +109,15 @@ We use (\ref{eqn:coefficients}) to find the new coefficients for the heat-kernel
 	\operatorname{Tr}\mathbf{b}_2 &= \frac{5}{3}\bar{\mathcal{R}}. (?)\\
 \end{aligned} 
 \end{equation}
-All together, we compute 
-
-
+All together, we compute the following contribution:
+\begin{equation}
+\begin{aligned}
+	-\tr{\left(\Gamma^{(2)}_{k, \bar{c}c}\right)^{-1}\partial_t R_{k,c}} &= -\tr{\frac{\bar{\Delta}_{\mu\nu}^{'(1)}\left(\partial_t r_k - \eta_c r_k\right)}{\bar{\Delta}_{\mu\nu}^{'(1)}\left(1 + r_k\right)}} \\[10pt]
+	&=  - \frac{1}{\left(4 \pi^{2}\right)}\left[4\int_{x} \sqrt{\bar{g}}\ \Phi_{2}^{1}\left(0\right)+\frac{5}{3} \int_{x} \sqrt{\bar{g}} \ \bar{\mathcal{R}} \ \Phi_{1}^{1}\left(0\right)\right] \\[10pt]
+	&= -\frac{1}{(4\pi)^2}\int_x\sqrt{\bar{g}}\left[4\left(1-\frac{\eta_c}{6}\right) + \frac{10}{3}\bar{\mathcal{R}}\left(1-\frac{\eta_c}{4}\right)\right].
+\end{aligned}
+\end{equation}
+The minus sign in front of the trace is due to the Grassmannian nature of the ghost fields. With the completion of this calculation, we are ready to consider minimally-coupled matter fields.
 \section{Matter Contributions in Background Field Approximation}
 The inclusion of matter in this theory setting is in principle straightforward. We extend our truncation (\ref{eqn:QGflow}) by including an additional matter term: 
 \begin{align}
@@ -131,7 +137,7 @@ For the scalar and gauge field regulators we choose
 	R_{k,\sfrac{S}{V}}(z) = Z_{\sfrac{S}{V}} \cdot \mathbbm{1}_{\sfrac{S}{V}} \cdot \tilde{\Delta}\cdot r_k\left(\frac{\tilde{\Delta}}{k^2}\right),
 	\label{eqn:Rk_matter}
 \end{align}
-where $\tilde{\Delta}= -\nabla^2 + \mathbf{E}_{\Psi}$ is a modified Laplacian, occurring as kinetic operator in the different matter field actions. The regulator choice for the Dirac fermions is slightly different, details are discussed in the respective subsection. Nevertheless, we already present the values of $\mathbf{E}_{\Psi}$ for all three kinetic operators:
+where $\tilde{\Delta}= -\nabla^2\mathbbm{1}_{\Psi} + \mathbf{E}_{\Psi}$ is a modified Laplacian, occurring as kinetic operator in the different matter field actions. The regulator choice for the Dirac fermions is slightly different, details are discussed in the respective subsection. Nevertheless, we already present the values of $\mathbf{E}_{\Psi}$ for all three kinetic operators:
 \begin{align}
 	\mathbf{E}_{\Psi} =  \left\{\begin{array}{ll}{0} & {\text { for } \Psi = S} \\[5pt] {\frac{\mathcal{R}}{4}} & {\text { for } \Psi = D}\\[5pt]  {R^{\mu}_{\phantom{\mu}\nu}} & {\text { for } \Psi = V.}\end{array}\right.
 \end{align}
@@ -187,7 +193,7 @@ Here, we already performed the trace operation on the internal indices, leading 
 \begin{equation}
 \begin{aligned}
 	\frac{N_S}{2}\tr{\frac{\bar{\Delta}\left(\partial_t r_k - \eta_s r_k\right)}{\bar{\Delta}\left(1 + r_k\right)}} &= \frac{N_S}{2}\frac{1}{(4\pi^2)}\left[\int_x\sqrt{\bar{g}} \  \Phi_2^1(0) + \frac{1}{6}\int_x\sqrt{\bar{g}} \ \bar{\mathcal{R}}\ \Phi_1^1(0) \right]\\[10pt]
-	&= 	\frac{N_S}{2}\frac{1}{(4\pi)^2}\int_x\sqrt{\bar{g}}\left[\left(1-\frac{\eta_S}{6}\right) + \frac{\bar{\mathcal{R}}}{3}\left(1-\frac{\eta_S}{6}\right)\right].
+	&= 	\frac{N_S}{2}\frac{1}{(4\pi)^2}\int_x\sqrt{\bar{g}}\left[\left(1-\frac{\eta_S}{6}\right) + \frac{\bar{\mathcal{R}}}{3}\left(1-\frac{\eta_S}{4}\right)\right].
 \end{aligned}
 \end{equation}
 \subsection{Fermionic  fields}
@@ -199,7 +205,7 @@ For the fermionic contribution, we  proceed slightly different. First, we presen
 	\end{aligned}
 \end{equation}
 The Dirac operator $\slashed{\nabla}$ satisfies $\left(i\slashed{\nabla}\right)^2 = -\nabla^2 + \frac{\mathcal{R}}{4} =: \Delta_{\left(\sfrac{1}{2}\right)}$.
-The notation for the conjugated field $\bar{\psi} = \psi^{\dagger}\mathfrak{h}$\footnote{The spin metric $\mathfrak{h}$ satisfies $\abs{\operatorname{det} \mathfrak{h}} = 1$ and $\mathfrak{h}^{-1} = -\mathfrak{h}$.} should not be confused with the bar referring to the background field. As usual, the slashed notation implies contraction with gamma matrices\footnote{In the discussion of Dirac fermions, the gamma matrices $\left\{\gamma^0, \gamma^1, \gamma^2, \gamma^3\right\}$ are a set of complex valued matrices, that constitute an irreducible representation of the Clifford algebra, defined by the anticommutation relation $\left\{\gamma_{\mu}, \gamma_{\nu}\right\}= 2g_{\mu\nu} \mathbbm{1}_{d_{\gamma}\times d_{\gamma}}$, with $d_{\gamma} = 2^{\left[\sfrac{d}{2}\right]}$. A more formal treatment of fermions in curved spacetimes is presented in \cite{LippoldtPHD}.}, i.\,e. $\slashed{\nabla} = \gamma^{\mu}\nabla_{\mu}$.  \\
+Once again, the notation for the conjugated field $\bar{\psi} = \psi^{\dagger}\mathfrak{h}$\footnote{The spin metric $\mathfrak{h}$ satisfies $\abs{\operatorname{det} \mathfrak{h}} = 1$ and $\mathfrak{h}^{-1} = -\mathfrak{h}$.} should not be confused with the bar referring to the background field. As usual, the slashed notation implies contraction with gamma matrices\footnote{In the discussion of Dirac fermions, the gamma matrices $\left\{\gamma^0, \gamma^1, \gamma^2, \gamma^3\right\}$ are a set of complex valued matrices, that constitute an irreducible representation of the Clifford algebra, defined by the anticommutation relation $\left\{\gamma_{\mu}, \gamma_{\nu}\right\}= 2g_{\mu\nu} \mathbbm{1}_{d_{\gamma}\times d_{\gamma}}$, with $d_{\gamma} = 2^{\left[\sfrac{d}{2}\right]}$. A more formal treatment of fermions in curved spacetimes is presented in \cite{LippoldtPHD}.}, i.\,e. $\slashed{\nabla} = \gamma^{\mu}\nabla_{\mu}$.  \\
 In principle, this allows us to read off the fermion two-point function
 \begin{align}
 	\Gamma^{(2)}_{\bar{\psi}\psi} = \frac{\delta^2 \mathcal{S}_D}{\delta \psi^{i}\ \delta \bar{\psi}^{j}} = Z_D\cdot\left(i\bar{\slashed{\nabla}}\right)\cdot\mathbbm{1}_D + \mathcal{O}(h).
@@ -229,7 +235,7 @@ Inserting this relation into the expression for the two-point function (\ref{eqn
 \end{equation}
 To invert the Dirac operator $\left(i\slashed{\nabla}\right)$, we use
 \begin{equation}
-	\left(i\slashed{\nabla}\right)^{-1} =\left(i\slashed{\nabla}\right)^{-1}\times\left(\left(i\slashed{\nabla}\right)\times\left(i\slashed{\nabla}\right)^{-1}\right) = \frac{\left(i\slashed{\nabla}\right)}{\Delta_{\left(\sfrac{1}{2}\right)}}
+	\left(i\slashed{\nabla}\right)^{-1} =\left(i\slashed{\nabla}\right)^{-1}\cdot\left(\left(i\slashed{\nabla}\right)\cdot\left(i\slashed{\nabla}\right)^{-1}\right) = \left(i\slashed{\nabla}\right)\cdot\left(\Delta_{\left(\sfrac{1}{2}\right)}\right)^{-1}
 \end{equation}
 and therefore the full fermion propagator reads
 \begin{equation}
@@ -246,8 +252,8 @@ For the scale derivative of the regulator we find
 Since we have to deal with the modified spin-$\frac{1}{2}$ Laplacian $\Delta_{\left(\sfrac{1}{2}\right)}$, we have to be careful with the heat-kernel coefficients. Using equation (\ref{eqn:coefficients}), we find:
 \begin{equation}
 \begin{aligned}
-	\operatorname{Tr}\mathbf{b}_0 &= 4 \\
-	\operatorname{Tr}\mathbf{b}_2 &= \frac{5}{12}\bar{\mathcal{R}}. \\
+	\operatorname{Tr}\mathbf{b}_0 &= 4 (?)\\
+	\operatorname{Tr}\mathbf{b}_2 &= \frac{5}{12}\bar{\mathcal{R}}. (?) \\
 \end{aligned} 
 \end{equation}
 All together, we can start to evaluate the r.\,h.\,s. of the flow equation:
