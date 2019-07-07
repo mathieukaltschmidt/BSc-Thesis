@@ -1,6 +1,5 @@
 \chapter{Asymptotic Safety of Gravity-Matter Systems}\label{chap:Matter} 
-The calculation in $h^{\mathrm{TT}}$ approximation we performed in the last chapter, already allowed us to investigate the characteristic fixed point structure of the Einstein-Hilbert truncation. Nevertheless, in this part of the thesis, where the impact of minimally coupled matter fields is analyzed, we want to work with the full result, including also the vector and scalar modes arising after the York decomposition (\ref{eqn:York}) of the fluctuation field. 
-
+The calculation in $h^{\mathrm{TT}}$ approximation we performed in the last chapter, already allowed us to investigate the characteristic fixed point structure of the Einstein-Hilbert truncation. Nevertheless, in this part of the thesis, where the impact of minimally coupled matter fields is analyzed, we want to work with the full result, including also the vector and scalar modes arising from the York decomposition (\ref{eqn:York}) of the fluctuation field. 
 \section{Inclusion of the other Graviton Modes}
 The gauge conditions and the results for the full graviton propagator are taken from \cite{PawlowskiNPgaugeLecture}.\\
 For the full solution, we have to take care of an additional gauge fixing term
@@ -37,7 +36,7 @@ R_{k}=\eval{\Gamma_{k}^{(2)}}_{\bar{R}=0, \Lambda=0} \cdot r_{k}\left(\frac{\bar
 \end{equation}
 where the shape function $r_k$ is again of Litim-type (\ref{eqn:Litim}). Since we already computed the contributions arising from the $h^{\mathrm{TT}}$ mode in the previous chapter, we only need to compute those from the trace mode $h^{\mathrm{Tr}}$ and the Faddeev-Popov ghosts associated with the graviton sector in the following. 
 \vspace{-0.5cm}
-\subsection{Trace mode}
+\subsection{Trace Mode}
 For the trace mode $h^{\mathrm{Tr}}$, we take the propagator given in (\ref{eqn:G_hh}):
 \begin{equation}
 	G_{k, h^{\mathrm{Tr}}h^{\mathrm{Tr}}} =\left(\frac{32\pi}{Z_h}\right) \left(-\frac{8}{3}\right)\frac{1}{\bar{\Delta}\left[1+r_k\right] - \frac{4}{3}\Lambda_k}.
@@ -54,7 +53,7 @@ In total, the contribution from the r.\,h.\,s. of the flow equation is given by
 \begin{equation}
 	\begin{aligned}
 	\frac{1}{2}\tr{G_{k, h^{\mathrm{Tr}}h^{\mathrm{Tr}}}\ \partial_t R_{k, h^{\mathrm{Tr}}}} =
-		\frac{1}{2}\tr{\frac{\bar{\Delta}\left(\partial_tr_k - \eta_h r_k\right)}{\bar{\Delta}\left[1+r_k\right] - \frac{4}{3}\Lambda_k}}
+		\frac{1}{2}\tr{\frac{\bar{\Delta}\left(\partial_tr_k - \eta_h r_k\right)}{\bar{\Delta}\left[1+r_k\right] - \frac{4}{3}\Lambda_k}}.
 	\end{aligned}
 \end{equation}
 To evaluate the functional trace, we make again use of the heat-kernel techniques we already used for the computation in $h^{\mathrm{TT}}$ approximation:
@@ -62,13 +61,11 @@ To evaluate the functional trace, we make again use of the heat-kernel technique
 \begin{align}
 \frac{1}{2}\tr{\frac{\bar{\Delta}\left(\partial_tr_k - \eta_h r_k\right)}{\bar{\Delta}\left[1+r_k\right] - \frac{4}{3}\Lambda_k}} &= \frac{1}{2} \frac{1}{\left(4 \pi^{2}\right)}\left[\int_{x} \sqrt{\bar{g}}\ \Phi_{2}^{1}\left(-\frac{4}{3}\Lambda_k\right)+\frac{1}{6} \int_{x} \sqrt{\bar{g}} \ \bar{\mathcal{R}} \ \Phi_{1}^{1}\left(-\frac{4}{3}\Lambda_k\right)\right]\nonumber \\
 \phantom{.} \\
-&= 	\frac{1}{2}\frac{1}{(4\pi)^2}\int_x\sqrt{\bar{g}}\left[ \frac{1}{1-\frac{4}{3}\Lambda_k}\left(\left(1-\frac{\eta_h}{6}\right) + \frac{\bar{\mathcal{R}}}{3}\left(1-\frac{\eta_h}{4}\right)\right)\right].\nonumber
+&= 	\frac{1}{2}\frac{1}{(4\pi)^2}\int_x\sqrt{\bar{g}}\left[ \frac{1}{1-\frac{4}{3}\lambda_k}\left(\left(1-\frac{\eta_h}{6}\right) + \frac{\bar{\mathcal{R}}}{3}\left(1-\frac{\eta_h}{4}\right)\right)\right].\nonumber
 	\end{align}
 In the last step, we evaluated the threshold functions using equation (\ref{eqn:threshold}). This already completes the computation of the additional contribution from the trace mode.  
- %TODO: Correct prefactors!!!
- %TODO: Contribution to LHS??
-\subsection{Faddeev-Popov ghosts for the graviton sector}
-Since we work in a background field approximation, where we assume $g_{\mu\nu}=\bar{g}_{\mu\nu}$, we can simplify the calculations for this part a lot. Nevertheless, we have to be very careful, since we will be confronted with a modified Laplacian, i.\,e. a spin-1 Laplacian $\bar{\Delta}_{\mu\nu}^{'(1)}$, occurring as kinetic operator in the ghost two-point function. A more detailed discussion on how these modified Laplacians effect the values of the heat-kernel coefficients is presented at the end of appendix \ref{chap:AppA}. \\
+\subsection{Faddeev-Popov Ghosts for the Graviton Sector}
+Since we work in a background field approximation, where we assume $g_{\mu\nu}=\bar{g}_{\mu\nu}$, we can simplify the calculations for this part a lot. Nevertheless, we have to be very careful since we will be confronted with a modified Laplace operator, i.\,e. a spin-1 Laplacian $\bar{\Delta}_{\mu\nu}^{'(1)}$, occurring as kinetic operator in the ghost two-point function. A more detailed discussion on how these modified Laplacians effect the values of the heat-kernel coefficients is presented at the end of appendix \ref{chap:AppA}. \\
 First we have a look at the Faddeev-Popov operator (\ref{eqn:FPop}). In background field approximation, $\mathcal{M}_{\mu\nu}$ is given by 
 \begin{equation}
 \begin{aligned}
@@ -126,7 +123,7 @@ where $\Gamma_{\mathrm{matter}}$ consists of scalar, fermion and gauge field con
 	\Gamma_{\text{matter}} = \mathcal{S}_S + \mathcal{S}_D + \mathcal{S}_V.
 \end{align}
 The different actions will be specified later on, every matter type will be treated separately. For conventions regarding the choice of the respective regulators and the general structure of this calculation, we are following \cite{DonaEichhornPercacci2013}. \\
-In this truncation we have two essential couplings, $G$ and $\Lambda$ and five inessential\footnote{Inessential in this sense means, that they can be eliminated by field rescalings.} wave function renormalizations $Z_{\Psi}$ with $\Psi = (h,c,S,D,V)$. As before, the wave function renormalizations $Z_{\Psi}$ do not enter the beta functions for $G$ and $\Lambda$ directly, but are still present in a non-trivial way via the anomalous dimension $\eta_{\Psi}$, defined as
+In this truncation we have two essential couplings, $G$ and $\Lambda$, and five inessential\footnote{Inessential in this sense means, that they can be eliminated by field rescalings.} wave function renormalizations $Z_{\Psi}$ with $\Psi = (h,c,S,D,V)$. As before, the wave function renormalizations $Z_{\Psi}$ do not enter the beta functions for $G$ and $\Lambda$ directly, but are still present in a non-trivial way via the anomalous dimension $\eta_{\Psi}$, defined as
 \begin{align}
 	\eta_{\Psi} = -\partial_t \ln Z_{\Psi}.
 \end{align}
@@ -142,7 +139,7 @@ where $\tilde{\Delta}= -\nabla^2\mathbbm{1}_{\Psi} + \mathbf{E}_{\Psi}$ is a mod
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.95\textwidth]{figs/TikZ/matter_corrections}
-\caption[Flow equation for the average effective action $\Gamma_k$ including different matter contributions in diagrammatic representation.]{Flow equation (\ref{eqn:matter_flow}) for the average effective action $\Gamma_k$ including different matter contributions in diagrammatic representation. The double, densely dotted, dashed, solid, wiggly and loosely dotted lines correspond to the graviton, Non-Abelian ghost, scalar, fermion, gauge field  and Abelian ghost propagators, respectively. The crossed circles denote the insertion of the respective regulator.}
+\caption[Flow equation for the average effective action $\Gamma_k$ including different matter contributions in diagrammatic representation.]{Flow equation (\ref{eqn:matter_flow}) for the average effective action $\Gamma_k$ including different matter contributions in diagrammatic representation. The double, densely dotted, dashed, solid, wiggly and loosely dotted lines correspond to the graviton, graviton ghost, scalar, fermion, gauge field  and gauge field ghost propagators, respectively. The crossed circles denote the insertion of the respective regulator.}
 	\label{fig:matter_calc}
 	\hrulefill
 \end{figure}
@@ -156,7 +153,7 @@ After having introduced the setup for the following calculation, we are now able
 As before, the minus signs arise due to the fact, that the ghosts and the fermions are Grassmann fields. A digrammatic representation of the flow equation (\ref{eqn:matter_flow}) is depicted in figure (\ref{fig:matter_calc}). \\
 For our computation in the background field approximation, we expand the different actions on some background $\bar{g}_{\mu\nu}$ and drop all contributions of $\mathcal{O}(h)$.
 \vfill
-\subsection{Scalar fields}
+\subsection{Scalar Fields}
 The action for $N_S$ scalar fields, minimally coupled to gravity reads
 \begin{align}
 	\mathcal{S}_S &= \frac{Z_{S}}{2}\int_x \sqrt{g} \ g^{\mu\nu} \ \sum\limits_{i=1}^{N_{\text{S}}} \partial_{\mu}\phi^{i}\partial_{\nu}\phi^{i} \nonumber \\
@@ -186,10 +183,10 @@ Here, we already performed the trace operation on the internal indices, leading 
 \begin{equation}
 \begin{aligned}
 	\frac{N_S}{2}\tr{\frac{\bar{\Delta}\left(\partial_t r_k - \eta_s r_k\right)}{\bar{\Delta}\left(1 + r_k\right)}} &= \frac{N_S}{2}\frac{1}{(4\pi^2)}\left[\int_x\sqrt{\bar{g}} \  \Phi_2^1(0) + \frac{1}{6}\int_x\sqrt{\bar{g}} \ \bar{\mathcal{R}}\ \Phi_1^1(0) \right]\\[10pt]
-	&= 	\frac{N_S}{2}\frac{1}{(4\pi)^2}\int_x\sqrt{\bar{g}}\left[\left(1-\frac{\eta_S}{6}\right) + \frac{\bar{\mathcal{R}}}{3}\left(1-\frac{\eta_S}{6}\right)\right].
+	&= 	\frac{N_S}{2}\frac{1}{(4\pi)^2}\int_x\sqrt{\bar{g}}\left[\left(1-\frac{\eta_S}{6}\right) + \frac{\bar{\mathcal{R}}}{3}\left(1-\frac{\eta_S}{4}\right)\right].
 \end{aligned}
 \end{equation}
-\subsection{Fermionic  fields}
+\subsection{Fermionic  Fields}
 For the fermionic contribution, we  proceed slightly different. First, we present the action for $N_D$ minimally coupled Dirac fermions:
 \begin{equation}
 	\begin{aligned}
@@ -228,7 +225,7 @@ Inserting this relation into the expression for the two-point function (\ref{eqn
 \end{equation}
 To invert the Dirac operator $\left(i\slashed{\nabla}\right)$, we use
 \begin{equation}
-	\left(i\slashed{\nabla}\right)^{-1} =\left(i\slashed{\nabla}\right)^{-1}\cdot\left(\left(i\slashed{\nabla}\right)^{-1}\cdot \ \left(i\slashed{\nabla}\right)\right) = \left(i\slashed{\nabla}\right)\cdot\left(\Delta_{\left(\sfrac{1}{2}\right)}\right)^{-1}
+	\left(i\slashed{\nabla}\right)^{-1} =\left(i\slashed{\nabla}\right)^{-1}\cdot\left(\left(i\slashed{\nabla}\right)^{-1}\cdot \ \left(i\slashed{\nabla}\right)\right) = \left(\Delta_{\left(\sfrac{1}{2}\right)}\right)^{-1}\cdot\left(i\slashed{\nabla}\right)
 \end{equation}
 and therefore the full fermion propagator reads
 \begin{equation}
@@ -247,20 +244,23 @@ Since we have to deal with the modified spin-$\frac{1}{2}$ Laplacian $\Delta_{\l
 \begin{aligned}
 	\operatorname{Tr}\mathbf{b}_0\left(\Delta_{\left(\sfrac{1}{2}\right)}\right) &= 4\\
 	\operatorname{Tr}\mathbf{b}_2\left(\Delta_{\left(\sfrac{1}{2}\right)}\right) &= \frac{5}{12}\bar{\mathcal{R}}. \\
+	\label{eqn:fermion_coefficients}
 \end{aligned} 
 \end{equation}
-All together, we can start to evaluate the r.\,h.\,s. of the flow equation:
+Altogether, we can start to evaluate the r.\,h.\,s. of the flow equation:
 \begin{equation}
 \begin{aligned}
 	-\tr{G_{k, \bar{\psi}\psi}\ \partial_t R_{k,D}} &=-\tr{\frac{Z_D\cdot\bar{\Delta}_{\left(\sfrac{1}{2}\right)}\cdot\left(\frac{\partial_t r_{k,S}}{2\sqrt{1+r_{k, S}}} - \eta_D\left(\sqrt{1+r_{k,S}} -1\right)\right)}{Z_D\cdot\bar{\Delta}_{\left(\sfrac{1}{2}\right)}\sqrt{1 + r_{k,S}}}\mathbbm{1}_D} \\[10pt]
-	&= -N_D\tr{\frac{\theta\left(1-\chi\right)}{\chi\left(r_{k,S}(\chi)+1\right)} + \eta_D\left(\frac{1}{\sqrt{r_{k,S}(\chi) + 1}}-1\right)},
+	&= -N_D\tr{\frac{k^2\cdot\theta\left(k^2-\bar{\Delta}_{\left(\sfrac{1}{2}\right)}\right)}{\bar{\Delta}_{\left(\sfrac{1}{2}\right)}\left(1+r_{k,S}\right)} + \eta_D\left(\frac{1}{\sqrt{1+r_{k,S}}}-1\right)},
 	\end{aligned}
 \end{equation}
-where we substituted $\chi=\frac{\bar{\Delta}_{\left(\sfrac{1}{2}\right)}}{k^2}$. Since we are working with a different shape function, we can not use the definition of the threshold functions this time. Nevertheless, it is still possible, to express this functional trace in terms of the heat kernel expansion. For this explicit trace, we solved the integrals occurring in the associated $Q$-functionals analytically. The most important steps of this calculation can be found in appendix \ref{chap:AppB}. The final contribution after solving all $4$ terms is given by:
+The Heaviside function $\theta$ enters via the scale derivative of $r_{k,S}$. Since we are working with a different shape function, we won't use the definition of the threshold functions this time. Nevertheless, it is still possible, to express this functional trace in terms of the heat kernel expansion. For this explicit trace, we solved the integrals occurring in the associated $Q$-functionals analytically. The most important steps of this calculation can be found in appendix \ref{chap:AppB}. The final contribution after solving all four integrals is given by:
 \begin{equation}
-	-\operatorname{Tr}\left[G_{k, \bar{\psi} \psi} \partial_{t} R_{k, D}\right]= -N_D\frac{1}{(4\pi)^2}\int_x\sqrt{\bar{g}}\left[2\left(1-\frac{\eta_D}{3}\right) + \frac{5}{12}\bar{\Ricci}\left(1-\frac{\eta_D}{2}\right)\right].
+	-\operatorname{Tr}\left[G_{k, \bar{\psi} \psi} \partial_{t} R_{k, D}\right]\overset{(\mathrm{\ref{eqn:trace_fermions}})}{=} -N_D\frac{1}{(4\pi)^2}\int_x\sqrt{\bar{g}}\left[2\left(1-\frac{\eta_D}{3}\right) + \frac{5}{12}\bar{\Ricci}\left(1-\frac{\eta_D}{2}\right)\right].
 \end{equation}
-\subsection{Gauge fields}  
+\subsection{Gauge Fields}  
+\vspace{-0.35cm}
+
 The structure of the gauge field contribution is more complex than for the other fields. This is due to the fact, that we have to employ a gauge fixing procedure w.\,r.\,t. the background field $\bar{g}_{\mu\nu}$. This ensures gauge invariance w.\,r.\,t. background gauge transformations. The action for $N_V$ gauge fields, minimally coupled to gravity reads
 \begin{equation}
 \begin{aligned}
@@ -276,7 +276,7 @@ where the second term is the gauge fixing term with gauge parameter $\xi$ and th
 &\overset{(\mathrm{\ref{eqn:FF2}})}{=} \frac{Z_{V}}{2} \int_x \sqrt{\bar{g}} \ \sum\limits_{i=1}^{N_{\text{V}}} A_{\lambda}^{i}\left[ \bar{\nabla}^{\mu}\bar{\nabla}^{\lambda} - \bar{g}^{\mu\lambda}\bar{\nabla}^2\right]A_{\mu}^{i} + \mathcal{O}(h).
 \end{aligned}
 \end{equation}
-%TODO: Alignment..
+\newpage
 The steps we skipped can be found in appendix \ref{chap:AppB}. For the gauge fixing term we find:
 \begin{equation}
 \begin{aligned}
@@ -301,7 +301,7 @@ In this form, we are again directly able to read off the two-point-function:
 \begin{equation}
 	\left[\Gamma^{(2)}_{AA}\right]^{\mu\nu} = \left[\frac{\delta^2 \mathcal{S}_V}{\delta A^{i}\ \delta A^{j}}\right]^{\mu\nu} = Z_V\underbrace{\left[ - \bar{g}^{\mu\lambda}\bar{\nabla}^2 +  \bar{R}^{\mu\lambda}\right]}_{=: \  \bar{\Delta}^{\mu\nu}_{(1)}}\mathbbm{1}_V + \mathcal{O}(h),
 \end{equation} 
-where $\bar{\Delta}^{\mu\nu}_{(1)}$ is another a modified spin-one Laplacian, but this time with a different sign in front of the Ricci tensor.  With the respective regulator we find
+where $\bar{\Delta}^{\mu\nu}_{(1)}$ is another modified spin-one Laplacian, but this time with a different sign in front of the Ricci tensor.  With the respective regulator we find
 \begin{align}
 	\left[\Gamma^{(2)}_{k, AA}\right]^{\mu\nu} = \left[\Gamma^{(2)}_{AA}+ R_{k, V}\right]^{\mu\nu}  = Z_V \cdot\bar{\Delta}_{(1)}^{\mu\nu}\cdot\mathbbm{1}_V\left(1 + r_k\left(\frac{\bar{\Delta}_{(1)}}{k^2}\right)\right)
 \end{align}
@@ -341,8 +341,19 @@ In absence of a wave function renormalization, the scale derivative only acts on
 	&= -N_V\frac{1}{(4\pi)^2}\int_x\sqrt{\bar{g}}\left[1 + \frac{1}{3}\bar{\mathcal{R}}\right].	
 \end{aligned}
 \end{equation}  
-In the next section, we combine the obtained results and  give the final expressions for the beta functions. 
+In the next section, we combine the obtained results and present the final expressions for the beta functions. 
 \section{Beta-Functions and Perturbative Approximation}
+Again, by comparing the l.\,h.\,s. of the flow equation (\ref{eqn:LHS}) with the results from chapter \ref{chap:EHT} and all the different contributions we computed in this chapter, we find the $\beta$-function for the cosmological constant\footnote{Note, that there are no additional contributions to the l.\,h.\,s. compared to the pure-gravity calculation. This is due to the fact, that we are working in a background field approximation.}:
+\begin{equation}
+\begin{aligned}
+	\partial_t\lambda_k = \left(\eta_h - 2\right)\lambda_k + \frac{g_k}{4\pi}\left[\left(\frac{5\left(1-\frac{\eta_h}{6}\right)}{1-2\lambda_k}\right) + \left(\frac{5\left(1-\frac{\eta_h}{6}\right)}{1-\frac{4}{3}\lambda_k}\right) - 8\left(1-\frac{\eta_c}{6}\right)\right. \\[10pt] 
+	\Biggl. + N_S\left(1-\frac{\eta_S}{6}\right) - 4N_D\left(1-\frac{\eta_D}{3}\right) - N_V\left(1- \frac{\eta_V}{6}\right)\Biggr]
+\end{aligned}
+\end{equation}
+
+
+
+
 We investigate the impact of the different matter fields in a qualitative analysis.  
 
 % \begin{figure}[t]

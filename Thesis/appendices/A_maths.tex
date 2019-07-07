@@ -30,7 +30,6 @@ This allows us to determine the Jacobian $J$ as follows:
 	J = \left(\operatorname{det}_{\phi}^{\prime}\left(-\nabla^{2}\right)\right)^{1/2}.
 \end{align}
 The prime denotes the fact, that the zero mode has to be removed, when computing the determinant to obtain a consistent result. Physically this is in accordance with the fact, that a constant $\phi$ does not contribute to $A_{\mu}$.\\
-%TODO: Some words on non-local redefinitions
 Four our computation in chapters \ref{chap:EHT} and \ref{chap:Matter}, we were using the background field method, where we assume a linear split of the \textit{full} metric $g_{\mu\nu}$ into a background metric $\bar{g}_{\mu\nu}$ and a fluctuation field $h_{\mu\nu}$. There is an analogous way of decomposing the fluctuation field in the background field formalism. First, we split $h_{\mu\nu}$ into
 \begin{align}
 	h_{\mu\nu} = h_{\mu\nu}^{\mathrm{T}} + \frac{1}{d}\ \bar{g}_{\mu\nu}h,
@@ -79,6 +78,7 @@ Note, that the prime has the same meaning and physical interpretation as in the 
  This concludes our discussion of the York decomposition, as a useful tool to simplify calculations in the background field method.
  \newpage
  \section{Heat-Kernel Techniques}\label{sec:heat-kernel}
+\vspace{-0.2cm}
 We use heat-kernel techniques to evaluate the r.\,h.\,s. of the flow equation (\ref{eqn:Wetterich}), where we need to compute the functional trace over functions depending on the Laplacian on a curved background. In general, the method can be understood as a curvature expansion about a flat background. \\
 The general formula to compute such traces is given by
 \begin{align}
@@ -109,6 +109,7 @@ and
 \begin{align}
 	Q_{n}[f(x)]=\frac{1}{\Gamma(n)} \int \dd x \ x^{n-1} f(x).\label{eqn:Qfunc}
 \end{align}
+\newpage
 For computations on $\mathbb{S}^4$, the values for the heat kernel coefficients $\mathbf{B}_n(\bar{\Delta})$ are presented in the following.
 \begin{table}[H]
 	\centering
