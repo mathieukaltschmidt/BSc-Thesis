@@ -1,10 +1,18 @@
 \chapter{Background Independence in Quantum Gravity}\label{chap:BGindependence}
-\begin{itemize}
-	\item breaking of the split symmetry   $\delta_{\varepsilon}g_{\mu\nu} = \left(\bar{g}_{\mu\nu} + \varepsilon\right) +  \left(h_{\mu\nu} - \varepsilon\right)$ due to regulator depending only on background 
-	\item Nielsen Identities $\mathrm{NI}=\frac{\delta \Gamma}{\delta \overline{g}_{\mu \nu}}-\frac{\delta \Gamma}{\delta h_{\mu \nu}}-\left\langle\left[\frac{\delta}{\delta \overline{g}_{\mu \nu}}-\frac{\delta}{\delta \hat{h}_{\mu \nu}}\right]\left(S_{\mathrm{gf}}+S_{\mathrm{gh}}\right)\right\rangle= 0$
-	\item Modified NI: $\mathrm{mNI}=\mathrm{NI}-\frac{1}{2} \operatorname{Tr}\left[\frac{\delta}{\sqrt{g}} \frac{\delta \sqrt{\bar{g}} R_{k}[\bar{g}]}{\delta \bar{g}_{\mu \nu}} G_{k}\right]=0$
-	\item Vertex Expansion in powers $h$: $\Gamma_{k}[\bar{g}, h]=\sum_{n=0}^{\infty} \frac{1}{n !} \Gamma_{k}^{(0, n)}[\bar{g}, h=0] h^{n}$
-
-	
-\end{itemize}
- 
+Before we come to an end, we briefly want to discuss the issue of background independence in the context of quantum gravity and emphasize that our calculations in the background field approximation have to be treated very carefully. The formulas presented in the scope of this chapter are taken from \cite{PawlowskiNPgaugeLecture}.\\
+Throughout this work we used a linear split of the metric  into some background $\bar{g}_{\mu\nu}$ and a fluctuation field $h_{\mu\nu}$. This changes nothing about the fact, that in general, the flowing action $\Gamma_k = \Gamma_k[\bar{g} + h]$ is still a functional of the full metric $g$, but from a computational point of view it may be easier accessible, since we can expand it in powers of the fluctuations on the given background, i.\,e.
+\begin{equation}
+	\Gamma_k\left[\bar{g} + h\right] = \Gamma_k\left[\bar{g}\right] +  \Gamma_k^{(0,1)}\left[\bar{g}\right]\cdot h + \frac{1}{2}\Gamma_k^{(0,2)}\left[\bar{g}\right]\cdot h^2 +\mathcal{O}(h^3),
+\label{eqn:vertex_expansion}
+\end{equation}
+where we introduced the shorthand notation $\Gamma_k^{(n,m)} = \frac{\delta^{n+m}\Gammak}{\delta^n\bar{g}_{\mu\nu}\delta^mh_{\mu\nu}}$ to distinguish derivatives w.\,r.\,t. the background and the fluctuation field. But since this split is only a mathematical trick to be able to perform calculations in a more efficient way, there should be some relation between the correlations of the fluctuation field and those of the background field.
+This idea is encoded in the \textit{Nielsen identities}, given by
+\begin{equation}
+	 \mathrm{NI}=\frac{\delta \Gamma}{\delta \bar{g}_{\mu \nu}}-\frac{\delta \Gamma}{\delta h_{\mu \nu}}-\left\langle\left[\frac{\delta}{\delta \bar{g}_{\mu \nu}}-\frac{\delta}{\delta \hat{h}_{\mu \nu}}\right]\left(\mathcal{S}_{\mathrm{gf}}+\mathcal{S}_{\mathrm{gh}}\right)\right\rangle= 0.
+\end{equation}
+Here $h_{\mu\nu}=\langle\hat{h}_{\mu\nu}\rangle$. The difference between the background derivatives and the fluctuation derivatives is connected to derivatives of the gauge fixing sector. At finite $k$ the regulator, which plays a crucial role in our approach to the subject, introduces another background dependence. This leads us to the \textit{modified Nielsen identities}:
+\begin{equation}
+	\mathrm{mNI}=\mathrm{NI}-\frac{1}{2} \operatorname{Tr}\left[\frac{\delta}{\delta\sqrt{g}} \frac{\delta \sqrt{\bar{g}} R_{k}[\bar{g}]}{\delta \bar{g}_{\mu \nu}} G_{k}\right]=0.
+\end{equation}
+In background field approximation we assume $\frac{\delta\Gammak}{\delta h}\approx\frac{\delta\Gammak}{\delta \bar{g}}$, this violates the Nielsen identities and therefore background independence is lost. This may seem contradictory at first sight, since in background field approximation we only deal with a single metric. Nevertheless, up until now, the background field approximation is somehow the standard approach to calculations in this area.
+As already mentioned in the introduction, more recently some progress has been made in surmounting the background field approximation. Results based on vertex expansions in powers of the fluctuation field, such as in (\ref{eqn:vertex_expansion}), were used to determine the flow of the couplings by computation of the flow of the $n$-point functions. Details can be found in \cite{ChristiansenLitimPawlowskiReichert2018,MeibohmPawlowskiReichert2015}. The results obtained from this approach differ to some extend strictly from the results found in computations in background field approximations. For future projects, one should keep these problems concerning the background field approximation in mind.

@@ -1,5 +1,5 @@
 \chapter{Additional calculations}\label{chap:AppB}
-For the sake of completeness, we present some auxiliary calculations and important steps, that were used to obtain the results presented in scope of this work, but were in general too long or unsuitable to be included in the main part.
+For the sake of completeness, we present some auxiliary calculations and important steps, that were used to obtain the results presented in the scope of this work, but were in general too long or unsuitable to be included in the main part.
 \subsection*{Fermion part}
 In the part on fermions, we are confronted with the Dirac operator $\slashed{\nabla}=\gamma^{\mu}\nabla_{\mu}$, that involves a contraction with gamma matrices. Here, we present the proof of an identity we used in the derivation of the fermion two-point function:
 \begin{equation}
@@ -12,7 +12,7 @@ In the part on fermions, we are confronted with the Dirac operator $\slashed{\na
 \end{equation} 
 The third line follows from the definition of the Clifford algebra $\left\{\gamma^{\mu},\gamma^{\nu}\right\} = 2g^{\mu\nu}\mathbbm{1}$. \\
 
-We solved the functional trace for the fermions once again using the heat kernel techniques introduced in appendix \ref{chap:AppA}, but different to the other calculations, we could not use the rather simple expressions for the threshold functions evaluated for Litim cutoff (\ref{eqn:Litim}). We expressed the fermion regulator in terms of the scalar regulator which means, that the $Q$-functionals looked different and therefore we had to solve these \enquote{new} integrals analytically. We start by simplifying the trace expression as much as possible:
+We solved the functional trace for the fermions once again using the heat-kernel techniques introduced in appendix \ref{chap:AppA}, but in contrast to the other calculations, we could not use the rather simple expressions for the threshold functions evaluated for the Litim cutoff (\ref{eqn:Litim}). We expressed the fermion regulator in terms of the scalar regulator which means, that the $Q$-functionals looked different and therefore we had to solve these \enquote{new} integrals analytically. We start by simplifying the trace expression as much as possible:
 \begin{equation}
 \begin{aligned}
 	-\tr{G_{k, \bar{\psi}\psi}\ \partial_t R_{k,D}} &=-\tr{\frac{Z_D\cdot\bar{\Delta}_{\left(\sfrac{1}{2}\right)}\cdot\left(\frac{\partial_t r_{k,S}}{2\sqrt{1+r_{k, S}}} - \eta_D\left(\sqrt{1+r_{k,S}} -1\right)\right)}{Z_D\cdot\bar{\Delta}_{\left(\sfrac{1}{2}\right)}\sqrt{1 + r_{k,S}}}\mathbbm{1}_D} \\[10pt]
@@ -20,20 +20,20 @@ We solved the functional trace for the fermions once again using the heat kernel
 	\end{aligned}
 \end{equation}
 We substituted $\chi := \sfrac{\bar{\Delta}_{\left(\sfrac{1}{2}\right)}}{k^2}$. Since the trace is linear, we can separate both terms and compute them independently.
-\paragraph{First term.} 
+\paragraph{First term:} 
 \begin{align}
 		-N_D\tr{\frac{\theta(1-\chi)}{\chi\left(1+r_{k,S}(\chi)\right)}} \overset{(\mathrm{\ref{eqn:master-eqn}})}{=} -N_D\frac{1}{(4\pi)^2}\int_x\sqrt{\bar{g}}&\left[\operatorname{Tr}\mathbf{b}_0\int_0^{\infty}\dd\chi\ \chi\frac{\theta(1-\chi)}{\chi\left(1+r_{k,S}(\chi)\right)}\right.\nonumber \\
 		\phantom{.}\\
- &+ \left.\operatorname{Tr}\mathbf{b}_2\int_0^{\infty}\dd\chi\ \frac{\theta(1-\chi)}{\chi\left(1+r_{k,S}(\chi)\right)}\right]\nonumber
+ &+ \left.\operatorname{Tr}\mathbf{b}_2\int_0^{\infty}\dd\chi\ \frac{\theta(1-\chi)}{\chi\left(1+r_{k,S}(\chi)\right)}\right].\nonumber
 \end{align}
-We directly set $\Gamma(n)=1$, since $n=1$ or $\ 2$ in both cases. With the definition of the Heaviside function, we can set the upper integration bound for the $\dd\chi$ integration to $1$. We use the heat-kernel coefficients for the spin-$\frac{1}{2}$ Laplacian given in (\ref{eqn:fermion_coefficients}) and the definition of the Litim shape function (\ref{eqn:Litim}) and obtain:
+We directly set $\Gamma(n)=1$, since $n$ equals $1$ or $\ 2$ in both cases. With the definition of the Heaviside function, we can set the upper integration bound for the $\dd\chi$ integration to $1$. We use the heat-kernel coefficients for the spin-$\frac{1}{2}$ Laplacian given in (\ref{eqn:fermion_coefficients}) and the definition of the Litim shape function (\ref{eqn:Litim}) and obtain:
 \begin{equation}
 \begin{aligned}
 		-N_D\tr{\frac{\theta(1-\chi)}{\chi\left(1+r_{k,S}(\chi)\right)}} &= -N_D\frac{1}{(4\pi)^2}\int_x\sqrt{\bar{g}}\left[4\int_0^1\dd\chi \ \chi + \frac{5}{12}\bar{\Ricci}\int_0^1\dd\chi\  1\right]\\[10pt]
 &= -N_D\frac{1}{(4\pi)^2}\int_x\sqrt{\bar{g}}\left[2 + \frac{5}{12}\bar{\Ricci}\right].
 \end{aligned}
 \end{equation}
-\paragraph{Second term.}
+\paragraph{Second term:}
 \begin{equation}
 \begin{aligned}
 	-N_D\tr{\eta_D\left(\frac{1}{\sqrt{1+r_{k,S}(\chi)}}-1\right)} &= -N_D\frac{1}{(4\pi)^2} \int_x\sqrt{\bar{g}}\left[4\eta_D\int_0^1\dd\chi \ \chi(\chi-1)\right. \\[10pt]
@@ -58,7 +58,7 @@ During the computation of the gauge field contribution to the running of $G$ and
 &\overset{(\dagger)}{=} -\int 2\left( A_{\lambda}\partial^2A^{\lambda} - A_{\lambda}\partial_{\mu}\partial^{\lambda}A^{\mu}\right) \nonumber\\
 &= \int 2A_{\lambda}\left[\partial^{\mu}\partial^{\lambda} - g^{\mu\lambda}\partial^2\right]A_{\mu}\nonumber 
 \end{align}
-For the first non-trivial step ($\star$) we use that $2\partial_{\mu}A_{\lambda} = \partial_{(\mu}A_{\lambda)} + \partial_{[\mu}A_{\lambda]}$, where $(\cdots)$ and $[\cdots]$ denote symmetrization and antisymmetrization w.\,r.\,t. the indices, respectively. The symmetric part vanishes due to the fact, that $F^{\mu\lambda}$ is antisymmetric under $\mu \rightleftharpoons \lambda$. This allows us to write $2\partial_{\mu}A_{\lambda}F^{\mu\lambda} = \partial_{[\mu}A_{\lambda]}F^{\mu\lambda} = \left(\partial_{\mu}A_{\lambda} - \partial_{\lambda}A_{\mu}\right)F^{\mu\lambda}$. The  second non-trivial step ($\dagger$) results from integrating by parts and assuming vanishing boundary terms. \\
+For the first non-trivial step ($\star$) we use that $2\partial_{\mu}A_{\lambda} = \partial_{(\mu}A_{\lambda)} + \partial_{[\mu}A_{\lambda]}$, where $(\cdots)$ and $[\cdots]$ denote symmetrization and antisymmetrization w.\,r.\,t. the respective indices. The symmetric part vanishes due to the fact, that $F^{\mu\lambda}$ is antisymmetric under $\mu \rightleftharpoons \lambda$. This allows us to write $2\partial_{\mu}A_{\lambda}F^{\mu\lambda} = \partial_{[\mu}A_{\lambda]}F^{\mu\lambda} = \left(\partial_{\mu}A_{\lambda} - \partial_{\lambda}A_{\mu}\right)F^{\mu\lambda}$. The  second non-trivial step ($\dagger$) results from integrating by parts and assuming vanishing boundary terms. \\
 
 Later on in the gauge field calculation, after specifying the gauge parameter $\xi=1$, we encounter a commutator of covariant derivatives acting on $A_{\mu}$. With the definition of the curvature tensor, given in equation (\ref{eqn:Riemann}), we find
 \begin{equation}
@@ -67,4 +67,4 @@ Later on in the gauge field calculation, after specifying the gauge parameter $\
 &= R^{\rho\lambda}A_{\rho} \label{eqn:RiemannB}
 \end{aligned}	
 \end{equation}
-Now, one simply has to rename the dummy indices $\rho \rightleftharpoons \mu$ to find the wanted expression. 	
+Now, one simply has to rename the dummy indices $\rho \rightleftharpoons \mu$ to find the wanted expression. We encounter the same term also in the computation of the Faddeev-Popov ghosts for the graviton sector.  	
