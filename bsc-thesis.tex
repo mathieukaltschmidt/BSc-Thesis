@@ -1,0 +1,61 @@
+%compiling with XeLaTeX
+\documentclass[abstracton,
+			   twoside,
+			   openright,
+			   parskip=half,
+			   11pt]{scrreprt}
+			   
+%Presettings			   
+\include{meta/settings}
+\include{meta/macros}
+%Footnote numbering
+\counterwithout*{footnote}{chapter}
+
+\begin{document}
+\pagenumbering{roman}
+%Introductory stuff, abstracts and toc
+\include{content/titlepage}
+\include{content/abstract}
+{\hypersetup{linkcolor=black}
+\tableofcontents  
+}
+\cleardoublepage
+
+
+\setcounter{tocdepth}{1}
+\pagenumbering{arabic}
+
+%Main part
+	\include{content/01_introduction}
+	\include{content/02_functional_methods}
+	\include{content/03_gravity}
+	\include{content/04_eh_truncation}
+	\include{content/05_matter}
+	\include{content/06_background_independence}
+	\include{content/07_conclusion}
+
+
+
+%Appendices
+\appendix{
+	\include{appendices/A_maths}
+	\include{appendices/B_computations}
+}
+
+
+\cleardoublepage
+\pagenumbering{Roman}
+%References, Figures etc.
+\pagestyle{plain}
+\addcontentsline{toc}{chapter}{References}
+\nocite{*}
+\printbibliography[title=References]
+\cleardoublepage
+
+{\hypersetup{linkcolor=black}
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+}	
+\cleardoublepage
+\include{content/acknowledgements}
+\end{document} 

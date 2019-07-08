@@ -123,7 +123,7 @@ where $\Gamma_{\mathrm{matter}}$ consists of scalar, fermion and gauge field con
 	\Gamma_{\text{matter}} = \mathcal{S}_S + \mathcal{S}_D + \mathcal{S}_V.
 \end{align}
 The different actions will be specified later on, every matter type will be treated separately. For conventions regarding the choice of the respective regulators and the general structure of this calculation, we are following \cite{DonaEichhornPercacci2013}. \\
-In this truncation we have two essential couplings, $G$ and $\Lambda$, and five inessential\footnote{Inessential in this sense means, that they can be eliminated by field rescalings.} wave function renormalizations $Z_{\Psi}$ with $\Psi = (h,c,S,D,V)$. As before, the wave function renormalizations $Z_{\Psi}$ do not enter the beta functions for $G$ and $\Lambda$ directly, but are still present in a non-trivial way via the anomalous dimension $\eta_{\Psi}$, defined as
+In this truncation we have two essential couplings, $G$ and $\Lambda$, and five inessential\footnote{Inessential in this sense means, that they can be eliminated by field rescalings.} wave function renormalizations $Z_{\Psi}$ with $\Psi = (h,c,S,D,V)$. As before, the wave function renormalizations $Z_{\Psi}$ do not enter the $\beta$-functions for $G$ and $\Lambda$ directly, but are still present in a non-trivial way via the anomalous dimension $\eta_{\Psi}$, defined as
 \begin{align}
 	\eta_{\Psi} = -\partial_t \ln Z_{\Psi}.
 \end{align}
@@ -315,7 +315,7 @@ In this case, the heat-kernel coefficients for $\bar{\Delta}^{\mu\nu}_{(1)}$ rea
 	\operatorname{Tr}\mathbf{b}_0\left(\bar{\Delta}_{(1)}\right) &= 4 \\
 	\operatorname{Tr}\mathbf{b}_2\left(\bar{\Delta}_{(1)}\right) &= -\frac{\bar{\mathcal{R}}}{3} \\
 \end{aligned} 
-\end{equation}
+\end{equation}\newpage
 and therefore, the result for the heat-kernel expansion for the gauge fields is given by:
 
 \begin{align}
@@ -341,10 +341,10 @@ In absence of a wave function renormalization, the scale derivative only acts on
 	&= -N_V\frac{1}{(4\pi)^2}\int_x\sqrt{\bar{g}}\left[1 + \frac{1}{3}\bar{\mathcal{R}}\right].	
 \end{aligned}
 \end{equation}  
-In the next section, we combine the obtained results and present the final expressions for the beta functions.
+In the next section, we combine the obtained results and present the final expressions for the $\beta$-functions.
  
 \section{Beta-Functions and Perturbative Approximation}
-We follow the same strategy as last chapter. Simply by comparing the different orders in curvature occurring on both sides of the flow equation, we are able to read off the beta function for the cosmological constant. We collect all terms of order $\sim \sqrt{\bar{g}}$ and find:
+We follow the same strategy as last chapter. Simply by comparing the different orders in curvature occurring on both sides of the flow equation, we are able to read off the $\beta$-function for the cosmological constant. We collect all terms of order $\sim \sqrt{\bar{g}}$ and find:
 \begin{equation}
 \begin{aligned}
 	\partial_t\lambda_k = \left(\eta_h - 2\right)\lambda_k + \frac{g_k}{4\pi}&\left[\left(\frac{5\left(1-\frac{\eta_h}{6}\right)}{1-2\lambda_k}\right) + \left(\frac{5\left(1-\frac{\eta_h}{6}\right)}{1-\frac{4}{3}\lambda_k}\right) - 8\left(1-\frac{\eta_c}{6}\right)\right. \\[10pt] 
@@ -365,18 +365,32 @@ This allows us also to determine also the $\beta$-function for the Newton coupli
 	 &\left. +\frac{N_S}{6}\left(1-\frac{\eta_S}{4}\right) - \frac{5N_D}{12}\left(1-\frac{\eta_D}{2}\right)-2N_V\left(\frac{1}{3}-\frac{\eta_V}{12}\right)\right].
 	\end{aligned}
 \end{equation}
-To get a rough idea on how the different matter fields contribute to the RG flow, we want to perform a perturbative approximation, i.\,e. we neglect all contributions from the different anomalous dimensions and expand our beta functions up to second order in the couplings. This yields:
+To get a rough idea on how the different matter fields contribute to the RG flow, we want to perform a perturbative approximation, i.\,e. we neglect all contributions from the different anomalous dimensions and expand our $\beta$-functions up to second order in the couplings. This yields:
 \begin{equation}
 \begin{aligned}
 	\partial_tg_k &\simeq 2g_k + \frac{g_k^2}{6\pi}\left(N_S - \frac{5}{2}N_D - 4N_V-27\right) \\[10pt]
 	\partial_t\lambda_k &\simeq -2\lambda_k +\frac{g_k}{4\pi}\bigl(N_S-4N_D-N_V+2\bigr) + \frac{g_k\lambda_k}{6\pi}\left(N_S-\frac{5}{2}N_D - 4N_V  -27 \right)
 \end{aligned}
 \end{equation}
- The integer numbers $-27$ and $+2$ represent the contributions from the gravitons and the Faddeev-Popov ghosts. In this approximation, the beta functions attain a non-trivial zero, corresponding to the Non-Gaussian fixed point we are interested in. We find
+ The integer numbers $-27$ and $+2$ represent the contributions from the gravitons and the Faddeev-Popov ghosts. In this approximation, the $\beta$-functions attain a non-trivial zero, corresponding to the Non-Gaussian fixed point we are interested in. \\
+ We find the following fixed point values:
  \begin{equation}
  	\begin{aligned}
  		g_k^{*} &= \frac{-12\pi}{N_S - \frac{5}{2}N_D - 4N_V-27} \\[10pt]
- 		\lambda_k^{*} &= -\frac{2}{3}\frac{N_S}{}
+ 		\lambda_k^{*} &= -\frac{3}{4}\frac{N_S - 4N_D-N_V+2}{N_S - \frac{5}{2}N_D-4N_V-27}.
  	\end{aligned}
  \end{equation}
- In the following we present some plots to visualize the impact of 
+ In the following we present some plots to visualize the effects on the fixed point values when a single matter species is increased while the other numbers are fixed to zero. \\
+The plots, depicted in figure (\ref{fig:matter_plots}) on the next page, indicate, that the scalar fields tend to destabilize the system, after a certain amount is surpassed. The values for both couplings increase drastically and will probably diverge. The fermionic and the gauge fields seem to be compatible with the theory, since they tend to decrease the values of both couplings. The value for $\lambda^{*}$ is nearly constant over almost the whole depicted range for the gauge fields.   
+ \begin{figure}[t]
+ 	\centering
+ 	\vfill
+ 	\includegraphics[width=0.7\textwidth]{figs/Plots/FP_scalars}
+ 	\vfill
+ 	\includegraphics[width=0.7\textwidth]{figs/Plots/FP_fermions}
+ 	\vfill
+ 	\includegraphics[width=0.7\textwidth]{figs/Plots/FP_gauge}
+ 	\vfill
+ 	\caption{Fixed point values for increasing number of matter fields. Initially the matter content is set to zero, meaning we are only considering the respective matter type in each plot.}
+ 	\label{fig:matter_plots}
+ \end{figure}
