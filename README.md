@@ -6,7 +6,7 @@ This repository contains:
 - The final version of my thesis.
 - The final version of my thesis defense presentation.
 - Most of the references.
-- (Maybe)A Mathematica script to determine the Non-Gaussian fixed points for the chosen setting numerically.
-- Additionally some of my notes and calculations, that were not included in the scope of the thesis but seem to be a good preparation for people with some background knowledge who are interested in the subject.
+- A Mathematica script to determine the Non-Gaussian fixed points for the chosen setting numerically.
+
 
 
